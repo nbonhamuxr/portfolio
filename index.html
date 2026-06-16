@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nate Bonham — User Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* Home-only hero treatment */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;padding:140px 48px 80px;overflow:hidden;}
+  .hero-glow{position:absolute;top:-10%;right:-10%;width:55%;height:70%;background:radial-gradient(circle, var(--signal-glow), transparent 70%);z-index:0;pointer-events:none;}
+  .signal-line{position:absolute;right:4%;top:50%;transform:translateY(-50%);width:38%;max-width:480px;z-index:1;opacity:0.9;pointer-events:none;}
+  .signal-line svg{width:100%;height:auto;}
+  .hero-content{position:relative;z-index:2;max-width:660px;}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--signal);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+  .eyebrow .rule{height:1px;width:32px;background:var(--signal-dim);}
+  h1.headline{font-family:var(--serif);font-weight:380;font-size:clamp(38px,5.4vw,62px);line-height:1.12;letter-spacing:-0.01em;}
+  h1.headline em{font-style:italic;font-weight:480;color:var(--signal);}
+  .teaser{margin-top:26px;font-size:17px;line-height:1.65;color:var(--graphite);max-width:480px;}
+  .hero-meta{margin-top:48px;display:flex;gap:40px;flex-wrap:wrap;}
+  .meta-item{font-family:var(--mono);font-size:11.5px;color:var(--graphite-dark);text-transform:uppercase;letter-spacing:0.04em;}
+  .meta-item strong{display:block;font-family:var(--sans);font-size:14.5px;color:var(--bone);text-transform:none;letter-spacing:0;font-weight:600;margin-top:3px;}
+  @media (max-width:900px){.signal-line{display:none;}}
+  @media (max-width:780px){.hero{padding:120px 24px 56px;}}
+
+  /* About strip — short, direct */
+  .about-strip{background:var(--panel);}
+  .about-strip .inner{max-width:760px;}
+  .about-strip p{font-size:17px;line-height:1.75;color:var(--graphite);}
+  .about-strip p strong{color:var(--bone);font-weight:600;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-mark">Nate Bonham — User Research</a>
+  <div class="nav-links">
+    <a href="philosophy.html">Philosophy</a>
+    <a href="ai-practice.html">AI Practice</a>
+    <a href="work.html">Case Studies</a>
+    <a href="recommendations.html">Recommendations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="signal-line"><svg viewBox="0 0 300 200">
+    <path d="M10,40 C50,15 40,90 80,70 C120,50 100,140 150,120 C190,104 180,160 230,150 C260,144 250,170 290,165"
+      fill="none" stroke="#5C5A55" stroke-width="1.6" stroke-dasharray="2 2" opacity="0.6"/>
+    <path d="M10,40 L290,165" fill="none" stroke="#E8472B" stroke-width="1.6" stroke-dasharray="3 5" opacity="0.5"/>
+    <circle cx="10" cy="40" r="3.5" fill="#E4DFD0"/>
+    <circle cx="290" cy="165" r="3.5" fill="#E8472B"/>
+  </svg></div>
+  <div class="hero-content">
+    <div class="eyebrow"><span class="rule"></span>Senior User Researcher</div>
+    <h1 class="headline">I help teams build <em>shared understanding</em> — then turn it into action.</h1>
+    <p class="teaser">Most research stalls from a lack of agreement on what the findings mean. That's the part I focus on.</p>
+    <div class="hero-meta">
+      <div class="meta-item">Currently<strong>Senior User Researcher, WWT</strong></div>
+      <div class="meta-item">Based in<strong>Ann Arbor, MI</strong></div>
+      <div class="meta-item">M.S. HCI<strong>University of Michigan</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT — SHORT ============ -->
+<section class="about-strip">
+  <div class="inner">
+    <div class="tag">Who I am</div>
+    <p>I'm a researcher and mentor with over 10 years leading user-centered decisions for products used by millions, including <strong>Halo Infinite</strong>, <strong>JSTOR</strong>, and <strong>The Sims</strong>. I'm curious by nature, steady under ambiguity, and most energized when a team moves from disagreement to a shared plan. I also mentor researchers through the <strong>University of Michigan</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ CHECK OUT MY WORK ============ -->
+<section class="cases-preview" id="work">
+  <div class="section-head">
+    <div class="tag">Check out my work</div>
+    <h2 class="section-title">Three studies, three teams finding <em>common ground.</em></h2>
+  </div>
+  <div class="preview-grid">
+    <a class="preview-card" href="case-study-jstor.html">
+      <div class="preview-image"><img src="images/jstor.png" alt="Artstor's logo and interface transitioning into JSTOR's branding"></div>
+      <div class="preview-body">
+        <div class="preview-meta">ITHAKA / JSTOR</div>
+        <h3>A platform integration without a shared definition of "done."</h3>
+        <p>A user-outcomes framework that gave two stalled teams a common scorecard — still in use org-wide.</p>
+        <span class="preview-cta">Read the case study →</span>
+      </div>
+    </a>
+    <a class="preview-card" href="case-study-roblox.html">
+      <div class="preview-image"><img src="images/roblox.png" alt="Collage of Roblox game tiles behind the Roblox logo"></div>
+      <div class="preview-body">
+        <div class="preview-meta">Electronic Arts / Maxis</div>
+        <h3>Nine players, one ride-along, a new studio-wide method.</h3>
+        <p>A lighter, player-centered approach to competitive research that became the new EA standard.</p>
+        <span class="preview-cta">Read the case study →</span>
+      </div>
+    </a>
+    <a class="preview-card" href="case-study-sims.html">
+      <div class="preview-image"><img src="images/sims.png" alt="The Sims: Project Rene title screen"></div>
+      <div class="preview-body">
+        <div class="preview-meta">Electronic Arts / Maxis — Project Rene</div>
+        <h3>Aligning a studio around who a mobile-first Sims player actually is.</h3>
+        <p>The research narrative that aligned development culture around new and returning players alike.</p>
+        <span class="preview-cta">Read the case study →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ RESUME ============ -->
+<section class="resume" id="resume">
+  <div class="resume-left">
+    <h2>The long version.</h2>
+    <p>Halo Infinite, JSTOR, The Sims, and now WWT — full role history, methods, and mentoring through the University of Michigan.</p>
+  </div>
+  <button class="btn-signal">Download résumé (PDF) ↓</button>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-line">Working through something <em>unclear</em>? I'd like to hear about it.</div>
+  <div class="footer-links">
+    <div class="footer-contact">
+      <a href="contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
+      <a href="https://natebonham.substack.com/">Substack</a>
+    </div>
+    <div class="footer-stamp">nateux.com — Ann Arbor, MI</div>
+  </div>
+</footer>
+
+</body>
+</html>
