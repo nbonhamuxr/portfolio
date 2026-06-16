@@ -4,83 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leadership Style — Nate Bonham</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<style>
-  .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(14,13,12,0.1);border:1px solid rgba(14,13,12,0.1);}
-  @media (max-width:780px){.principles{grid-template-columns:1fr;}}
-  .deep-dive{max-width:680px;}
-  .deep-dive h2{font-family:var(--serif);font-size:clamp(22px,2.8vw,28px);font-weight:460;margin:48px 0 16px;}
-  .deep-dive h2:first-child{margin-top:0;}
-  .deep-dive p{font-size:17px;line-height:1.8;color:var(--graphite);margin-bottom:16px;}
-  .deep-dive p strong{color:var(--bone);font-weight:600;}
-</style>
 </head>
 <body>
+<div class="page">
 
-<nav>
-  <a href="index.html" class="nav-mark">Nate Bonham — User Research</a>
-  <div class="nav-links">
-    <a href="philosophy.html" class="active">Leadership Style</a>
-    <a href="ai-practice.html">AI Practice</a>
-    <a href="work.html">Case Studies</a>
-    <a href="recommendations.html">Recommendations</a>
-    <a href="contact.html">Contact</a>
-    <a href="resume.pdf" target="_blank" class="nav-resume">Résumé</a>
-  </div>
-</nav>
-
-<section class="page-hero">
-  <div class="page-eyebrow"><span class="rule"></span>How I lead</div>
-  <h1 class="page-title">I've led research across gaming studios, academic publishing, and enterprise technology. These are the principles that show up regardless of the context.</h1>
-</section>
-
-<section class="philosophy">
-  <div class="principles">
-    <div class="p-card">
-      <div class="p-icon"><svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="14" r="7" stroke="#23231F" stroke-width="1.6"/><path d="M6,30 C6,23 30,23 30,30" stroke="#E8472B" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></div>
-      <h3>Nurturing</h3>
-      <p>I want the people around me to feel supported, seen, and capable of more than they thought. That shows up in how I give feedback, how I hold space for uncertainty, and how I celebrate the success of others.</p>
-    </div>
-    <div class="p-card">
-      <div class="p-icon"><svg viewBox="0 0 36 36" fill="none"><circle cx="15" cy="15" r="10" stroke="#23231F" stroke-width="1.6"/><line x1="22.5" y1="22.5" x2="31" y2="31" stroke="#E8472B" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="15" r="3" fill="#23231F"/></svg></div>
-      <h3>Leaning in with curiosity</h3>
-      <p>My instinct when something's unclear isn't to fill the gap with assumptions — it's to ask more questions. I find ambiguity genuinely interesting. It usually means there's something worth understanding underneath. I've found that curiosity is contagious in a room: when a researcher approaches a problem with open, genuine interest, the people around them tend to start doing the same.</p>
-    </div>
-    <div class="p-card">
-      <div class="p-icon"><svg viewBox="0 0 36 36" fill="none"><circle cx="9" cy="27" r="3.2" stroke="#23231F" stroke-width="1.6"/><circle cx="27" cy="27" r="3.2" stroke="#23231F" stroke-width="1.6"/><circle cx="18" cy="9" r="3.2" stroke="#E8472B" stroke-width="1.6"/><line x1="11.5" y1="25" x2="16" y2="11.5" stroke="#23231F" stroke-width="1.4"/><line x1="24.5" y1="25" x2="20" y2="11.5" stroke="#23231F" stroke-width="1.4"/><line x1="12" y1="27" x2="24" y2="27" stroke="#23231F" stroke-width="1.4"/></svg></div>
-      <h3>Building alignment and shared understanding</h3>
-      <p>I'm often described as the person in the room who gets everyone speaking the same language. The most important thing I can do on any project is to make sure the people who need to act on it are already moving in the same direction before the findings happen. I design scoping, synthesis, and co-working workshops so teams reach insight and know how to act on that insight together.</p>
-    </div>
-    <div class="p-card">
-      <div class="p-icon"><svg viewBox="0 0 36 36" fill="none"><rect x="8" y="10" width="20" height="16" rx="2" stroke="#23231F" stroke-width="1.6"/><line x1="18" y1="10" x2="18" y2="26" stroke="#E8472B" stroke-width="1.4"/><line x1="8" y1="18" x2="28" y2="18" stroke="#23231F" stroke-width="1.4"/></svg></div>
-      <h3>Transparency</h3>
-      <p>I'd rather name what I don't know than project confidence I haven't earned. I share my thinking early and often, including the parts that are still rough. That kind of openness tends to make everyone around me more willing to participate throughout the research process, and avoid conflict when the results of that research are socialized.</p>
-    </div>
-    <div class="p-card">
-      <div class="p-icon"><svg viewBox="0 0 36 36" fill="none"><path d="M10,28 L10,18 C10,13 15,10 18,10 C21,10 26,13 26,18 L26,28" stroke="#23231F" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M14,22 C14,22 16,25 18,22 C20,19 22,22 22,22" stroke="#E8472B" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></div>
-      <h3>Mentoring and coaching</h3>
-      <p>I've mentored graduate students at the <strong>University of Michigan</strong> and served as a formal mentor at JSTOR, where my mentee was promoted from Associate User Researcher to User Researcher. Helping someone grow into their own voice is some of the most satisfying work I do. I deeply value education, and continually coach my organization on research best practices and how to listen to the audiences we serve.</p>
-    </div>
-    <div class="p-card">
-      <div class="p-icon"><svg viewBox="0 0 36 36" fill="none"><path d="M6,28 L14,16 L20,22 L30,8" stroke="#23231F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="8" r="2.8" fill="#E8472B"/><line x1="10" y1="28" x2="10" y2="22" stroke="#23231F" stroke-width="1.4"/></svg></div>
-      <h3>Authoritative, but never authoritarian</h3>
-      <p>I take an evidence-informed approach to everything I do. I'm comfortable saying "I don't know — but we'll figure it out," and I mean it. I take deep pride in my craft and in the work I put into the world, but I don't need to announce it. Expertise shows in the work. Quiet confidence.</p>
+  <div class="cover-band">
+    <div class="cover-inner">
+      <span class="cover-tag">HOW I LEAD</span>
+      <h1 class="cover-title--md cover-title">LEADERSHIP STYLE</h1>
+      <p class="cover-sub" style="margin-bottom:0;">I've led research across gaming studios, academic publishing, and enterprise technology. These are the principles that show up regardless of the context.</p>
+      <div class="cover-nav">
+        <a href="index.html">Home</a>
+        <a href="philosophy.html" class="active">Leadership Style</a>
+        <a href="ai-practice.html">AI Practice</a>
+        <a href="work.html">Case Studies</a>
+        <a href="recommendations.html">Recommendations</a>
+        <a href="contact.html">Contact</a>
+        <a href="resume.pdf" target="_blank">Résumé</a>
+      </div>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="footer-links">
-    <div class="footer-contact">
-      <a href="contact.html">Contact</a>
-      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
-      <a href="https://natebonham.substack.com/">Substack</a>
-    </div>
-    <div class="footer-stamp">nateux.com — Ann Arbor, MI</div>
+  <span class="page-tab">PAGE 02 — PRINCIPLES</span>
+
+  <div class="panel">
+    <div class="section-num">01</div>
+    <h2 class="section-title">NURTURING</h2>
+    <p>I want the people around me to feel supported, seen, and capable of more than they thought. That shows up in how I give feedback, how I hold space for uncertainty, and how I celebrate the success of others.</p>
   </div>
-</footer>
 
+  <div class="panel">
+    <div class="section-num section-num--red">02</div>
+    <h2 class="section-title">LEANING IN WITH CURIOSITY</h2>
+    <p>My instinct when something's unclear isn't to fill the gap with assumptions — it's to ask more questions. I find ambiguity genuinely interesting. It usually means there's something worth understanding underneath. I've found that curiosity is contagious in a room: when a researcher approaches a problem with open, genuine interest, the people around them tend to start doing the same.</p>
+  </div>
+
+  <div class="panel">
+    <div class="section-num section-num--green">03</div>
+    <h2 class="section-title">BUILDING ALIGNMENT AND SHARED UNDERSTANDING</h2>
+    <p>I'm often described as the person in the room who gets everyone speaking the same language. The most important thing I can do on any project is to make sure the people who need to act on it are already moving in the same direction before the findings happen. I design scoping, synthesis, and co-working workshops so teams reach insight and know how to act on that insight together.</p>
+  </div>
+
+  <div class="panel">
+    <div class="section-num section-num--gold">04</div>
+    <h2 class="section-title">TRANSPARENCY</h2>
+    <p>I'd rather name what I don't know than project confidence I haven't earned. I share my thinking early and often, including the parts that are still rough. That kind of openness tends to make everyone around me more willing to participate throughout the research process, and avoid conflict when the results of that research are socialized.</p>
+  </div>
+
+  <div class="controller-divider">CONTINUE</div>
+
+  <div class="panel">
+    <div class="section-num">05</div>
+    <h2 class="section-title">MENTORING AND COACHING</h2>
+    <p>I've mentored graduate students at the <strong>University of Michigan</strong> and served as a formal mentor at JSTOR, where my mentee was promoted from Associate User Researcher to User Researcher. Helping someone grow into their own voice is some of the most satisfying work I do. I deeply value education, and continually coach my organization on research best practices and how to listen to the audiences we serve.</p>
+  </div>
+
+  <div class="panel">
+    <div class="section-num section-num--red">06</div>
+    <h2 class="section-title">AUTHORITATIVE, BUT NEVER AUTHORITARIAN</h2>
+    <p>I take an evidence-informed approach to everything I do. I'm comfortable saying "I don't know — but we'll figure it out," and I mean it. I take deep pride in my craft and in the work I put into the world, but I don't need to announce it. Expertise shows in the work. Quiet confidence.</p>
+  </div>
+
+  <div class="footer-strip">
+    <span>nateux.com — Ann Arbor, MI</span>
+    <span><a href="contact.html">Contact</a> · <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a> · <a href="https://natebonham.substack.com/">Substack</a></span>
+  </div>
+
+</div>
 </body>
 </html>
