@@ -67,8 +67,10 @@ header.nav{
   justify-content: space-between;
   align-items: center;
   padding: 30px 0;
-  position: relative;
-  z-index: 2;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--carbon);
 }
 .logo{
   color: var(--paper);
@@ -93,6 +95,35 @@ header.nav{
 .navlinks a.active{ color: var(--ink-cyan); }
 .navlinks a:focus-visible{ outline: 2px solid var(--ink-cyan); outline-offset: 4px; }
 
+.nav-dropdown{ position: relative; }
+.nav-dropdown > a::after{ content: ' ▾'; font-size: 10px; opacity: 0.6; }
+.nav-dropdown-menu{
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--carbon-2);
+  border: 1px solid var(--ink-cyan);
+  min-width: 180px;
+  z-index: 300;
+  padding: 6px 0;
+}
+.nav-dropdown-menu a{
+  display: block;
+  padding: 10px 16px;
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a:hover{ color: var(--ink-cyan); background: rgba(255,255,255,0.04); }
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu{ display: block; }
+
 .nav-toggle{
   display: none;
   background: none;
@@ -112,7 +143,7 @@ header.nav{
 /* --------------------------------------------------------------------------
    HERO (homepage)
    -------------------------------------------------------------------------- */
-.hero{ padding: 50px 0 90px; position: relative; z-index: 1; }
+.hero{ padding: 50px 0 30px; position: relative; z-index: 1; }
 
 .hero-tag{
   display: inline-block;
@@ -757,8 +788,21 @@ footer a:hover{ color: var(--ink-magenta); }
     z-index: 100;
     border-top: 2px solid var(--ink-cyan);
   }
-  header.nav{ flex-wrap: wrap; position: relative; }
+  header.nav{ flex-wrap: wrap; }
   header.nav.nav-open .navlinks{ display: flex; }
+  .nav-dropdown-menu{
+    display: none;
+    position: static;
+    transform: none;
+    border: none;
+    background: transparent;
+    padding: 0 0 0 12px;
+    min-width: unset;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu,
+  .nav-dropdown.open .nav-dropdown-menu{ display: block; }
+  .nav-dropdown-menu a{ padding: 6px 0; font-size: 12px; }
   .splat{ display: none; }
   .case-card--img .card-img{ height: 140px; }
   .principle-grid{ grid-template-columns: 1fr; }
