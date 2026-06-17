@@ -71,15 +71,14 @@ header.nav{
   z-index: 2;
 }
 .logo{
-  font-family: 'Archivo Expanded', sans-serif;
-  font-weight: 900;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-style: italic;
   color: var(--paper);
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+.logo:hover{ color: var(--ink-magenta); }
 .logo span{ color: var(--ink-lime); }
 .navlinks{ display: flex; gap: 26px; }
 .navlinks a{
@@ -111,6 +110,11 @@ header.nav{
   margin-bottom: 30px;
   transform: rotate(-2deg);
   box-shadow: 3px 3px 0 var(--ink-magenta);
+}
+.hero .hero-tag{
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
 }
 
 .hero h1{
