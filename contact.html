@@ -4,58 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Nate Bonham</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="page">
+<div class="wrap">
 
-  <div class="cover-band">
-    <div class="cover-inner">
-      <span class="cover-tag">GET IN TOUCH</span>
-      <h1 class="cover-title cover-title--md">CONTACT</h1>
-      <p class="cover-sub" style="margin-bottom:0;">THE FASTEST WAY TO REACH ME IS EMAIL.</p>
-      <div class="cover-nav">
-        <a href="index.html">Home</a>
-        <a href="philosophy.html">Leadership Style</a>
-        <a href="ai-practice.html">AI Practice</a>
-        <a href="work.html">Case Studies</a>
-        <a href="recommendations.html">Recommendations</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="resume.pdf" target="_blank">Résumé</a>
-      </div>
+  <svg class="splat" style="top:80px; left:-70px; width:200px; height:200px;" viewBox="0 0 200 200">
+    <path d="M95 5 C130 0 165 25 178 60 C191 95 180 135 150 158 C120 181 80 182 50 162 C20 142 5 105 12 70 C19 35 60 10 95 5 Z" fill="#C6FF3D" opacity="0.10"/>
+  </svg>
+
+  <header class="nav">
+    <a href="index.html" class="logo">Nate<span>UX</span></a>
+    <nav class="navlinks">
+      <a href="philosophy.html">Leadership</a>
+      <a href="ai-practice.html">AI Practice</a>
+      <a href="work.html">Case Studies</a>
+      <a href="recommendations.html">Recs</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="hero-tag">GET IN TOUCH</div>
+    <h1>Contact</h1>
+    <p>The fastest way to reach me is email. I'm also active on LinkedIn and write occasionally on Substack.</p>
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="philosophy.html">Leadership Style</a>
+      <a href="ai-practice.html">AI Practice</a>
+      <a href="work.html">Case Studies</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="resume.pdf" target="_blank">Résumé</a>
+    </nav>
+  </section>
+
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:nate.bonham@gmail.com">nate.bonham@gmail.com</a></div>
+    </div>
+    <div class="info-cell">
+      <div class="label">LinkedIn</div>
+      <div class="value"><a href="https://www.linkedin.com/in/nathanielbonham" target="_blank">linkedin.com/in/nathanielbonham</a></div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Substack</div>
+      <div class="value"><a href="https://natebonham.substack.com/" target="_blank">natebonham.substack.com</a></div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Résumé</div>
+      <div class="value"><a href="resume.pdf" target="_blank">Download PDF ↓</a></div>
     </div>
   </div>
 
-  <span class="page-tab">PAGE 02 — PLAYER SELECT SCREEN</span>
-  <div class="panel">
-    <div class="section-num">01</div>
-    <h2 class="section-title">HOW TO REACH ME</h2>
-    <p>I'm also active on LinkedIn and write occasionally on Substack.</p>
-    <div class="stat-grid" style="margin-top:18px;">
-      <div class="stat-box">
-        <div class="stat-label">Email</div>
-        <div class="stat-value"><a href="mailto:nate.bonham@gmail.com" style="color:var(--red);text-decoration:none;">nate.bonham@gmail.com</a></div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">LinkedIn</div>
-        <div class="stat-value"><a href="https://www.linkedin.com/in/nathanielbonham" style="color:var(--blue);text-decoration:none;">linkedin.com/in/nathanielbonham</a></div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">Substack</div>
-        <div class="stat-value"><a href="https://natebonham.substack.com/" style="color:var(--green);text-decoration:none;">natebonham.substack.com</a></div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">Résumé</div>
-        <div class="stat-value"><a href="resume.pdf" target="_blank" style="color:var(--ink);text-decoration:none;">Download PDF ↓</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-strip">
+  <footer style="margin-top:90px;">
     <span>nateux.com — Ann Arbor, MI</span>
-    <span><a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a> · <a href="https://natebonham.substack.com/">Substack</a></span>
-  </div>
+    <span>
+      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
+      <a href="https://natebonham.substack.com/">Substack</a>
+    </span>
+  </footer>
 
 </div>
+<script src="js/theme-toggle.js"></script>
 </body>
 </html>
