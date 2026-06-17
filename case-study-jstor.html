@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How User Outcomes Realigned ITHAKA's Product Org — Nate Bonham</title>
+<link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Archivo+Expanded:wght@700;900&family=Space+Mono:wght@400;700&display=swap');
 
@@ -40,34 +41,6 @@
   .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
 
   /* ---------- NAV ---------- */
-  header.nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:30px 0;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    margin-bottom:0;
-  }
-  .logo{
-    font-family:'Archivo Expanded', sans-serif;
-    font-weight:900;
-    font-size:18px;
-    letter-spacing:0.5px;
-    text-transform:uppercase;
-    text-decoration:none;
-    color:var(--paper);
-  }
-  .logo span{ color:var(--acid); }
-  .navlinks{ display:flex; gap:26px; }
-  .navlinks a{
-    color:var(--paper);
-    text-decoration:none;
-    font-size:13px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-  }
-  .navlinks a:hover{ color:var(--acid); }
   .back-link{
     font-family:'Space Mono', monospace;
     font-size:12px;
@@ -740,11 +713,19 @@
 
 <div class="wrap">
   <header class="nav">
-    <a class="logo" href="index.html">Nate<span>UX</span></a>
+    <a href="index.html" class="logo">Home</a>
+    <button class="nav-toggle" aria-label="Open navigation"><span></span><span></span><span></span></button>
     <nav class="navlinks">
       <a href="philosophy.html">Leadership</a>
-      <a href="ai-practice.html">AI Practice</a>
-      <a href="work.html">Case Studies</a>
+      <a href="ai-practice.html">AI</a>
+      <div class="nav-dropdown">
+        <a href="work.html" class="active">Case Studies</a>
+        <div class="nav-dropdown-menu">
+          <a href="case-study-jstor.html">JSTOR Integration</a>
+          <a href="case-study-roblox.html">Competitive Research</a>
+          <a href="case-study-sims.html">The Sims Audience</a>
+        </div>
+      </div>
       <a href="recommendations.html">Recs</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -963,6 +944,7 @@
   </footer>
 </div>
 
+<script src="js/theme-toggle.js"></script>
 <script>
   const progressFill = document.getElementById('progressFill');
   function updateProgress(){
