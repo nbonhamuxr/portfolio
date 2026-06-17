@@ -100,14 +100,14 @@ header.nav{
 .nav-dropdown-menu{
   display: none;
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: var(--carbon-2);
   border: 1px solid var(--ink-cyan);
   min-width: 180px;
   z-index: 300;
-  padding: 6px 0;
+  padding: 12px 0 6px;
 }
 .nav-dropdown-menu a{
   display: block;
