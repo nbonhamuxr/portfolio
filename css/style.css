@@ -93,6 +93,22 @@ header.nav{
 .navlinks a.active{ color: var(--ink-cyan); }
 .navlinks a:focus-visible{ outline: 2px solid var(--ink-cyan); outline-offset: 4px; }
 
+.nav-toggle{
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: column;
+  gap: 5px;
+}
+.nav-toggle span{
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--paper);
+}
+
 /* --------------------------------------------------------------------------
    HERO (homepage)
    -------------------------------------------------------------------------- */
@@ -610,6 +626,7 @@ footer a:hover{ color: var(--ink-magenta); }
   padding: 28px 24px;
   position: relative;
   overflow: hidden;
+  border-top: 4px solid transparent;
 }
 .principle-card::after{
   content: '';
@@ -619,11 +636,25 @@ footer a:hover{ color: var(--ink-magenta); }
   bottom: -40px; right: -30px;
   opacity: 0.08;
 }
+/* Nurturing — orange */
+.principle-card:nth-child(1){ border-top-color: var(--ink-orange); }
 .principle-card:nth-child(1)::after{ background: var(--ink-orange); }
-.principle-card:nth-child(2)::after{ background: var(--ink-cyan); }
+/* Curiosity — neon green */
+.principle-card:nth-child(2){ border-top-color: var(--ink-lime); }
+.principle-card:nth-child(2)::after{ background: var(--ink-lime); }
+.principle-card:nth-child(2) .section-label{ color: var(--ink-lime); }
+/* Shared Reality — magenta */
+.principle-card:nth-child(3){ border-top-color: var(--ink-magenta); }
 .principle-card:nth-child(3)::after{ background: var(--ink-magenta); }
+/* Transparency — violet */
+.principle-card:nth-child(4){ border-top-color: var(--ink-violet); }
 .principle-card:nth-child(4)::after{ background: var(--ink-violet); }
-.principle-card:nth-child(5)::after{ background: var(--ink-orange); }
+/* Coaching — dayglow yellow */
+.principle-card:nth-child(5){ border-top-color: #FFE600; }
+.principle-card:nth-child(5)::after{ background: #FFE600; }
+.principle-card:nth-child(5) .section-label{ color: #FFE600; }
+/* Authoritative — cyan */
+.principle-card:nth-child(6){ border-top-color: var(--ink-cyan); }
 .principle-card:nth-child(6)::after{ background: var(--ink-cyan); }
 .principle-card h3{
   font-family: 'Archivo', sans-serif;
@@ -713,7 +744,21 @@ footer a:hover{ color: var(--ink-magenta); }
   .thesis-block h2{ font-size: 28px; }
   .resume-block h2{ font-size: 28px; }
   .resume-inner{ flex-direction: column; align-items: flex-start; }
-  .navlinks{ display: none; }
+  .nav-toggle{ display: flex; }
+  .navlinks{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--carbon-2);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 20px;
+    z-index: 100;
+    border-top: 2px solid var(--ink-cyan);
+  }
+  header.nav{ flex-wrap: wrap; position: relative; }
+  header.nav.nav-open .navlinks{ display: flex; }
   .splat{ display: none; }
   .case-card--img .card-img{ height: 140px; }
   .principle-grid{ grid-template-columns: 1fr; }
