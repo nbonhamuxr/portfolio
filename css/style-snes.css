@@ -1,0 +1,413 @@
+/* ==========================================================================
+   NATEUX.COM — "SNES Manual" design system
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* ---------- TOKENS ---------- */
+:root{
+  --paper:      #F2EAD3;
+  --paper-dark: #E6D9B4;
+  --ink:        #241F1A;
+  --red:        #C2362B;
+  --blue:       #2A5C8A;
+  --gold:       #D6A12C;
+  --green:      #3C6E47;
+  --line: var(--ink);
+}
+
+/* ---------- BASE ---------- */
+*{ box-sizing: border-box; }
+html, body{ margin: 0; padding: 0; }
+body{
+  background: var(--paper);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(36,31,26,0.035) 0px,
+    rgba(36,31,26,0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a{ color: inherit; }
+img{ max-width: 100%; display: block; }
+
+.page{ max-width: 920px; margin: 0 auto; padding: 28px 24px 80px; }
+
+/* ---------- TYPE ROLES ---------- */
+.font-display{ font-family: 'Press Start 2P', monospace; }
+.font-label{ font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+
+/* ---------- COVER BAND ---------- */
+.cover-band{
+  border: 4px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 6px;
+  margin-bottom: 6px;
+}
+.cover-inner{
+  border: 2px solid var(--ink);
+  padding: 28px 24px 22px;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(36,31,26,0.05) 0 2px,
+    transparent 2px 10px
+  );
+}
+.cover-tag{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  background: var(--ink);
+  color: var(--paper);
+  display: inline-block;
+  padding: 4px 8px;
+  margin-bottom: 18px;
+}
+.cover-title{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 28px;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  color: var(--red);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+.cover-title--md{
+  font-size: 18px;
+  line-height: 1.5;
+}
+.cover-title--sm{
+  font-size: 12px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 0 var(--ink);
+}
+.cover-sub{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  color: var(--blue);
+  margin: 0 0 22px;
+}
+.cover-nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.cover-nav a{
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  padding: 7px 10px;
+  background: var(--gold);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.cover-nav a:hover{ transform: translate(1px,1px); box-shadow: 2px 2px 0 var(--ink); }
+.cover-nav a:focus-visible{ outline: 2px solid var(--red); outline-offset: 2px; }
+.cover-nav a.active{ background: var(--ink); color: var(--paper); box-shadow: none; }
+
+/* ---------- PAGE TAB ---------- */
+.page-tab{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  color: var(--paper);
+  background: var(--ink);
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 26px 0 8px;
+}
+
+/* ---------- PANEL ---------- */
+.panel{
+  border: 3px solid var(--ink);
+  background: var(--paper);
+  padding: 22px 22px 20px;
+  margin-bottom: 22px;
+  position: relative;
+}
+.panel::before{
+  content: '';
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border: 1px solid rgba(36,31,26,0.35);
+  pointer-events: none;
+}
+
+.section-num{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: var(--paper);
+  background: var(--blue);
+  border: 2px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  margin-bottom: 14px;
+}
+.section-num--red{  background: var(--red); }
+.section-num--green{ background: var(--green); }
+.section-num--gold{ background: var(--gold); color: var(--ink); }
+
+h2.section-title{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0 0 16px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- STAT GRID ---------- */
+.stat-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 6px;
+}
+.stat-box{
+  border: 2px solid var(--ink);
+  padding: 12px 14px;
+  background: var(--paper-dark);
+}
+.stat-label{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.stat-value{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ---------- BODY COPY ---------- */
+p{ margin: 0 0 14px; font-size: 14.5px; }
+p:last-child{ margin-bottom: 0; }
+.lead{ font-size: 16px; line-height: 1.7; }
+
+.thesis{
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.6;
+  border-left: 5px solid var(--red);
+  padding-left: 16px;
+  margin: 8px 0 0;
+}
+.thesis em{
+  color: var(--red);
+  font-style: normal;
+  background: linear-gradient(180deg, transparent 60%, rgba(194,54,43,0.18) 60%);
+}
+
+strong{ font-weight: 700; }
+
+/* ---------- CONTROLLER DIVIDER ---------- */
+.controller-divider{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0 18px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--ink);
+}
+.controller-divider::before, .controller-divider::after{
+  content: '';
+  flex: 1;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 8px, transparent 8px 14px);
+}
+
+/* ---------- CARTRIDGE CARDS ---------- */
+.cart-grid{ display: grid; gap: 16px; }
+.cart{
+  border: 3px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  align-items: start;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.15s;
+}
+.cart:hover{ background: var(--ink); color: var(--paper); }
+.cart:hover .cart-eyebrow{ color: var(--gold); }
+.cart:hover .cart-link{ color: var(--gold); }
+.cart-icon{
+  width: 64px; height: 64px;
+  border: 2px solid var(--ink);
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.cart-icon.blue{ background: var(--blue); color: var(--paper); }
+.cart-icon.red{  background: var(--red);  color: var(--paper); }
+.cart-icon.green{ background: var(--green); color: var(--paper); }
+.cart-icon.gold{  background: var(--gold); color: var(--ink); }
+
+/* Wide-image variant for the case studies list page */
+.cart--wide{
+  grid-template-columns: 200px 1fr;
+}
+.cart--wide .cart-icon{
+  width: 100%;
+  height: 140px;
+  font-size: 0;
+  padding: 0;
+}
+.cart--wide .cart-icon img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) contrast(1.1);
+}
+
+.cart-eyebrow{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.cart-title{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+.cart-desc{ font-size: 13.5px; margin-bottom: 10px; line-height: 1.6; }
+.cart-link{
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--red);
+  text-decoration: none;
+}
+.cart-link:hover{ text-decoration: underline; }
+.cart:focus-visible{ outline: 2px solid var(--red); outline-offset: 2px; }
+
+/* ---------- QUOTE BOX ---------- */
+.quote-box{
+  background: var(--ink);
+  color: var(--paper);
+  border: 3px solid var(--ink);
+  padding: 18px 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+.quote-cite{
+  display: block;
+  margin-top: 12px;
+  font-size: 10px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- CASE STUDY NEXT NAV ---------- */
+.cs-next{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid var(--ink);
+  padding: 16px 20px;
+  background: var(--paper-dark);
+  margin-top: 22px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.15s;
+}
+.cs-next:hover{ background: var(--ink); color: var(--paper); }
+.cs-next:hover .cs-next-label{ color: var(--gold); }
+.cs-next-label{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.cs-next-title{
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* ---------- DOWNLOAD BUTTON ---------- */
+.btn-download{
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  padding: 10px 16px;
+  background: var(--gold);
+  box-shadow: 3px 3px 0 var(--ink);
+  margin-top: 14px;
+  cursor: pointer;
+}
+.btn-download:hover{ transform: translate(1px,1px); box-shadow: 2px 2px 0 var(--ink); }
+
+/* ---------- FOOTER STRIP ---------- */
+.footer-strip{
+  border-top: 4px solid var(--ink);
+  margin-top: 32px;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.footer-strip a{ color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--gold); }
+.footer-strip a:hover{ color: var(--red); border-color: var(--red); }
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; animation: none !important; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px){
+  .stat-grid{ grid-template-columns: 1fr; }
+  .cart{ grid-template-columns: 48px 1fr; }
+  .cart--wide{ grid-template-columns: 1fr; }
+  .cart--wide .cart-icon{ width: 100%; height: 180px; font-size: 0; }
+  .cart-icon{ width: 48px; height: 48px; font-size: 14px; }
+  .cover-title{ font-size: 20px; }
+  .cover-title--md{ font-size: 14px; }
+  .cover-title--sm{ font-size: 10px; }
+  h2.section-title{ font-size: 12px; }
+  .page{ padding: 16px 16px 60px; }
+}

@@ -4,66 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Recommendations — Nate Bonham</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="page">
+<div class="wrap">
 
-  <div class="cover-band">
-    <div class="cover-inner">
-      <span class="cover-tag">IN THEIR WORDS</span>
-      <h1 class="cover-title cover-title--md">RECOMMENDATIONS</h1>
-      <p class="cover-sub" style="margin-bottom:0;">WHAT IT'S LIKE TO WORK WITH ME.</p>
-      <div class="cover-nav">
-        <a href="index.html">Home</a>
-        <a href="philosophy.html">Leadership Style</a>
-        <a href="ai-practice.html">AI Practice</a>
-        <a href="work.html">Case Studies</a>
-        <a href="recommendations.html" class="active">Recommendations</a>
-        <a href="contact.html">Contact</a>
-        <a href="resume.pdf" target="_blank">Résumé</a>
-      </div>
-    </div>
+  <svg class="splat" style="top:100px; right:-60px; width:200px; height:200px;" viewBox="0 0 200 200">
+    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#FF2E93" opacity="0.11"/>
+  </svg>
+
+  <header class="nav">
+    <a href="index.html" class="logo">Nate<span>UX</span></a>
+    <nav class="navlinks">
+      <a href="philosophy.html">Leadership</a>
+      <a href="ai-practice.html">AI Practice</a>
+      <a href="work.html">Case Studies</a>
+      <a href="recommendations.html" class="active">Recs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="hero-tag">IN THEIR WORDS</div>
+    <h1>Recommendations</h1>
+    <p>What it's like to work with me.</p>
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="philosophy.html">Leadership Style</a>
+      <a href="ai-practice.html">AI Practice</a>
+      <a href="work.html">Case Studies</a>
+      <a href="recommendations.html" class="active">Recommendations</a>
+      <a href="contact.html">Contact</a>
+      <a href="resume.pdf" target="_blank">Résumé</a>
+    </nav>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
   </div>
 
-  <span class="page-tab">PAGE 02 — PLAYER REVIEWS</span>
-  <div class="panel">
-    <div class="section-num">01</div>
-    <h2 class="section-title">THREE PEOPLE I'VE WORKED CLOSELY WITH</h2>
-    <div class="cart-grid">
-
-      <div class="cart">
-        <div class="cart-icon blue">D</div>
-        <div>
-          <div class="cart-eyebrow">FORMER MANAGER — DIRECTOR OF USER INSIGHTS, ITHAKA</div>
-          <div class="quote-box">"Nate is one of the most thoughtful, strategic, and impactful user researchers I've worked with. His work leading our UX scorecard initiative is a great example: what began as a research artifact became a unifying framework used across product teams to anchor decisions in real user needs. Product managers rely on him as a sounding board because he consistently brings conversations back to the core question: what are we trying to learn, what decisions will this inform, and how will this help users?"</div>
-        </div>
-      </div>
-
-      <div class="cart">
-        <div class="cart-icon red">K</div>
-        <div>
-          <div class="cart-eyebrow">CROSS-FUNCTIONAL PARTNER — KRISTI INCE, DIRECTOR OF EXPERIENCE DESIGN, MAXIS</div>
-          <div class="quote-box">"I highly recommend him for any role in the game industry — he's a vital development partner and someone I truly wish we hadn't lost. Where Nate truly shines is in his partnership after the research is complete. He works directly with product and design to interpret findings, pressure-test action plans, and serve as a sounding board as ideas evolve."</div>
-        </div>
-      </div>
-
-      <div class="cart">
-        <div class="cart-icon green">J</div>
-        <div>
-          <div class="cart-eyebrow">DESIGN PARTNER — JACLYN "JAKI" KIMBALL, PRINCIPAL GAME DESIGNER, MAXIS</div>
-          <div class="quote-box">"Nate's research goes beyond superficial insights and gets at deeper motivations, problems, and opportunities. I've gone back to slides from that deck many times in the months since the study concluded, and I expect I'll continue to do so for quite a while."</div>
-        </div>
-      </div>
-
+  <section class="case-grid" style="padding-top:60px;">
+    <div class="case-card">
+      <div class="case-org">FORMER MANAGER — DIRECTOR OF USER INSIGHTS, ITHAKA</div>
+      <p class="case-desc" style="font-style:italic; color:var(--paper-dim); font-size:15px; flex-grow:1;">"Nate is one of the most thoughtful, strategic, and impactful user researchers I've worked with. His work leading our UX scorecard initiative is a great example: what began as a research artifact became a unifying framework used across product teams to anchor decisions in real user needs. Product managers rely on him as a sounding board because he consistently brings conversations back to the core question: what are we trying to learn, what decisions will this inform, and how will this help users?"</p>
+      <div class="case-cta" style="color:var(--paper-faint); font-family:'Space Mono',monospace; font-size:11px; font-weight:400; text-transform:uppercase; letter-spacing:1px;">— D., Director of User Insights</div>
     </div>
-  </div>
+    <div class="case-card">
+      <div class="case-org">CROSS-FUNCTIONAL PARTNER — DIRECTOR OF EXPERIENCE DESIGN, MAXIS</div>
+      <p class="case-desc" style="font-style:italic; color:var(--paper-dim); font-size:15px; flex-grow:1;">"I highly recommend him for any role in the game industry — he's a vital development partner and someone I truly wish we hadn't lost. Where Nate truly shines is in his partnership after the research is complete. He works directly with product and design to interpret findings, pressure-test action plans, and serve as a sounding board as ideas evolve."</p>
+      <div class="case-cta" style="color:var(--paper-faint); font-family:'Space Mono',monospace; font-size:11px; font-weight:400; text-transform:uppercase; letter-spacing:1px;">— Kristi Ince, Director of Experience Design, Maxis</div>
+    </div>
+    <div class="case-card">
+      <div class="case-org">DESIGN PARTNER — PRINCIPAL GAME DESIGNER, MAXIS</div>
+      <p class="case-desc" style="font-style:italic; color:var(--paper-dim); font-size:15px; flex-grow:1;">"Nate's research goes beyond superficial insights and gets at deeper motivations, problems, and opportunities. I've gone back to slides from that deck many times in the months since the study concluded, and I expect I'll continue to do so for quite a while."</p>
+      <div class="case-cta" style="color:var(--paper-faint); font-family:'Space Mono',monospace; font-size:11px; font-weight:400; text-transform:uppercase; letter-spacing:1px;">— Jaclyn "Jaki" Kimball, Principal Game Designer, Maxis</div>
+    </div>
+  </section>
 
-  <div class="footer-strip">
+  <footer>
     <span>nateux.com — Ann Arbor, MI</span>
-    <span><a href="contact.html">Contact</a> · <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a> · <a href="https://natebonham.substack.com/">Substack</a></span>
-  </div>
+    <span>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
+      <a href="https://natebonham.substack.com/">Substack</a>
+    </span>
+  </footer>
 
 </div>
+<script src="js/theme-toggle.js"></script>
 </body>
 </html>

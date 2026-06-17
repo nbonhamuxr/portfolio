@@ -4,93 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nate Bonham — User Research</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="page">
+<div class="wrap">
 
-  <div class="cover-band">
-    <div class="cover-inner">
-      <span class="cover-tag">PLAYER PROFILE / INSTRUCTION BOOKLET</span>
-      <h1 class="cover-title">NATE BONHAM</h1>
-      <p class="cover-sub">USER RESEARCH — SENIOR USER RESEARCHER, WWT</p>
-      <p class="lead" style="font-family:'JetBrains Mono',monospace;font-size:15px;margin-bottom:0;">I help teams build <strong>shared understanding</strong> — then turn it into action. I combine user experience research, product management, and design thinking to help teams clarify problem spaces, uncover opportunities, and move forward with confidence.</p>
-      <div class="cover-nav">
-        <a href="philosophy.html">Leadership Style</a>
-        <a href="ai-practice.html">AI Practice</a>
-        <a href="work.html">Case Studies</a>
-        <a href="recommendations.html">Recommendations</a>
-        <a href="contact.html">Contact</a>
-        <a href="resume.pdf" target="_blank">Résumé</a>
+  <svg class="splat" style="top:-40px; right:-60px; width:280px; height:280px;" viewBox="0 0 200 200">
+    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#FF2E93" opacity="0.14"/>
+  </svg>
+  <svg class="splat" style="top:520px; left:-90px; width:240px; height:240px;" viewBox="0 0 200 200">
+    <path d="M95 5 C130 0 165 25 178 60 C191 95 180 135 150 158 C120 181 80 182 50 162 C20 142 5 105 12 70 C19 35 60 10 95 5 Z" fill="#21E6E6" opacity="0.12"/>
+  </svg>
+  <svg class="splat" style="top:1150px; right:-50px; width:200px; height:200px;" viewBox="0 0 200 200">
+    <path d="M100 15 C135 12 168 35 180 68 C192 101 178 138 148 158 C118 178 78 176 50 154 C22 132 10 96 20 62 C30 28 65 18 100 15 Z" fill="#C6FF3D" opacity="0.1"/>
+  </svg>
+
+  <header class="nav">
+    <div class="logo">Nate<span>UX</span></div>
+    <nav class="navlinks">
+      <a href="philosophy.html">Leadership</a>
+      <a href="ai-practice.html">AI Practice</a>
+      <a href="work.html">Case Studies</a>
+      <a href="recommendations.html">Recs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-tag">SENIOR USER RESEARCHER</div>
+    <h1>I help teams build <span class="accent">shared understanding</span> — then turn it into action.</h1>
+    <p class="lead">I combine user experience research, product management, and design thinking to help teams clarify problem spaces, uncover opportunities, and move forward with confidence.</p>
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <div class="label">Current Role</div>
+        <div class="value">Senior User Researcher, WWT</div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">Based In</div>
+        <div class="value">Ann Arbor, MI</div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">Education</div>
+        <div class="value">M.S. Information, U-M</div>
       </div>
     </div>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
   </div>
 
-  <span class="page-tab">PAGE 02 — WHO I AM</span>
-  <div class="panel">
-    <div class="section-num">01</div>
-    <h2 class="section-title">CHARACTER STATUS</h2>
-    <div class="stat-grid">
-      <div class="stat-box"><div class="stat-label">Current Role</div><div class="stat-value">Senior User Researcher, WWT</div></div>
-      <div class="stat-box"><div class="stat-label">Based In</div><div class="stat-value">Ann Arbor, MI</div></div>
-      <div class="stat-box"><div class="stat-label">Education</div><div class="stat-value">Master of Science in Information from The University of Michigan</div></div>
-      <div class="stat-box"><div class="stat-label">Years Active</div><div class="stat-value">10+ Years</div></div>
+  <section class="who-block">
+    <div class="section-label">Who I Am</div>
+    <p>I'm a researcher and mentor with over <strong>10 years</strong> leading user-centered decisions for products used by millions, including <strong>Halo Infinite</strong>, <strong>JSTOR</strong>, and <strong>The Sims</strong>. I'm curious by nature, comfortable in the unknown, and am most energized when I help teams move from ambiguity to clarity. I also mentor researchers through the <strong>University of Michigan</strong>.</p>
+  </section>
+
+  <section class="thesis-block">
+    <div class="section-label section-label--cyan">Check Out My Work</div>
+    <h2>Three studies, three teams finding <em>common ground.</em></h2>
+  </section>
+
+  <section class="case-grid">
+    <a class="case-card" href="case-study-jstor.html">
+      <div class="case-org">ITHAKA / JSTOR — 150M+ ANNUAL VISITORS</div>
+      <h3 class="case-title">How I Led a Multiplatform Integration at ITHAKA by Focusing on User Outcomes</h3>
+      <p class="case-desc">A user-outcomes framework that gave two stalled teams a common scorecard — still in use org-wide.</p>
+      <div class="case-cta">Read the case study →</div>
+    </a>
+    <a class="case-card" href="case-study-roblox.html">
+      <div class="case-org">ELECTRONIC ARTS / MAXIS — COMPETITIVE RESEARCH</div>
+      <h3 class="case-title">How I Introduced a Lightweight, Player-Centered Competitive Research Approach at EA</h3>
+      <p class="case-desc">A lighter, player-centered approach to competitive research that became the new EA standard.</p>
+      <div class="case-cta">Read the case study →</div>
+    </a>
+    <a class="case-card" href="case-study-sims.html">
+      <div class="case-org">ELECTRONIC ARTS / MAXIS — PROJECT RENE</div>
+      <h3 class="case-title">Aligning a Studio Around Who a Mobile-First Sims Player Actually Is</h3>
+      <p class="case-desc">The research narrative that aligned development culture around new and returning players alike.</p>
+      <div class="case-cta">Read the case study →</div>
+    </a>
+  </section>
+
+  <section class="resume-block">
+    <div class="splat-deco"></div>
+    <div class="resume-inner">
+      <div>
+        <h2>The long version.</h2>
+        <p>See my full work history spanning Halo Infinite, JSTOR, The Sims, and now WWT.</p>
+      </div>
+      <a class="btn-dark" href="resume.pdf" target="_blank">Download Résumé (PDF) ↓</a>
     </div>
-    <p style="margin-top:18px;">I'm a researcher and mentor with over 10 years leading user-centered decisions for products used by millions, including <strong>Halo Infinite</strong>, <strong>JSTOR</strong>, and <strong>The Sims</strong>. I'm curious by nature, comfortable in the unknown, and am most energized when I help teams move from ambiguity to clarity. I also mentor researchers through the <strong>University of Michigan</strong>.</p>
-  </div>
+  </section>
 
-  <div class="controller-divider">START</div>
-
-  <span class="page-tab">PAGE 03 — STAGE SELECT</span>
-  <div class="panel">
-    <div class="section-num section-num--red">02</div>
-    <h2 class="section-title">CASE STUDIES — STAGE SELECT</h2>
-    <div class="cart-grid">
-      <a class="cart" href="case-study-jstor.html">
-        <div class="cart-icon blue">A</div>
-        <div>
-          <div class="cart-eyebrow">ITHAKA / JSTOR — 150M+ ANNUAL VISITORS</div>
-          <h3 class="cart-title">HOW I LED A MULTIPLATFORM INTEGRATION AT ITHAKA BY FOCUSING ON USER OUTCOMES</h3>
-          <p class="cart-desc">A user-outcomes framework that gave two stalled teams a common scorecard — still in use org-wide.</p>
-          <span class="cart-link">Read the case study →</span>
-        </div>
-      </a>
-      <a class="cart" href="case-study-roblox.html">
-        <div class="cart-icon red">B</div>
-        <div>
-          <div class="cart-eyebrow">ELECTRONIC ARTS / MAXIS — COMPETITIVE RESEARCH</div>
-          <h3 class="cart-title">HOW I INTRODUCED A LIGHTWEIGHT, PLAYER-CENTERED COMPETITIVE RESEARCH APPROACH AT EA</h3>
-          <p class="cart-desc">And also helped Maxis update its foundational understanding of the next potential generation of Sims gamers.</p>
-          <span class="cart-link">Read the case study →</span>
-        </div>
-      </a>
-      <a class="cart" href="case-study-sims.html">
-        <div class="cart-icon green">C</div>
-        <div>
-          <div class="cart-eyebrow">ELECTRONIC ARTS / MAXIS — PROJECT RENE</div>
-          <h3 class="cart-title">ALIGNING A STUDIO AROUND WHO A MOBILE-FIRST SIMS PLAYER ACTUALLY IS</h3>
-          <p class="cart-desc">The research narrative that aligned development culture around new and returning players alike.</p>
-          <span class="cart-link">Read the case study →</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="controller-divider">CONTINUE</div>
-
-  <span class="page-tab">PAGE 04 — BONUS CONTENT</span>
-  <div class="panel">
-    <div class="section-num section-num--green">03</div>
-    <h2 class="section-title">THE LONG VERSION</h2>
-    <p>See my full work history spanning Halo Infinite, JSTOR, The Sims, and now WWT.</p>
-    <a class="btn-download" href="resume.pdf" target="_blank">&gt; Download Résumé (PDF) ↓</a>
-  </div>
-
-  <div class="footer-strip">
+  <footer>
     <span>nateux.com — Ann Arbor, MI</span>
-    <span><a href="contact.html">Contact</a> · <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a> · <a href="https://natebonham.substack.com/">Substack</a></span>
-  </div>
+    <span>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
+      <a href="https://natebonham.substack.com/">Substack</a>
+    </span>
+  </footer>
 
 </div>
+<script src="js/theme-toggle.js"></script>
 </body>
 </html>

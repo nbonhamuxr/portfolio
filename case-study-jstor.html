@@ -4,105 +4,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JSTOR / Artstor — Case Study — Nate Bonham</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="page">
+<div class="wrap">
 
-  <div class="cover-band">
-    <div class="cover-inner">
-      <span class="cover-tag">ITHAKA / JSTOR — 150M+ ANNUAL VISITORS</span>
-      <h1 class="cover-title cover-title--sm">HOW I LED A MULTIPLATFORM INTEGRATION AT ITHAKA BY FOCUSING ON USER OUTCOMES</h1>
-      <div class="cover-nav">
-        <a href="index.html">Home</a>
-        <a href="work.html">← Case Studies</a>
-        <a href="philosophy.html">Leadership Style</a>
-        <a href="ai-practice.html">AI Practice</a>
-        <a href="recommendations.html">Recommendations</a>
-        <a href="contact.html">Contact</a>
-        <a href="resume.pdf" target="_blank">Résumé</a>
-      </div>
+  <svg class="splat" style="top:-20px; right:-60px; width:240px; height:240px;" viewBox="0 0 200 200">
+    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#FF2E93" opacity="0.12"/>
+  </svg>
+  <svg class="splat" style="top:800px; left:-70px; width:200px; height:200px;" viewBox="0 0 200 200">
+    <path d="M95 5 C130 0 165 25 178 60 C191 95 180 135 150 158 C120 181 80 182 50 162 C20 142 5 105 12 70 C19 35 60 10 95 5 Z" fill="#21E6E6" opacity="0.10"/>
+  </svg>
+
+  <header class="nav">
+    <a href="index.html" class="logo">Nate<span>UX</span></a>
+    <nav class="navlinks">
+      <a href="philosophy.html">Leadership</a>
+      <a href="ai-practice.html">AI Practice</a>
+      <a href="work.html" class="active">Case Studies</a>
+      <a href="recommendations.html">Recs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="hero-tag">ITHAKA / JSTOR — 150M+ ANNUAL VISITORS</div>
+    <h1>How I Led a Multiplatform Integration at ITHAKA by Focusing on <span class="accent">User Outcomes</span></h1>
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="work.html">← Case Studies</a>
+      <a href="philosophy.html">Leadership Style</a>
+      <a href="ai-practice.html">AI Practice</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="contact.html">Contact</a>
+      <a href="resume.pdf" target="_blank">Résumé</a>
+    </nav>
+  </section>
+
+  <div class="stat-strip">
+    <div class="stat-cell">
+      <div class="label">Platform Ease-of-Use</div>
+      <div class="value">+16% post-redesign</div>
+    </div>
+    <div class="stat-cell">
+      <div class="label">Framework Adoption</div>
+      <div class="value">Org-wide, beyond the original team</div>
+    </div>
+    <div class="stat-cell">
+      <div class="label">Integration Stalled</div>
+      <div class="value">1 yr+ before this work</div>
     </div>
   </div>
 
-  <span class="page-tab">PAGE 02 — STATS</span>
-  <div class="panel">
-    <div class="stat-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="stat-box">
-        <div class="stat-label">Platform Ease-of-Use</div>
-        <div class="stat-value" style="color:var(--red);font-size:22px;">+16%</div>
-        <div style="font-size:12px;margin-top:4px;">post-redesign</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">Framework Adoption</div>
-        <div class="stat-value" style="color:var(--blue);font-size:18px;">Org-wide</div>
-        <div style="font-size:12px;margin-top:4px;">beyond the original team</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-label">Integration Stalled</div>
-        <div class="stat-value" style="color:var(--green);font-size:18px;">1 yr+</div>
-        <div style="font-size:12px;margin-top:4px;">before this work</div>
-      </div>
-    </div>
+  <div class="squiggle-divider" style="margin-top:40px;">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
   </div>
 
-  <span class="page-tab">PAGE 03 — THE STORY</span>
-
-  <div class="panel">
-    <div class="section-num">01</div>
-    <h2 class="section-title">BACKGROUND</h2>
+  <section class="prose-section" style="border-top:none;">
+    <div class="section-label">Background</div>
+    <h2>01</h2>
     <p>JSTOR and Artstor were being merged into a single unified platform under ITHAKA, serving over 150 million visitors a year. JSTOR was built for text-based scholarly research. Artstor was built for visual art discovery — used primarily by art history faculty and students who needed to find, organize, and teach with images. Combining them wasn't just a technical challenge. It required understanding how two very different kinds of scholars worked and what they needed from an experience that had never existed before.</p>
-  </div>
+  </section>
 
-  <div class="panel">
-    <div class="section-num section-num--red">02</div>
-    <h2 class="section-title">THE PROBLEM</h2>
+  <section class="prose-section">
+    <div class="section-label section-label--magenta">The Problem</div>
+    <h2>02</h2>
     <p>After more than a year, the integration had stalled. The two product teams each had their own roadmap, their own definition of success, and no shared vocabulary for what "done" meant. Decisions went in circles. Meetings ended with more disagreement than they started with. For ITHAKA, this wasn't just an internal friction problem — it was a real business risk. A platform serving millions of academics couldn't afford to stay incomplete indefinitely, and the longer the two teams stayed misaligned, the more expensive every decision became.</p>
-  </div>
+  </section>
 
-  <div class="panel">
-    <div class="section-num section-num--green">03</div>
-    <h2 class="section-title">MY APPROACH</h2>
+  <section class="prose-section">
+    <div class="section-label section-label--cyan">My Approach</div>
+    <h2>03</h2>
     <p>Rather than running another round of research aimed at proving one team's roadmap right, I stepped back and asked a more fundamental question: what outcomes did users actually need from this merged platform, independent of either team's existing plans? I combined usability testing, surveys, Google Analytics, and A/B testing to build a <strong>User Outcomes Framework</strong> — research-informed statements that expressed user goals in terms of their lives and careers, not just actions within the product. Alongside it, I created <em>The Story of Art History</em>: a narrative presentation that oriented JSTOR staff — most of whom had limited familiarity with Artstor's users — to how art history scholars actually work and why it matters to them.</p>
-  </div>
+  </section>
 
-  <div class="panel">
-    <div class="section-num section-num--gold">04</div>
-    <h2 class="section-title">MY FINDINGS</h2>
+  <section class="prose-section">
+    <div class="section-label section-label--violet">My Findings</div>
+    <h2>04</h2>
     <p>Users across both platforms shared underlying needs that crossed the existing organizational divide. One example: when studying how users "look for inspiration," A/B testing revealed that a "Load more" button significantly outperformed both pagination and infinite scroll. Not because of a preference — because of a behavior. Users doing exploratory search needed to control the pace of discovery without losing their place. That kind of finding wasn't about features; it was about how scholars think and move through information. Translating those behaviors into user outcomes gave both teams a shared language they could actually use to evaluate competing priorities.</p>
-  </div>
+  </section>
 
-  <div class="controller-divider">CONTINUE</div>
+  <div class="ink-divider"><span>Continue</span></div>
 
-  <div class="panel">
-    <div class="section-num">05</div>
-    <h2 class="section-title">HOW I DELIVERED MY FINDINGS</h2>
+  <section class="prose-section" style="border-top:none;">
+    <div class="section-label section-label--cyan">How I Delivered My Findings</div>
+    <h2>05</h2>
     <p>I brought the framework into the room with both teams together — not as a finished artifact to approve, but as a working draft to pressure-test. A collaborative Google Sheets scorecard tracked outcomes and let both teams see how their work stacked up against the same yardstick in real time. I designed the conversation as carefully as I designed the research: the goal was for both teams to leave the room believing the framework was theirs, not mine. That shift in ownership mattered more than any individual finding in it.</p>
-  </div>
+  </section>
 
-  <div class="panel">
-    <div class="section-num section-num--red">06</div>
-    <h2 class="section-title">WHAT WAS RESOLVED</h2>
+  <section class="prose-section">
+    <div class="section-label section-label--magenta">What Was Resolved</div>
+    <h2>06</h2>
     <p>The framework gave the integration a shared finish line for the first time. It directly shaped a major redesign of JSTOR's content viewer, which raised platform ease-of-use by 16%. More durably, the framework was adopted org-wide as the standard way ITHAKA's product teams ground decisions in real user needs — well beyond the original integration project that prompted it.</p>
-    <div class="quote-box">
-      "What began as a research artifact became a unifying framework used across product teams to anchor decisions in real user needs."
-      <cite class="quote-cite">— Former manager, Director of User Insights, ITHAKA</cite>
+    <div class="pull-quote">
+      <p>"What began as a research artifact became a unifying framework used across product teams to anchor decisions in real user needs."</p>
+      <cite>— Former manager, Director of User Insights, ITHAKA</cite>
     </div>
-  </div>
+  </section>
 
   <a class="cs-next" href="case-study-roblox.html">
     <div>
       <div class="cs-next-label">Next Case Study</div>
       <div class="cs-next-title">Electronic Arts / Maxis — Competitive Research</div>
     </div>
-    <div style="font-family:'Press Start 2P',monospace;font-size:14px;">→</div>
+    <div class="cs-next-arrow">→</div>
   </a>
 
-  <div class="footer-strip">
+  <footer>
     <span>nateux.com — Ann Arbor, MI</span>
-    <span><a href="contact.html">Contact</a> · <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a> · <a href="https://natebonham.substack.com/">Substack</a></span>
-  </div>
+    <span>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
+      <a href="https://natebonham.substack.com/">Substack</a>
+    </span>
+  </footer>
 
 </div>
+<script src="js/theme-toggle.js"></script>
 </body>
 </html>
