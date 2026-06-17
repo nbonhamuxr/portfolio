@@ -583,6 +583,80 @@ footer a:hover{ color: var(--ink-magenta); }
 .info-cell .value a:hover{ color: var(--ink-cyan); }
 
 /* --------------------------------------------------------------------------
+   PRINCIPLE GRID (philosophy page — 2×3 icon cards)
+   -------------------------------------------------------------------------- */
+.principle-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+.principle-card{
+  background: var(--carbon-2);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.principle-card::after{
+  content: '';
+  position: absolute;
+  width: 100px; height: 100px;
+  border-radius: 62% 38% 51% 49%;
+  bottom: -40px; right: -30px;
+  opacity: 0.08;
+}
+.principle-card:nth-child(1)::after{ background: var(--ink-orange); }
+.principle-card:nth-child(2)::after{ background: var(--ink-cyan); }
+.principle-card:nth-child(3)::after{ background: var(--ink-magenta); }
+.principle-card:nth-child(4)::after{ background: var(--ink-violet); }
+.principle-card:nth-child(5)::after{ background: var(--ink-orange); }
+.principle-card:nth-child(6)::after{ background: var(--ink-cyan); }
+.principle-card h3{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 14px 0 12px;
+  line-height: 1.3;
+  color: var(--paper);
+}
+.principle-card p{
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--paper-card);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   HORIZONTAL CASE CARD (work.html listing)
+   -------------------------------------------------------------------------- */
+.case-card--horiz{
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 200px;
+  padding: 0;
+}
+.case-card--horiz .card-img{
+  width: 280px;
+  flex-shrink: 0;
+  height: auto;
+  min-height: 200px;
+  margin: 0;
+}
+.case-card--horiz .card-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.case-card--horiz .card-content{
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
    INK DIVIDER
    -------------------------------------------------------------------------- */
 .ink-divider{
@@ -630,4 +704,7 @@ footer a:hover{ color: var(--ink-magenta); }
   .navlinks{ display: none; }
   .splat{ display: none; }
   .case-card--img .card-img{ height: 140px; }
+  .principle-grid{ grid-template-columns: 1fr; }
+  .case-card--horiz{ flex-direction: column; }
+  .case-card--horiz .card-img{ width: 100%; min-height: 160px; }
 }
