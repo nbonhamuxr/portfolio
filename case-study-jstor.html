@@ -89,13 +89,17 @@
   .case-title{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
+    font-style:italic;
     font-size:46px;
     line-height:1.08;
     letter-spacing:-0.5px;
     margin:0 0 22px;
     max-width:880px;
   }
-  .case-title em{ font-style:normal; color:var(--electric); }
+  .case-title .accent{
+    color: var(--ink-cyan);
+    text-shadow: 3px 0 0 var(--ink-magenta);
+  }
 
   .case-dek{
     font-size:18px;
@@ -107,8 +111,7 @@
   .fact-strip{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
-    gap:1px;
-    background:rgba(255,255,255,0.12);
+    gap:16px;
     margin-bottom:60px;
   }
   .fact-cell{
@@ -123,6 +126,14 @@
     color:var(--acid);
     margin-bottom:8px;
   }
+  .fact-cell:nth-child(1){ border:2px solid var(--hot); }
+  .fact-cell:nth-child(1) .label{ color:var(--hot); }
+  .fact-cell:nth-child(2){ border:2px solid var(--electric); }
+  .fact-cell:nth-child(2) .label{ color:var(--electric); }
+  .fact-cell:nth-child(3){ border:2px solid var(--acid); }
+  .fact-cell:nth-child(3) .label{ color:var(--acid); }
+  .fact-cell:nth-child(4){ border:2px solid var(--violet); }
+  .fact-cell:nth-child(4) .label{ color:var(--violet); }
   .fact-cell .value{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:700;
@@ -132,9 +143,7 @@
 
   /* ---------- TENSION STATEMENT ---------- */
   .tension{
-    padding:10px 0 70px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:60px;
+    padding:60px 0 70px;
   }
   .tension .section-label{
     display:inline-flex;
@@ -253,9 +262,7 @@
 
   /* ---------- FRAMEWORK EXPLAINER ---------- */
   .framework{
-    padding:20px 0 80px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:70px;
+    padding:70px 0 80px;
   }
   .framework .section-label{
     display:inline-flex; align-items:center; gap:10px;
@@ -362,9 +369,7 @@
 
   /* ---------- DECISION WALKTHROUGH ---------- */
   .decision{
-    padding:20px 0 80px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:70px;
+    padding:70px 0 80px;
   }
   .decision .section-label{
     display:inline-flex; align-items:center; gap:10px;
@@ -452,9 +457,7 @@
 
   /* ---------- RECEIPTS ---------- */
   .receipts{
-    padding:20px 0 80px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:70px;
+    padding:70px 0 80px;
   }
   .receipts .section-label{
     display:inline-flex; align-items:center; gap:10px;
@@ -573,9 +576,7 @@
 
   /* ---------- OUTCOME ---------- */
   .outcome{
-    padding:20px 0 80px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:70px;
+    padding:70px 0 80px;
   }
   .outcome .section-label{
     display:inline-flex; align-items:center; gap:10px;
@@ -623,9 +624,7 @@
 
   /* ---------- REFLECTION ---------- */
   .reflection{
-    padding:20px 0 90px;
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:60px;
+    padding:60px 0 90px;
   }
   .reflection .section-label{
     display:inline-flex; align-items:center; gap:10px;
@@ -712,6 +711,20 @@
 <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 
 <div class="wrap">
+
+  <svg class="splat" style="top:-40px; right:-60px; width:280px; height:280px;" viewBox="0 0 200 200">
+    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#FF2E93" opacity="0.14"/>
+  </svg>
+  <svg class="splat" style="top:600px; left:-90px; width:240px; height:240px;" viewBox="0 0 200 200">
+    <path d="M95 5 C130 0 165 25 178 60 C191 95 180 135 150 158 C120 181 80 182 50 162 C20 142 5 105 12 70 C19 35 60 10 95 5 Z" fill="#21E6E6" opacity="0.12"/>
+  </svg>
+  <svg class="splat" style="top:1400px; right:-50px; width:200px; height:200px;" viewBox="0 0 200 200">
+    <path d="M100 15 C135 12 168 35 180 68 C192 101 178 138 148 158 C118 178 78 176 50 154 C22 132 10 96 20 62 C30 28 65 18 100 15 Z" fill="#C6FF3D" opacity="0.1"/>
+  </svg>
+  <svg class="splat" style="top:2400px; left:-70px; width:220px; height:220px;" viewBox="0 0 200 200">
+    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#9B6BFF" opacity="0.11"/>
+  </svg>
+
   <header class="nav">
     <a href="index.html" class="logo">Home</a>
     <button class="nav-toggle" aria-label="Open navigation"><span></span><span></span><span></span></button>
@@ -736,8 +749,8 @@
   <a class="back-link" href="work.html" style="margin-top:24px; display:inline-flex;">← Back to case studies</a>
 
   <section class="case-header">
-    <div class="case-eyebrow">ITHAKA / JSTOR — Case Study</div>
-    <h1 class="case-title">How a <em>User Outcomes</em> framework became the operating backbone for an 18-month, org-wide product integration</h1>
+    <div class="hero-tag">ITHAKA / JSTOR — CASE STUDY</div>
+    <h1 class="case-title">How a <span class="accent">User Outcomes</span> framework became the operating backbone for an 18-month, org-wide product integration</h1>
     <p class="case-dek">When ITHAKA's effort to fold Artstor into JSTOR stalled under its own ambiguity, I built the framework that gave product, design, and leadership a shared way to define progress — and ran it for a year and a half across the org.</p>
 
     <div class="fact-strip">
@@ -759,6 +772,12 @@
       </div>
     </div>
   </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#9B6BFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
 
   <section class="tension">
     <div class="section-label">The Problem</div>
@@ -801,6 +820,12 @@
     </div>
   </section>
 
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 8 C90 2 180 18 300 10 C420 2 520 16 640 8 C760 0 860 16 970 9 C1010 6 1050 14 1078 10" stroke="#FF4D5E" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
   <section class="framework">
     <div class="section-label">The Framework</div>
     <h2>User Outcomes: goals stated from the user's life, not the product's feature list</h2>
@@ -834,6 +859,12 @@
     </div>
   </section>
 
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 14 C100 6 220 18 350 10 C480 2 580 18 700 10 C820 2 920 16 1020 9 C1045 7 1062 13 1078 10" stroke="#9B6BFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
   <section class="decision">
     <div class="section-label">The Framework In Practice</div>
     <h2>One scorecard line item, traced through to a real product decision</h2>
@@ -860,6 +891,12 @@
 
     <p class="decision-close">Feature parity would have kept pagination. A pure behavioral metric like "items viewed" would have rewarded infinite scroll. Grounding the decision in the actual user outcome was what made "Load more" the right call — <strong>Google reached the same conclusion on search results three years later.</strong></p>
   </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#D7FF3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
 
   <section class="receipts">
     <div class="section-label">The Receipts</div>
@@ -893,12 +930,13 @@
       </div>
     </div>
 
-    <div class="pull-quote">
-      <div class="pull-quote-mark">"</div>
-      <p>If you're basically merging Artstor into JSTOR, for someone like me, that's a freaking godsend. I'm not worried about having to use separate websites, because all my stuff is right where I want it.</p>
-      <div class="pull-quote-attr">— JSTOR user, post-integration research</div>
-    </div>
   </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#3D7CFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
 
   <section class="outcome">
     <div class="section-label">The Outcome</div>
@@ -922,6 +960,12 @@
       </div>
     </div>
   </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 8 C90 2 180 18 300 10 C420 2 520 16 640 8 C760 0 860 16 970 9 C1010 6 1050 14 1078 10" stroke="#FF4D5E" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
 
   <section class="reflection">
     <div class="section-label">What I'd Say To Someone Starting This Today</div>
