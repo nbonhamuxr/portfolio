@@ -130,6 +130,14 @@ header.nav{
   color: var(--ink-cyan);
   text-shadow: 3px 0 0 var(--ink-magenta);
 }
+.hero h1 .accent-2{
+  color: var(--ink-magenta);
+  text-shadow: 3px 0 0 var(--ink-cyan);
+}
+.hero h1 .accent-3{
+  color: var(--ink-lime);
+  text-shadow: 3px 0 0 var(--ink-magenta);
+}
 
 .hero p.lead{
   font-size: 16px;
@@ -338,7 +346,7 @@ header.nav{
 .resume-block{
   background: var(--ink-lime);
   color: var(--carbon);
-  padding: 60px 0;
+  padding: 60px 40px;
   margin-bottom: 90px;
   position: relative;
   overflow: hidden;
@@ -376,7 +384,7 @@ header.nav{
   font-family: 'Archivo Expanded', sans-serif;
   font-weight: 700;
   text-decoration: none;
-  padding: 16px 28px;
+  padding: 16px 40px;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
