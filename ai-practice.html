@@ -248,6 +248,68 @@
     .tools-grid{ grid-template-columns:repeat(2, 1fr); }
   }
 
+  /* Project sections — Forge + Workshop Builder */
+  .project-section{ padding:50px 0 80px; position:relative; z-index:1; }
+  .project-heading{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:24px;
+    margin:0 0 18px;
+    line-height:1.2;
+    color:var(--paper);
+  }
+  .project-heading em{ font-style:italic; color:var(--ink-violet); }
+  .project-desc{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--paper-dim);
+    max-width:760px;
+    margin:0 0 16px;
+  }
+  .project-desc strong{ color:var(--paper); }
+  .project-desc:last-of-type{ margin-bottom:32px; }
+  .project-lead{
+    width:100%;
+    border:1px solid rgba(255,255,255,0.1);
+    display:block;
+    margin-bottom:16px;
+  }
+  .project-shots{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+    margin-bottom:14px;
+  }
+  .project-shots-2{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+  }
+  .project-shot{
+    background:var(--carbon-2);
+    border:1px solid rgba(255,255,255,0.08);
+    overflow:hidden;
+  }
+  .project-shot img{
+    width:100%;
+    display:block;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .project-shot-caption{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    color:var(--paper-faint);
+    padding:10px 12px;
+    line-height:1.5;
+  }
+  @media(max-width:760px){
+    .project-shots{ grid-template-columns:1fr; }
+    .project-shots-2{ grid-template-columns:1fr; }
+  }
+
   /* Reach-for grid — reuses principle-grid pattern */
   .reach-section{ padding:50px 0 0; position:relative; z-index:1; }
   .reach-grid{
@@ -469,12 +531,75 @@
       </div>
     </div>
 
-    <div class="capstone-artifact">
-      <div class="capstone-artifact-img"><img src="images/capstone.png" alt="Screenshot of an agentic coding assistant UI built by Nate, showing a chat interface with a sequenced tool-call trace — execute_command, read_file, write_file, git_commit, git_push, and create_pull_request — alongside a live diff panel and a pull request awaiting approval."></div>
-      <div class="capstone-artifact-cap">
-        <div class="artifact-tag">Capstone — Agentic Coding Assistant</div>
-        <h4>An agent that plans, executes, and waits for approval</h4>
-        <p>The tool sequences real actions — reading and writing files, committing, pushing, opening a pull request — and stops at a pending-approval gate before anything merges. The interesting design problem wasn't getting AI to write code; it was scoping what it's allowed to do unsupervised, and where a human has to sign off.</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#B14EFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="project-section">
+    <div class="tag-label tag-label--violet">Capstone · AI-Native Engineering Bootcamp · Honors</div>
+    <h2 class="project-heading">Forge: an agentic coding assistant built with <em>Devin</em></h2>
+    <p class="project-desc">For my bootcamp capstone I used Devin — an AI software engineer — to build Forge, a chat-based coding assistant powered by AWS Bedrock. The interesting design problem wasn't getting AI to write code. It was figuring out what it should be allowed to do on its own, and where a human has to sign off before anything happens.</p>
+    <p class="project-desc">Forge connects to a GitHub repo, creates and manages pull requests, and streams its reasoning in real time as it works. It toggles between <strong>Ask</strong> and <strong>Code</strong> modes within the same stream — so you stay in control of when the tool is thinking versus when it's executing and spending tokens. It manages context across a conversation, troubleshoots its own errors, and stops at an approval gate before anything merges.</p>
+
+    <img class="project-lead" src="images/forge01.png" alt="Forge chat interface showing a live conversation, tool-call trace, and Ask/Code toggle at the bottom of the screen">
+
+    <div class="project-shots">
+      <div class="project-shot">
+        <img src="images/forge02.png" alt="Forge PR panel showing PR history with revert and rolled-back status badges and View on GitHub links">
+        <div class="project-shot-caption">PR management — rollback and revert built in</div>
+      </div>
+      <div class="project-shot">
+        <img src="images/forge03.png" alt="Forge settings panel with auto-approve toggle, explanation length, tool calls per plan slider, and live token usage counter">
+        <div class="project-shot-caption">Cost controls — token usage, tool call limits, auto-approve</div>
+      </div>
+      <div class="project-shot">
+        <img src="images/forge04.png" alt="Forge chat showing an image analysis interaction — the agent identifies a personality quiz result and narrates its reasoning">
+        <div class="project-shot-caption">Ask mode — reasoning through an image, not just describing it</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="project-section">
+    <div class="tag-label tag-label--cyan">Claude Skill · In Beta at WWT</div>
+    <h2 class="project-heading">Workshop Builder: a Claude skill that makes AI a <em>thinking partner</em>, not a shortcut</h2>
+    <p class="project-desc">Workshop Builder is a Claude skill I built for WWT that guides sales reps and designers through planning a research session or workshop — the same questions I'd ask if I were running it myself. Who's the audience? What needs to be learned? What format fits the context? What activities will actually surface the right things?</p>
+    <p class="project-desc">The skill references an MD file I built that acts as an activity database — it proposes specific activities based on the context a user provides, then generates a ready-to-use research brief. The design intent was anti-cognitive-offloading: rather than just producing a plan, it makes the person think more carefully about what they're actually trying to get out of the session. Currently in beta with sales and design teams at WWT.</p>
+
+    <img class="project-lead" src="images/workshopbuilder01.png" alt="Workshop Builder skill opening screen showing the six-stage flow: Context and Goals, Questions, Audience, Logistics, Activities, and Workshop Brief">
+
+    <div class="project-shots">
+      <div class="project-shot">
+        <img src="images/workshopbuilder02.png" alt="Logistics stage of the Workshop Builder — Claude asking about platform, session dates, and duration, with a logistics summary generated at the end">
+        <div class="project-shot-caption">Stage 4 — logistics clarified and confirmed before moving on</div>
+      </div>
+      <div class="project-shot">
+        <img src="images/workshopbuilder03.png" alt="Workshop Builder working through goal clarification and question framing with the user">
+        <div class="project-shot-caption">Stage 2 — questions framed around what the session needs to answer</div>
+      </div>
+      <div class="project-shot">
+        <img src="images/workshopbuilder04.png" alt="Workshop Builder proposed activity flow — a structured 60-minute agenda with timing, blocks, and activity names pulled from the database">
+        <div class="project-shot-caption">Stage 5 — activities proposed from the database, matched to context</div>
+      </div>
+    </div>
+
+    <div class="project-shots-2">
+      <div class="project-shot">
+        <img src="images/workshopbuilder05.png" alt="Generated facilitator welcome script — a full opening script tailored to the session context, ready to use or edit">
+        <div class="project-shot-caption">Generated welcome script — ready to use or edit before the session</div>
+      </div>
+      <div class="project-shot">
+        <img src="images/workshopbuilder06.png" alt="Full workshop brief output — a multi-section document covering goals, questions, participant profile, agenda, and facilitator notes">
+        <div class="project-shot-caption">The full brief — everything needed to run the session, in one document</div>
       </div>
     </div>
   </section>
