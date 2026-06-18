@@ -293,7 +293,7 @@ header.nav::before{
 .who-block p{
   font-size: 20px;
   line-height: 1.6;
-  max-width: 780px;
+  max-width: 880px;
   color: var(--paper-prose);
   margin: 0;
   position: relative;
@@ -501,7 +501,7 @@ footer a:hover{ color: var(--ink-magenta); }
 .page-hero p{
   font-size: 16px;
   color: var(--paper-dim);
-  max-width: 620px;
+  max-width: 880px;
   margin: 0 0 30px;
   position: relative;
   z-index: 2;
@@ -549,14 +549,14 @@ footer a:hover{ color: var(--ink-magenta); }
   font-size: 16px;
   line-height: 1.75;
   color: var(--paper-dim);
-  max-width: 760px;
+  max-width: 880px;
   margin: 0 0 16px;
   position: relative;
   z-index: 2;
 }
 .prose-section p:last-child{ margin-bottom: 0; }
 .prose-section ul{
-  max-width: 760px;
+  max-width: 880px;
   margin: 0 0 16px;
   padding-left: 20px;
   color: var(--paper-dim);
@@ -578,7 +578,7 @@ footer a:hover{ color: var(--ink-magenta); }
   padding: 20px 24px;
   margin: 40px 0 0;
   background: var(--carbon-2);
-  max-width: 680px;
+  max-width: 880px;
   position: relative;
   z-index: 2;
 }
