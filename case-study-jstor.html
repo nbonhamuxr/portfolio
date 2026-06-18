@@ -361,11 +361,13 @@
     .story-artifact-cap{ padding:20px 20px 24px; }
   }
 
-  .story-artifact-img img{
+  .story-artifact-img img,
+  .artifact-shot img[data-lightbox]{
     cursor:zoom-in;
     transition:opacity 0.15s;
   }
-  .story-artifact-img img:hover{ opacity:0.88; }
+  .story-artifact-img img:hover,
+  .artifact-shot img[data-lightbox]:hover{ opacity:0.88; }
 
   /* Lightbox */
   .lightbox{
@@ -965,7 +967,7 @@
 
     <p style="font-size:16px; color:#C9C8C2; max-width:880px; margin:32px 0 32px;">I organized these statements into a Google Sheet Scorecard so that everyone in the organization could easily view and use. I also constructed a context-building artifact called "The Story of Art History." The scorecard kept the outcomes and the evaluations of how well we delivered, whereas The Story was used to onboard employees onto the project and empathize with our users and the environments they work in.</p>
 
-    <p style="font-size:16px; color:#C9C8C2; max-width:880px; margin:32px 0 0;">Getting the framework adopted required more than building it. I brought the VP of Product, Director of Marketing, Director of Insights, and the PM Director into the process early — not to get sign-off, but to make them co-authors of the approach. They became its champions. When the framework expanded from product into the broader organization, I opened a dedicated Slack channel to post regular updates and field questions from people encountering it for the first time. One friction point came up fast: the word "scorecard" made people nervous — it sounded like a performance review. I addressed it head-on across teams, clarifying that the scorecard wasn't measuring anyone's work; it was measuring how well the product was closing real gaps in users' lives. Once that distinction landed, the resistance disappeared.</p>
+    <p style="font-size:16px; color:#C9C8C2; max-width:880px; margin:32px 0 0;">The word "scorecard" created immediate friction — people heard "performance review." I addressed it directly across teams: this wasn't evaluating anyone's work, it was tracking how well the product was closing real gaps in users' lives. Once that landed, resistance disappeared. The VP of Product, Director of Marketing, and PM Director stopped pushing back and became the framework's loudest champions.</p>
 
     <div class="story-artifact">
       <div class="story-artifact-img"><img src="images/scorecard.png" alt="The User Outcomes Scorecard spreadsheet showing rows of user goals scored across JSTOR and Artstor." data-lightbox></div>
@@ -1075,27 +1077,27 @@
 
     <div class="artifact-grid">
       <div class="artifact-card">
-        <div class="artifact-shot img"><img src="images/okr-redacted.png" alt="A leadership OKR slide reading: Objective — Users can find connections seamlessly among all resources on JSTOR: Images, Books, Journals, and Primary Sources. Key Result — 100% of Barrier to Exploration user needs advance from needs improvement to meets expectations in the Artstor Integration User Experience Scorecard."></div>
+        <div class="artifact-shot img"><img src="images/okr-redacted.png" alt="A leadership OKR slide reading: Objective — Users can find connections seamlessly among all resources on JSTOR: Images, Books, Journals, and Primary Sources. Key Result — 100% of Barrier to Exploration user needs advance from needs improvement to meets expectations in the Artstor Integration User Experience Scorecard." data-lightbox></div>
         <div class="artifact-meta">
           <div class="artifact-tag">Artifact 01 — Leadership OKR</div>
           <h4>The scorecard, written into the org's OKRs</h4>
-          <p>Leadership didn't just reference the framework — they wrote a company OKR using its exact terms ("Barrier to Exploration," "meets expectations"). The vocabulary I built became the vocabulary leadership measured the business by.</p>
+          <p>Leadership wrote a company OKR using the scorecard's exact terms — "Barrier to Exploration," "meets expectations." My vocabulary became the vocabulary the business measured itself by.</p>
         </div>
       </div>
       <div class="artifact-card">
-        <div class="artifact-shot img"><img src="images/slack.png" alt="A research update titled Scoring Updates, describing findings from 18 one-on-one feedback sessions with Art History faculty, with scorecard rows updated to 'Not supported' and supporting user quotes underneath each finding."></div>
+        <div class="artifact-shot img"><img src="images/slack.png" alt="A research update titled Scoring Updates, describing findings from 18 one-on-one feedback sessions with Art History faculty, with scorecard rows updated to 'Not supported' and supporting user quotes underneath each finding." data-lightbox></div>
         <div class="artifact-meta">
           <div class="artifact-tag">Artifact 02 — Research Update</div>
           <h4>Findings shared after every research round</h4>
-          <p>Each round of research — 18 faculty sessions in this one — directly updated specific rows on the scorecard, with the user's own words attached as evidence. This is what made it a living document instead of a one-time deliverable.</p>
+          <p>After every research round, findings mapped directly to scorecard rows — with the user's own words as evidence. This is what made it a living document.</p>
         </div>
       </div>
       <div class="artifact-card">
-        <div class="artifact-shot img"><img src="images/scorecard.png" alt="The User Outcomes Scorecard spreadsheet, showing rows of user goals like 'Conduct formal analysis of images' and 'Is the image trustworthy' scored as Meets expectations or Needs improvement across JSTOR and Artstor, with a Want/Need priority column."></div>
+        <div class="artifact-shot img"><img src="images/scorecard.png" alt="The User Outcomes Scorecard spreadsheet, showing rows of user goals like 'Conduct formal analysis of images' and 'Is the image trustworthy' scored as Meets expectations or Needs improvement across JSTOR and Artstor, with a Want/Need priority column." data-lightbox></div>
         <div class="artifact-meta">
           <div class="artifact-tag">Artifact 03 — The Scorecard</div>
           <h4>The tactical backbone, mid-update</h4>
-          <p>At a glance: where does JSTOR meet or exceed expectations on the real things users were trying to do, and where does it still fall short? This is the artifact product managers and designers worked from directly.</p>
+          <p>The artifact product managers and designers worked from directly — where does JSTOR meet expectations, and where does it still fall short?</p>
         </div>
       </div>
     </div>
