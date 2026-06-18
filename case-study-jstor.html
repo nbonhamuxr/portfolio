@@ -52,21 +52,6 @@
   }
   .back-link:hover{ color:var(--acid); }
 
-  /* ---------- SCROLL PROGRESS ---------- */
-  .progress-track{
-    position:fixed;
-    top:0; left:0;
-    height:3px;
-    width:100%;
-    background:rgba(255,255,255,0.08);
-    z-index:50;
-  }
-  .progress-fill{
-    height:100%;
-    width:0%;
-    background:var(--acid);
-    transition:width 0.1s linear;
-  }
 
   /* ---------- HEADER STRIP ---------- */
   .case-header{
@@ -126,12 +111,12 @@
     color:var(--acid);
     margin-bottom:8px;
   }
-  .fact-cell:nth-child(1){ border:2px solid var(--hot); }
-  .fact-cell:nth-child(1) .label{ color:var(--hot); }
-  .fact-cell:nth-child(2){ border:2px solid var(--electric); }
-  .fact-cell:nth-child(2) .label{ color:var(--electric); }
-  .fact-cell:nth-child(3){ border:2px solid var(--acid); }
-  .fact-cell:nth-child(3) .label{ color:var(--acid); }
+  .fact-cell:nth-child(1){ border:2px solid #DC2B81; }
+  .fact-cell:nth-child(1) .label{ color:#DC2B81; }
+  .fact-cell:nth-child(2){ border:2px solid #21EAE9; }
+  .fact-cell:nth-child(2) .label{ color:#21EAE9; }
+  .fact-cell:nth-child(3){ border:2px solid #D8FD41; }
+  .fact-cell:nth-child(3) .label{ color:#D8FD41; }
   .fact-cell:nth-child(4){ border:2px solid var(--violet); }
   .fact-cell:nth-child(4) .label{ color:var(--violet); }
   .fact-cell .value{
@@ -146,18 +131,19 @@
     padding:60px 0 70px;
   }
   .tension .section-label{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+    display:inline-block;
     font-family:'Space Mono', monospace;
     font-size:12px;
     font-weight:700;
     text-transform:uppercase;
-    letter-spacing:1.5px;
-    color:var(--violet);
-    margin-bottom:24px;
+    letter-spacing:1px;
+    background:#9B6BFF;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #9B6BFF;
   }
-  .tension .section-label::before{ content:''; width:10px; height:10px; background:var(--violet); }
   .tension h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
@@ -178,18 +164,19 @@
     padding:20px 0 90px;
   }
   .timeline-label{
+    display:inline-block;
     font-family:'Space Mono', monospace;
     font-size:12px;
     font-weight:700;
     text-transform:uppercase;
-    letter-spacing:1.5px;
-    color:var(--electric);
-    margin-bottom:6px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+    letter-spacing:1px;
+    background:#3D7CFF;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:16px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #3D7CFF;
   }
-  .timeline-label::before{ content:''; width:10px; height:10px; background:var(--electric); }
   .timeline-sub{
     color:#9A9A94;
     font-size:14px;
@@ -265,12 +252,19 @@
     padding:70px 0 80px;
   }
   .framework .section-label{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'Space Mono', monospace; font-size:12px; font-weight:700;
-    text-transform:uppercase; letter-spacing:1.5px; color:var(--hot);
-    margin-bottom:24px;
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    background:#FF4D5E;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #FF4D5E;
   }
-  .framework .section-label::before{ content:''; width:10px; height:10px; background:var(--hot); }
   .framework h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
@@ -372,12 +366,19 @@
     padding:70px 0 80px;
   }
   .decision .section-label{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'Space Mono', monospace; font-size:12px; font-weight:700;
-    text-transform:uppercase; letter-spacing:1.5px; color:var(--violet);
-    margin-bottom:24px;
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    background:#9B6BFF;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #9B6BFF;
   }
-  .decision .section-label::before{ content:''; width:10px; height:10px; background:var(--violet); }
   .decision h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
@@ -460,12 +461,19 @@
     padding:70px 0 80px;
   }
   .receipts .section-label{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'Space Mono', monospace; font-size:12px; font-weight:700;
-    text-transform:uppercase; letter-spacing:1.5px; color:var(--acid);
-    margin-bottom:24px;
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    background:#D7FF3D;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #D7FF3D;
   }
-  .receipts .section-label::before{ content:''; width:10px; height:10px; background:var(--acid); }
   .receipts h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
@@ -579,12 +587,19 @@
     padding:70px 0 80px;
   }
   .outcome .section-label{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'Space Mono', monospace; font-size:12px; font-weight:700;
-    text-transform:uppercase; letter-spacing:1.5px; color:var(--electric);
-    margin-bottom:24px;
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    background:#3D7CFF;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #3D7CFF;
   }
-  .outcome .section-label::before{ content:''; width:10px; height:10px; background:var(--electric); }
   .outcome h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
@@ -627,12 +642,19 @@
     padding:60px 0 90px;
   }
   .reflection .section-label{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'Space Mono', monospace; font-size:12px; font-weight:700;
-    text-transform:uppercase; letter-spacing:1.5px; color:var(--hot);
-    margin-bottom:24px;
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    background:#FF4D5E;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #FF4D5E;
   }
-  .reflection .section-label::before{ content:''; width:10px; height:10px; background:var(--hot); }
   .reflection p{
     font-size:19px;
     line-height:1.6;
@@ -708,7 +730,6 @@
 </head>
 <body>
 
-<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 
 <div class="wrap">
 
@@ -995,17 +1016,6 @@
 </div>
 
 <script src="js/theme-toggle.js"></script>
-<script>
-  const progressFill = document.getElementById('progressFill');
-  function updateProgress(){
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressFill.style.width = pct + '%';
-  }
-  window.addEventListener('scroll', updateProgress, { passive:true });
-  updateProgress();
-</script>
 
 </body>
 </html>
