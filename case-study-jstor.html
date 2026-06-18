@@ -539,8 +539,14 @@
   }
   .artifact-card{
     background:var(--carbon-2);
-    border:1px solid rgba(255,255,255,0.1);
+    position:relative;
   }
+  .artifact-card:nth-child(1){ box-shadow:inset 0 0 0 2px #21EAE9; }
+  .artifact-card:nth-child(1) .artifact-tag{ color:#21EAE9; }
+  .artifact-card:nth-child(2){ box-shadow:inset 0 0 0 2px #D8FD41; }
+  .artifact-card:nth-child(2) .artifact-tag{ color:#D8FD41; }
+  .artifact-card:nth-child(3){ box-shadow:inset 0 0 0 2px #DC2B81; }
+  .artifact-card:nth-child(3) .artifact-tag{ color:#DC2B81; }
   .artifact-shot{
     height:180px;
     background:
@@ -1094,14 +1100,6 @@
 
     <div class="artifact-grid">
       <div class="artifact-card">
-        <div class="artifact-shot img"><img src="images/okr-redacted.png" alt="A leadership OKR slide reading: Objective — Users can find connections seamlessly among all resources on JSTOR: Images, Books, Journals, and Primary Sources. Key Result — 100% of Barrier to Exploration user needs advance from needs improvement to meets expectations in the Artstor Integration User Experience Scorecard." data-lightbox></div>
-        <div class="artifact-meta">
-          <div class="artifact-tag">Artifact 01 — Leadership OKR</div>
-          <h4>The scorecard, written into the org's OKRs</h4>
-          <p>Leadership wrote a company OKR using the scorecard's exact terms — "Barrier to Exploration," "meets expectations." My vocabulary became the vocabulary the business measured itself by.</p>
-        </div>
-      </div>
-      <div class="artifact-card">
         <div class="artifact-shot img"><img src="images/slack.png" alt="A research update titled Scoring Updates, describing findings from 18 one-on-one feedback sessions with Art History faculty, with scorecard rows updated to 'Not supported' and supporting user quotes underneath each finding." data-lightbox></div>
         <div class="artifact-meta">
           <div class="artifact-tag">Artifact 02 — Research Update</div>
@@ -1115,6 +1113,14 @@
           <div class="artifact-tag">Artifact 03 — Barriers</div>
           <h4>Barriers to Exploration</h4>
           <p>The scorecard morphed into a new framework called "Barriers to Exploration", which were a collection of unresolved items from the scorecard. OKRs and work centered around closing these gaps, and I continued to update the organization with updates as I validated through continual research efforts.</p>
+        </div>
+      </div>
+      <div class="artifact-card">
+        <div class="artifact-shot img"><img src="images/okr-redacted.png" alt="A leadership OKR slide reading: Objective — Users can find connections seamlessly among all resources on JSTOR: Images, Books, Journals, and Primary Sources. Key Result — 100% of Barrier to Exploration user needs advance from needs improvement to meets expectations in the Artstor Integration User Experience Scorecard." data-lightbox></div>
+        <div class="artifact-meta">
+          <div class="artifact-tag">Artifact 01 — Leadership OKR</div>
+          <h4>The scorecard, written into the org's OKRs</h4>
+          <p>Leadership wrote a company OKR using the scorecard's exact terms — "Barrier to Exploration," "meets expectations." My vocabulary became the vocabulary the business measured itself by.</p>
         </div>
       </div>
     </div>
@@ -1132,20 +1138,30 @@
     <h2>The framework became how the org defined "done"</h2>
     <div class="outcome-grid">
       <div class="outcome-cell">
-        <div class="o-label">Leadership</div>
-        <p>Leadership authored a Q3 2021 OKR: 15 of 20 ARTSTOR faculty participants indicate that JSTOR meets their image platform needs.</p>
+        <div class="o-label">Validation</div>
+        <p>I conducted research and validated that JSTOR met the teaching needs for over 90% of Artstor Faculty.</p>
       </div>
       <div class="outcome-cell">
         <div class="o-label">Resolution</div>
-        <p>Following, 12 specific barriers to exploration were identified within the context of the scorecard. Those barriers carried forward into 2022 and informed deliverables definition and shaped OKRs.</p>
+        <p>The organization successfully closed all gaps preventing Artstor Faculty from using JSTOR for their image needs.</p>
       </div>
       <div class="outcome-cell">
         <div class="o-label">Result</div>
         <p>On August 2024 Artstor was sunset, with JSTOR becoming the new trusted home for scholarly images.</p>
       </div>
     </div>
+  </section>
 
-    <div class="outcome-gallery" id="outcome-gallery">
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="prose-section" style="padding:60px 0 60px;">
+    <div class="section-label" style="background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; color:var(--carbon);">JSTOR: After Integration</div>
+
+    <div class="outcome-gallery" id="outcome-gallery" style="margin-top:36px;">
       <div class="gallery-stage">
         <div class="gallery-slides">
           <div class="gallery-slide" data-caption="JSTOR homepage — Artstor folded in"><img src="images/artstor01.webp" alt="JSTOR homepage announcing the Artstor integration"></div>
