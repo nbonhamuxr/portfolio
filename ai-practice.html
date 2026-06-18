@@ -5,12 +5,308 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Practice — Nate Bonham</title>
 <link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
+<style>
+  /* ---------- PAGE-SPECIFIC: AI PRACTICE ---------- */
+
+  /* ---------- STICKER-TAG SECTION LABEL (matches case-study-jstor.html) ---------- */
+  .tag-label{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+  }
+  .tag-label--cyan{ background:var(--ink-cyan); box-shadow:3px 3px 0 var(--ink-cyan); }
+  .tag-label--violet{ background:var(--ink-violet); box-shadow:3px 3px 0 var(--ink-violet); }
+  .tag-label--lime{ background:var(--ink-lime); box-shadow:3px 3px 0 var(--ink-lime); }
+  .tag-label--hot{ background:#FF4D5E; box-shadow:3px 3px 0 #FF4D5E; }
+  .tag-label--magenta{ background:var(--ink-magenta); box-shadow:3px 3px 0 var(--ink-magenta); }
+  .boundary-section{
+    padding:50px 0;
+    border-top:1px solid rgba(255,255,255,0.06);
+    position:relative;
+    z-index:1;
+  }
+  .boundary-section h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:24px;
+    margin:0 0 18px;
+    line-height:1.2;
+    position:relative;
+    z-index:2;
+  }
+  .boundary-section p{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--paper-dim);
+    max-width:760px;
+    margin:0 0 16px;
+    position:relative;
+    z-index:2;
+  }
+  .boundary-section p:last-child{ margin-bottom:0; }
+  .boundary-section em{ color:#FF4D5E; font-style:normal; }
+
+  /* History timeline — reuses the JSTOR case study's phase/rail pattern */
+  .history-timeline{ padding:50px 0; border-top:1px solid rgba(255,255,255,0.06); position:relative; z-index:1; }
+  .history-heading{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:24px;
+    margin:0 0 18px;
+    line-height:1.2;
+  }
+  .history-heading em{ color:var(--ink-violet); font-style:italic; }
+  .history-rail{
+    position:relative;
+    height:6px;
+    background:rgba(255,255,255,0.12);
+    margin:40px 0 0;
+  }
+  .history-rail-fill{
+    position:absolute;
+    top:0; left:0;
+    height:100%;
+    width:100%;
+    background:linear-gradient(90deg, var(--ink-violet), var(--ink-cyan) 50%, var(--ink-lime) 100%);
+  }
+  .history-phases{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:0;
+  }
+  .history-phase{
+    position:relative;
+    padding-top:28px;
+    padding-right:24px;
+  }
+  .history-phase::before{
+    content:'';
+    position:absolute;
+    top:-34px;
+    left:0;
+    width:2px;
+    height:28px;
+    background:rgba(255,255,255,0.3);
+  }
+  .history-phase .h-year{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--paper-faint);
+    margin-bottom:10px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .history-phase h4{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:16px;
+    font-weight:700;
+    margin:0 0 10px;
+    line-height:1.3;
+    color:var(--paper);
+  }
+  .history-phase.milestone h4{ color:var(--ink-lime); }
+  .history-phase p{
+    font-size:13.5px;
+    color:var(--paper-card);
+    margin:0;
+    line-height:1.55;
+  }
+
+  @media (max-width:760px){
+    .history-phases{ grid-template-columns:1fr; gap:28px; }
+    .history-phase{ padding-right:0; padding-left:24px; }
+    .history-phase::before{ top:0; left:0; width:28px; height:2px; }
+  }
+
+  /* Capstone artifact card — reuses story-artifact pattern from JSTOR case study */
+  .capstone-artifact{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:24px;
+    margin-top:36px;
+    background:var(--carbon-2);
+    border:1px solid rgba(255,255,255,0.1);
+    overflow:hidden;
+  }
+  .capstone-artifact-img{
+    height:100%;
+    min-height:200px;
+    overflow:hidden;
+  }
+  .capstone-artifact-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top;
+    display:block;
+  }
+  .capstone-artifact-cap{
+    padding:24px 24px 24px 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .capstone-artifact-cap .artifact-tag{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--ink-lime);
+    margin-bottom:10px;
+  }
+  .capstone-artifact-cap h4{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:16px;
+    margin:0 0 10px;
+    color:var(--paper);
+  }
+  .capstone-artifact-cap p{
+    font-size:14px;
+    color:var(--paper-card);
+    margin:0;
+    line-height:1.6;
+  }
+
+  @media (max-width:760px){
+    .capstone-artifact{ grid-template-columns:1fr; }
+    .capstone-artifact-img{ min-height:220px; }
+    .capstone-artifact-cap{ padding:20px 20px 24px; }
+  }
+
+  /* Tools grid — small accent-topped cards, cycling the ink palette like principle-grid/case-grid */
+  .tools-list-section{ padding:50px 0 80px; border-top:1px solid rgba(255,255,255,0.06); position:relative; z-index:1; }
+  .tools-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+  }
+  .tool-card{
+    background:var(--carbon-2);
+    padding:22px 18px;
+    border-top:4px solid transparent;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:64px;
+  }
+  .tool-card::after{
+    content:'';
+    position:absolute;
+    width:70px; height:70px;
+    border-radius:62% 38% 51% 49%;
+    bottom:-30px; right:-22px;
+    opacity:0.08;
+  }
+  .tool-card-name{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--paper);
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .tool-card:nth-child(1){ border-top-color:var(--ink-magenta); }
+  .tool-card:nth-child(1)::after{ background:var(--ink-magenta); }
+  .tool-card:nth-child(2){ border-top-color:var(--ink-cyan); }
+  .tool-card:nth-child(2)::after{ background:var(--ink-cyan); }
+  .tool-card:nth-child(3){ border-top-color:var(--ink-lime); }
+  .tool-card:nth-child(3)::after{ background:var(--ink-lime); }
+  .tool-card:nth-child(4){ border-top-color:var(--ink-orange); }
+  .tool-card:nth-child(4)::after{ background:var(--ink-orange); }
+  .tool-card:nth-child(5){ border-top-color:var(--ink-violet); }
+  .tool-card:nth-child(5)::after{ background:var(--ink-violet); }
+  .tool-card:nth-child(6){ border-top-color:var(--ink-magenta); }
+  .tool-card:nth-child(6)::after{ background:var(--ink-magenta); }
+  .tool-card:nth-child(7){ border-top-color:var(--ink-cyan); }
+  .tool-card:nth-child(7)::after{ background:var(--ink-cyan); }
+
+  @media (max-width:760px){
+    .tools-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+
+  /* Reach-for grid — reuses principle-grid pattern */
+  .reach-section{ padding:50px 0 0; position:relative; z-index:1; }
+  .reach-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+    padding:30px 0 80px;
+    position:relative;
+    z-index:1;
+  }
+  .reach-card{
+    background:var(--carbon-2);
+    padding:28px 24px;
+    position:relative;
+    overflow:hidden;
+    border-top:4px solid transparent;
+  }
+  .reach-card::after{
+    content:'';
+    position:absolute;
+    width:90px; height:90px;
+    border-radius:62% 38% 51% 49%;
+    bottom:-40px; right:-30px;
+    opacity:0.08;
+  }
+  .reach-card:nth-child(1){ border-top-color:var(--ink-magenta); }
+  .reach-card:nth-child(1)::after{ background:var(--ink-magenta); }
+  .reach-card:nth-child(2){ border-top-color:var(--ink-cyan); }
+  .reach-card:nth-child(2)::after{ background:var(--ink-cyan); }
+  .reach-card:nth-child(3){ border-top-color:var(--ink-orange); }
+  .reach-card:nth-child(3)::after{ background:var(--ink-orange); }
+  .reach-card:nth-child(4){ border-top-color:var(--ink-violet); }
+  .reach-card:nth-child(4)::after{ background:var(--ink-violet); }
+  .reach-card .reach-num{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:var(--paper-faint);
+    margin-bottom:14px;
+  }
+  .reach-card h3{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    margin:0 0 12px;
+    line-height:1.3;
+    color:var(--paper);
+  }
+  .reach-card p{
+    font-size:14px;
+    line-height:1.65;
+    color:var(--paper-card);
+    margin:0;
+  }
+
+  @media (max-width:760px){
+    .reach-grid{ grid-template-columns:1fr; }
+  }
+</style>
 </head>
 <body>
+
 <div class="wrap">
 
-  <svg class="splat" style="top:-20px; right:-60px; width:240px; height:240px;" viewBox="0 0 200 200">
-    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#B14EFF" opacity="0.11"/>
+  <svg class="splat" style="top:-40px; right:-60px; width:280px; height:280px;" viewBox="0 0 200 200">
+    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#21E6E6" opacity="0.14"/>
+  </svg>
+  <svg class="splat" style="top:700px; left:-90px; width:240px; height:240px;" viewBox="0 0 200 200">
+    <path d="M95 5 C130 0 165 25 178 60 C191 95 180 135 150 158 C120 181 80 182 50 162 C20 142 5 105 12 70 C19 35 60 10 95 5 Z" fill="#C6FF3D" opacity="0.12"/>
+  </svg>
+  <svg class="splat" style="top:1600px; right:-50px; width:200px; height:200px;" viewBox="0 0 200 200">
+    <path d="M100 15 C135 12 168 35 180 68 C192 101 178 138 148 158 C118 178 78 176 50 154 C22 132 10 96 20 62 C30 28 65 18 100 15 Z" fill="#FF2E93" opacity="0.1"/>
   </svg>
 
   <header class="nav">
@@ -31,11 +327,21 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+</div>
+
+<div class="wrap">
 
   <section class="page-hero">
-    <div class="hero-tag">HOW I USE AI</div>
-    <h1>AI Practice</h1>
-    <p>A partner in the work. Not a replacement for the judgment.</p>
+    <div class="hero-tag">How I Use AI</div>
+    <h1>A <span class="accent">partner</span> in the work. Not a replacement for the judgment.</h1>
+  </section>
+
+  <section class="prose-section">
+    <div class="tag-label tag-label--cyan">The Approach</div>
+    <h2>From early experiments to <em>everyday practice.</em></h2>
+    <p>I've been experimenting with AI tools since 2021 — long enough to have a considered point of view on where they genuinely help and where they fall short.</p>
+    <p>I see AI as a thinking partner, not a shortcut. It's a place to <strong>pressure-test a plan</strong> before it reaches a stakeholder, <strong>refine how I'm explaining something</strong> so it lands clearly, <strong>explore alternatives</strong> I might not land on alone, and turn rough findings into <strong>polished, walkable artifacts</strong> for a room full of decision-makers.</p>
+    <p>What I've found is that it's most powerful when I know exactly what question I'm trying to answer — and least useful when I'm hoping it will figure that out for me. The judgment calls stay mine.</p>
   </section>
 
   <div class="squiggle-divider">
@@ -44,101 +350,125 @@
     </svg>
   </div>
 
-  <section class="who-block">
-    <div class="section-label">The Approach</div>
-    <p>I've been experimenting with AI tools since 2021 — long enough to have a considered point of view on where they genuinely help and where they fall short.</p>
-  </section>
-
-  <section class="who-block">
-    <div class="section-label section-label--cyan" style="margin-bottom:0;"></div>
-    <p>I see AI as a thinking partner, not a shortcut. It's a place to <strong>pressure-test a plan</strong> before it reaches a stakeholder, <strong>refine how I'm explaining something</strong> so it lands clearly, <strong>explore alternatives</strong> I might not land on alone, and turn rough findings into <strong>polished, walkable artifacts</strong> for a room full of decision-makers.</p>
-  </section>
-
-  <section class="who-block">
-    <div class="section-label section-label--magenta" style="margin-bottom:0;"></div>
-    <p>I've used it to try different research approaches, build and test study materials faster, and assemble the kind of narrative that helps an organization move from findings to action. What I've found is that it's most powerful when I know exactly what question I'm trying to answer — and least useful when I'm hoping it will figure that out for me. The judgment calls stay mine.</p>
-  </section>
-
-  <section class="thesis-block" style="padding-bottom:40px;">
-    <div class="section-label section-label--cyan">History &amp; Proficiency</div>
-    <h2>From early experiments to <em>everyday practice.</em></h2>
-  </section>
-
-  <section class="case-grid">
-    <div class="case-card">
-      <div class="case-org">EARLY EXPERIMENTATION</div>
-      <h3 class="case-title">2021</h3>
-      <p class="case-desc">Started experimenting with early AI tools — exploring what they could and couldn't do for research workflows before most people in UX were paying attention.</p>
-    </div>
-    <div class="case-card">
-      <div class="case-org">AI-NATIVE ENGINEERING BOOTCAMP — HONORS</div>
-      <h3 class="case-title">2026</h3>
-      <p class="case-desc">Completed an AI Native Engineering Bootcamp. My capstone project was an agentic coding assistant — a system that could reason across steps, not just respond to a single prompt. Graduated with honors.</p>
-    </div>
-    <div class="case-card">
-      <div class="case-org">CLAUDE SKILLJAR — AI FLUENCY</div>
-      <h3 class="case-title">2026</h3>
-      <p class="case-desc">Completed Claude's SkillJar training modules to deepen AI fluency. Developed a working practice across Claude (chat, Cowork, and Code), ChatGPT, and Gemini for different stages of research and synthesis work.</p>
+  <section class="reach-section">
+    <div class="tag-label tag-label--lime">Four Places I Reach For It</div>
+    <div class="reach-grid">
+      <div class="reach-card">
+        <div class="reach-num">01</div>
+        <h3>Pressure-Testing a Plan</h3>
+        <p>Before a study design or a stakeholder readout goes out, I'll run it past AI to find the gaps in my own logic — the questions a sharp stakeholder would ask that I haven't answered yet.</p>
+      </div>
+      <div class="reach-card">
+        <div class="reach-num">02</div>
+        <h3>Refining Language</h3>
+        <p>Findings only matter if people understand them. I use AI to tighten how I'm explaining a concept, especially when I need the same idea to land with both an engineer and an exec.</p>
+      </div>
+      <div class="reach-card">
+        <div class="reach-num">03</div>
+        <h3>Exploring Alternatives</h3>
+        <p>When I'm stuck on how to frame a recommendation or structure a workshop, AI is a fast way to see options I wouldn't have generated alone — before I decide which one actually fits the situation.</p>
+      </div>
+      <div class="reach-card">
+        <div class="reach-num">04</div>
+        <h3>Building Walkable Artifacts</h3>
+        <p>Turning raw notes and transcripts into a clear narrative stakeholders can walk through — rather than a wall of text — is where AI earns its place most consistently in my workflow.</p>
+      </div>
     </div>
   </section>
 
-  <section class="prose-section" style="border-top:none; padding-top:0;">
-    <div class="section-label section-label--lime">Tools I Work With Regularly</div>
-    <div class="stat-strip" style="margin-top:0;">
-      <div class="stat-cell"><div class="value">Claude</div></div>
-      <div class="stat-cell"><div class="value">ChatGPT</div></div>
-      <div class="stat-cell"><div class="value">Gemini</div></div>
-    </div>
-    <div class="stat-strip" style="margin-top:14px;">
-      <div class="stat-cell"><div class="value">Midjourney</div></div>
-      <div class="stat-cell"><div class="value">Hey Marvin</div></div>
-      <div class="stat-cell"><div class="value">Otter.ai</div></div>
-    </div>
-    <div class="stat-strip" style="margin-top:14px; grid-template-columns: repeat(1,1fr); max-width:350px;">
-      <div class="stat-cell"><div class="value">Eleven Labs</div></div>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#D7FF3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="tools-list-section">
+    <div class="tag-label tag-label--magenta">Tools I Work With Regularly</div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-name">Claude</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-name">ChatGPT</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-name">Gemini</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-name">Midjourney</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-name">Hey Marvin</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-name">Otter.ai</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-name">Eleven Labs</div>
+      </div>
     </div>
   </section>
 
-  <div class="ink-divider"><span>Four Places I Reach for It</span></div>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 14 C100 6 220 18 350 10 C480 2 580 18 700 10 C820 2 920 16 1020 9 C1045 7 1062 13 1078 10" stroke="#FF4D5E" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
 
-  <section class="case-grid" style="padding-bottom:60px;">
-    <div class="case-card">
-      <div class="case-org">01</div>
-      <h3 class="case-title">Pressure-Testing a Plan</h3>
-      <p class="case-desc">Before a study design or a stakeholder readout goes out, I'll run it past AI to find the gaps in my own logic — the questions a sharp stakeholder would ask that I haven't answered yet.</p>
-    </div>
-    <div class="case-card">
-      <div class="case-org">02</div>
-      <h3 class="case-title">Refining Language</h3>
-      <p class="case-desc">Findings only matter if people understand them. I use AI to tighten how I'm explaining a concept, especially when I need the same idea to land with both an engineer and an exec.</p>
-    </div>
-    <div class="case-card">
-      <div class="case-org">03</div>
-      <h3 class="case-title">Exploring Alternatives</h3>
-      <p class="case-desc">When I'm stuck on how to frame a recommendation or structure a workshop, AI is a fast way to see options I wouldn't have generated alone — before I decide which one actually fits the situation.</p>
-    </div>
+  <section class="boundary-section">
+    <div class="tag-label tag-label--hot">Where I Don't Use AI</div>
+    <h2>Knowing the mechanism is what tells you where the line is.</h2>
+    <p>A team once asked if I could run open-ended survey responses through ChatGPT to get the analysis. I said no, and explained why: an LLM generates text by predicting the next most probable token given everything before it, trained on patterns across huge volumes of existing text. Hand it 200 open-ended responses and ask for themes, and it isn't holding the data in a structure and reasoning over it the way a person reading 200 responses in sequence does — it's producing a summary that looks like what thematic analysis output looks like, because it's seen many examples of what analysis summaries look like in training.</p>
+    <p>That's a crucial difference: it's pattern-matching the shape of an analytical artifact, not performing the cognitive act of building a model of what's true across the responses, checking it against contradicting cases, and revising it. It also has no persistent memory of the texture of <em>this specific</em> product, team, or moment — every response gets evaluated fresh, with no accumulating sense of "wait, that's the third person who's mentioned the checkout flow," which is exactly the kind of pattern-sense a person reading sequentially builds without even trying. And it's prone to over-indexing on outliers, which then get presented as more common in the dataset than they are — leading people to draw the wrong conclusions.</p>
+    <p>AI still earns a place around that work — building the instrument, pressure-testing question wording, shaping how I present themes once I've found them. But the reading stays mine.</p>
   </section>
 
-  <section class="prose-section" style="border-top:none; padding-top:0; padding-bottom:60px;">
-    <div class="case-grid" style="padding-bottom:0;">
-      <div class="case-card">
-        <div class="case-org">04</div>
-        <h3 class="case-title">Building Walkable Artifacts</h3>
-        <p class="case-desc">Turning raw notes and transcripts into a clear narrative stakeholders can walk through — rather than a wall of text — is where AI earns its place most consistently in my workflow.</p>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 8 C90 2 180 18 300 10 C420 2 520 16 640 8 C760 0 860 16 970 9 C1010 6 1050 14 1078 10" stroke="#9B6BFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="history-timeline">
+    <div class="tag-label tag-label--violet">History &amp; Proficiency</div>
+    <h2 class="history-heading">From early experimentation to <em>honors-level practice.</em></h2>
+
+    <div class="history-rail"><div class="history-rail-fill"></div></div>
+    <div class="history-phases">
+      <div class="history-phase">
+        <div class="h-year">2021</div>
+        <h4>Early experimentation</h4>
+        <p>Started exploring what early AI tools could and couldn't do for research workflows, before most people in UX were paying attention.</p>
+      </div>
+      <div class="history-phase milestone">
+        <div class="h-year">2026</div>
+        <h4>AI-Native Engineering Bootcamp — Honors</h4>
+        <p>Capstone: an agentic coding assistant that plans, executes, and opens its own pull requests — reasoning across steps, not just responding to a single prompt. Graduated with honors.</p>
+      </div>
+      <div class="history-phase">
+        <div class="h-year">2026</div>
+        <h4>Claude SkillJar — AI Fluency</h4>
+        <p>Completed Claude's SkillJar training. Developed a working practice across Claude, ChatGPT, and Gemini for different stages of research and synthesis work.</p>
+      </div>
+    </div>
+
+    <div class="capstone-artifact">
+      <div class="capstone-artifact-img"><img src="images/capstone.png" alt="Screenshot of an agentic coding assistant UI built by Nate, showing a chat interface with a sequenced tool-call trace — execute_command, read_file, write_file, git_commit, git_push, and create_pull_request — alongside a live diff panel and a pull request awaiting approval."></div>
+      <div class="capstone-artifact-cap">
+        <div class="artifact-tag">Capstone — Agentic Coding Assistant</div>
+        <h4>An agent that plans, executes, and waits for approval</h4>
+        <p>The tool sequences real actions — reading and writing files, committing, pushing, opening a pull request — and stops at a pending-approval gate before anything merges. The interesting design problem wasn't getting AI to write code; it was scoping what it's allowed to do unsupervised, and where a human has to sign off.</p>
       </div>
     </div>
   </section>
 
   <footer>
     <span>nateux.com — Ann Arbor, MI</span>
-    <span>
-      <a href="contact.html">Contact</a>
-      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
-      <a href="https://natebonham.substack.com/">Substack</a>
-    </span>
+    <span><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/nathanielbonham" target="_blank" rel="noopener">LinkedIn</a><a href="https://natebonham.substack.com/" target="_blank" rel="noopener">Substack</a></span>
   </footer>
-
 </div>
+
 <script src="js/theme-toggle.js"></script>
+
 </body>
 </html>
