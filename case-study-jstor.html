@@ -635,6 +635,21 @@
   .outcome{
     padding:60px 0 60px;
   }
+  .after-integration .section-label{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    background:#21E6E6;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 #21E6E6;
+  }
+  .after-integration .section-label::before{ display:none; }
   .outcome .section-label{
     display:inline-block;
     font-family:'Space Mono', monospace;
@@ -902,10 +917,7 @@
   <a class="back-link" href="work.html" style="margin-top:24px; display:inline-flex;">← Back to case studies</a>
 
   <section class="case-header">
-    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:0;">
-      <div class="hero-tag">ITHAKA / JSTOR &#8594; Artstor</div>
-      <div class="hero-tag" style="background:#21E6E6; box-shadow:3px 3px 0 #21E6E6;">ITHAKA / Artstor &#8594; JSTOR</div>
-    </div>
+    <div class="hero-tag" style="line-height:1.7;">ITHAKA / JSTOR &#8594; Artstor<br>ITHAKA / Artstor &#8594; JSTOR</div>
     <h1 class="case-title">How a <span class="accent">User Outcomes</span> framework became the operating backbone for an 18-month, org-wide product integration</h1>
     <p class="case-dek">When ITHAKA's effort to fold Artstor into JSTOR stalled under its own ambiguity, I built the framework that gave product, design, and leadership a shared way to define progress — and ran it for a year and a half across the org.</p>
 
@@ -1002,17 +1014,6 @@
     <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="">
   </div>
-
-  <div class="squiggle-divider">
-    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
-      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#DC2B81" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
-    </svg>
-  </div>
-
-  <section class="prose-section" style="padding:60px 0 60px;">
-    <div class="section-label" style="background:#DC2B81; box-shadow:3px 3px 0 #DC2B81; color:var(--carbon);">One Hurdle</div>
-    <p style="font-size:16px; color:#C9C8C2; max-width:880px; margin:32px 0 0;">The word "scorecard" created immediate friction — people heard "performance review." I addressed it directly across teams: this wasn't evaluating anyone's work, it was tracking how well the product was closing real gaps in users' lives. Once that landed, resistance disappeared. The VP of Product, Director of Marketing, and PM Director stopped pushing back and became the framework's loudest champions.</p>
-  </section>
 
   <div class="squiggle-divider">
     <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
@@ -1158,8 +1159,8 @@
     </svg>
   </div>
 
-  <section class="prose-section" style="padding:60px 0 60px;">
-    <div class="section-label" style="background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; color:var(--carbon);">JSTOR: After Integration</div>
+  <section class="after-integration" style="padding:60px 0 60px;">
+    <div class="section-label">JSTOR: After Integration</div>
 
     <div class="outcome-gallery" id="outcome-gallery" style="margin-top:36px;">
       <div class="gallery-stage">
