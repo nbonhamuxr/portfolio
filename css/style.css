@@ -555,6 +555,18 @@ footer a:hover{ color: var(--ink-magenta); }
   z-index: 2;
 }
 .prose-section p:last-child{ margin-bottom: 0; }
+.prose-section ul{
+  max-width: 760px;
+  margin: 0 0 16px;
+  padding-left: 20px;
+  color: var(--paper-dim);
+  font-size: 16px;
+  line-height: 1.75;
+  position: relative;
+  z-index: 2;
+}
+.prose-section li{ margin-bottom: 10px; }
+.prose-section li:last-child{ margin-bottom: 0; }
 .prose-section strong{ color: var(--paper); }
 .prose-section em{ color: var(--ink-cyan); font-style: normal; }
 
