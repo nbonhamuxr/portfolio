@@ -788,6 +788,7 @@ footer a:hover{ color: var(--ink-magenta); }
   transition: opacity 0.2s ease;
 }
 .worked-on-tile:hover img{ opacity: 0.95; }
+.worked-on-tile{ cursor: zoom-in; }
 .worked-on-overlay{
   position: absolute;
   bottom: 0;

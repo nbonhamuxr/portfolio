@@ -67,27 +67,31 @@
   <section class="worked-on-block">
     <div class="section-label section-label--orange">What I've Worked On</div>
     <div class="worked-on-strip">
-      <a class="worked-on-tile" href="case-study-sims.html">
+      <div class="worked-on-tile" role="button" tabindex="0" aria-label="View Halo Infinite image" onclick="openLightbox(this)">
         <img src="images/HaloInfinite.jpg" alt="Halo Infinite">
         <div class="worked-on-overlay">
           <div class="worked-on-name">Xbox Research</div>
           <div class="worked-on-org">2017–2019</div>
         </div>
-      </a>
-      <a class="worked-on-tile" href="case-study-jstor.html">
+      </div>
+      <div class="worked-on-tile" role="button" tabindex="0" aria-label="View JSTOR image" onclick="openLightbox(this)">
         <img src="images/JSTOR_logo.png" alt="JSTOR">
         <div class="worked-on-overlay">
           <div class="worked-on-name">ITHAKA</div>
           <div class="worked-on-org">2019–2023</div>
         </div>
-      </a>
-      <a class="worked-on-tile" href="case-study-sims.html">
+      </div>
+      <div class="worked-on-tile" role="button" tabindex="0" aria-label="View The Sims image" onclick="openLightbox(this)">
         <img src="images/the-sims-project-rene-new-playtest.jpg" alt="The Sims — Project Renée">
         <div class="worked-on-overlay">
           <div class="worked-on-name">Electronic Arts / Maxis</div>
           <div class="worked-on-org">2023–2025</div>
         </div>
-      </a>
+      </div>
+    </div>
+
+    <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out;" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;display:block;">
     </div>
   </section>
 
@@ -138,5 +142,20 @@
 
 </div>
 <script src="js/theme-toggle.js"></script>
+<script>
+function openLightbox(tile) {
+  var img = tile.querySelector('img');
+  var lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox-img').alt = img.alt;
+  lb.style.display = 'flex';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
 </body>
 </html>
