@@ -92,7 +92,8 @@ header.nav::before{
   letter-spacing: 0.5px;
 }
 .logo:hover{ color: var(--ink-magenta); }
-.logo span{ color: var(--ink-cyan); }
+.logo span{ color: var(--ink-lime); }
+.logo:hover span{ color: var(--ink-cyan); }
 .navlinks{ display: flex; gap: 26px; }
 .navlinks a{
   color: var(--paper);
