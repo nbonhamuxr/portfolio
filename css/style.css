@@ -804,9 +804,7 @@ footer a:hover{ color: var(--ink-magenta); }
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
-.worked-on-tile:nth-child(1) .worked-on-org{ color: var(--ink-magenta); }
-.worked-on-tile:nth-child(2) .worked-on-org{ color: var(--ink-cyan); }
-.worked-on-tile:nth-child(3) .worked-on-org{ color: var(--ink-lime); }
+.worked-on-org{ color: rgba(255,255,255,0.65); }
 .worked-on-name{
   font-size: 13px;
   font-weight: 700;
