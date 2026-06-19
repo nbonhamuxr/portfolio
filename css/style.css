@@ -776,8 +776,8 @@ footer a:hover{ color: var(--ink-magenta); }
   text-decoration: none;
   display: block;
 }
-.worked-on-tile:nth-child(1){ border-top: 4px solid var(--ink-cyan); }
-.worked-on-tile:nth-child(2){ border-top: 4px solid var(--ink-magenta); }
+.worked-on-tile:nth-child(1){ border-top: 4px solid var(--ink-magenta); }
+.worked-on-tile:nth-child(2){ border-top: 4px solid var(--ink-cyan); }
 .worked-on-tile:nth-child(3){ border-top: 4px solid var(--ink-lime); }
 .worked-on-tile img{
   width: 100%;
@@ -804,8 +804,8 @@ footer a:hover{ color: var(--ink-magenta); }
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
-.worked-on-tile:nth-child(1) .worked-on-org{ color: var(--ink-cyan); }
-.worked-on-tile:nth-child(2) .worked-on-org{ color: var(--ink-magenta); }
+.worked-on-tile:nth-child(1) .worked-on-org{ color: var(--ink-magenta); }
+.worked-on-tile:nth-child(2) .worked-on-org{ color: var(--ink-cyan); }
 .worked-on-tile:nth-child(3) .worked-on-org{ color: var(--ink-lime); }
 .worked-on-name{
   font-size: 13px;
