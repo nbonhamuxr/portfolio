@@ -405,6 +405,39 @@ header.nav::before{
 }
 
 /* --------------------------------------------------------------------------
+   IN THEIR WORDS
+   -------------------------------------------------------------------------- */
+.in-their-words{
+  padding: 20px 0 60px;
+  position: relative;
+  z-index: 1;
+}
+.itw-stack{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.itw-card{
+  background: var(--carbon-2);
+  border-left: 5px solid var(--ink-violet);
+  padding: 24px 32px;
+}
+.itw-card p{
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--paper-prose);
+  margin: 0 0 14px;
+}
+.itw-card cite{
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-violet);
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
    RESUME / CALLOUT BLOCK
    -------------------------------------------------------------------------- */
 .resume-block{
