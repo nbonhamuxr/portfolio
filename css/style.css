@@ -155,7 +155,7 @@ header.nav::before{
 /* --------------------------------------------------------------------------
    HERO (homepage)
    -------------------------------------------------------------------------- */
-.hero{ padding: 50px 0 30px; position: relative; z-index: 1; }
+.hero{ padding: 50px 0 60px; position: relative; z-index: 1; }
 
 .hero-tag{
   display: inline-block;
@@ -327,7 +327,7 @@ header.nav::before{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  padding-bottom: 90px;
+  padding-bottom: 60px;
   position: relative;
   z-index: 1;
 }
@@ -408,7 +408,7 @@ header.nav::before{
    IN THEIR WORDS
    -------------------------------------------------------------------------- */
 .in-their-words{
-  padding: 20px 0 60px;
+  padding: 0 0 60px;
   position: relative;
   z-index: 1;
 }
@@ -792,7 +792,7 @@ footer a:hover{ color: var(--ink-magenta); }
    WHAT I'VE WORKED ON STRIP
    -------------------------------------------------------------------------- */
 .worked-on-block{
-  padding: 50px 0 50px;
+  padding: 0 0 60px;
   position: relative;
   z-index: 1;
 }
