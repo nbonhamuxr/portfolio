@@ -431,8 +431,8 @@ header.nav::before{
 }
 .itw-card cite{
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
-  color: var(--ink-violet);
+  font-size: 13px;
+  color: var(--paper-faint);
   font-style: normal;
   letter-spacing: 0.5px;
 }
