@@ -927,15 +927,20 @@ footer a:hover{ color: var(--ink-magenta); }
    RESPONSIVE
    -------------------------------------------------------------------------- */
 @media (max-width: 760px){
-  .hero h1{ font-size: 38px; }
-  .page-hero h1{ font-size: 28px; }
+  .hero h1{ font-size: 42px; }
+  .page-hero h1{ font-size: 32px; }
+  .hero p.lead{ font-size: 18px; }
   .stat-strip{ grid-template-columns: 1fr; }
   .case-grid{ grid-template-columns: 1fr; }
   .info-grid{ grid-template-columns: 1fr; }
+  .education-grid{ grid-template-columns: 1fr; }
   .who-block p{ font-size: 18px; }
   .thesis-block h2{ font-size: 28px; }
   .resume-block h2{ font-size: 28px; }
   .resume-inner{ flex-direction: column; align-items: flex-start; }
+  .worked-on-name{ font-size: 16px; }
+  .worked-on-org{ font-size: 12px; }
+  .section-label{ font-size: 13px; }
   .nav-toggle{ display: flex; }
   .navlinks{
     display: none;
