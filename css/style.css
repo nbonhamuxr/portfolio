@@ -826,6 +826,7 @@ footer a:hover{ color: var(--ink-magenta); }
 .marquee-track{
   display: flex;
   align-items: stretch;
+  gap: 10px;
   width: max-content;
   animation: mq-scroll 36s linear infinite;
 }
