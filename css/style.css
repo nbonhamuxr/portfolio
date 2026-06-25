@@ -236,7 +236,7 @@ header.nav::before{
 }
 .stat-inline-label{
   font-family: 'Space Mono', monospace;
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 6px;
@@ -365,7 +365,7 @@ header.nav::before{
 
 .case-org{
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--paper-faint);
@@ -374,7 +374,7 @@ header.nav::before{
 .case-title{
   font-family: 'Archivo', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.4;
   margin: 0 0 14px;
 }
@@ -428,7 +428,7 @@ header.nav::before{
   padding: 24px 32px;
 }
 .itw-card p{
-  font-size: 17px;
+  font-size: 16px;
   font-style: italic;
   line-height: 1.65;
   color: var(--paper-prose);
@@ -436,7 +436,7 @@ header.nav::before{
 }
 .itw-card cite{
   font-family: 'Space Mono', monospace;
-  font-size: 13px;
+  font-size: 11px;
   color: var(--paper-faint);
   font-style: normal;
   letter-spacing: 0.5px;
