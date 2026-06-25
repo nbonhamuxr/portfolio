@@ -427,8 +427,8 @@ header.nav::before{
   overflow: hidden;
   border-top: 4px solid transparent;
 }
-.education-tile--1{ border-top-color: var(--ink-violet); }
-.education-tile--2{ border-top-color: var(--ink-cyan); }
+.education-tile--1{ border-top-color: var(--ink-cyan); }
+.education-tile--2{ border-top-color: var(--ink-lime); }
 .education-tile img{
   width: 100%;
   height: 160px;
