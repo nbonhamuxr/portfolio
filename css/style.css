@@ -851,27 +851,29 @@ footer a:hover{ color: var(--ink-magenta); }
 .mq-overlay{
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 20px 14px 12px;
-  background: linear-gradient(transparent, rgba(14,14,16,0.85));
+  padding: 32px 14px 14px;
+  background: linear-gradient(transparent, rgba(14,14,16,0.95));
 }
 .mq-overlay--dark{
   position: absolute;
   inset: 0;
-  background: rgba(14,14,16,0.45);
+  background: rgba(14,14,16,0.5);
   padding: 0;
 }
 .mq-name{
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  color: var(--paper);
+  color: #ffffff;
   letter-spacing: 0.3px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 .mq-year{
   font-family: 'Space Mono', monospace;
-  font-size: 9px;
-  color: rgba(255,255,255,0.5);
-  margin-top: 3px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 .mq-divider{
   width: 1px;
