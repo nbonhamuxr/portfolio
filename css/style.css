@@ -433,9 +433,10 @@ header.nav::before{
   width: 100%;
   height: 160px;
   object-fit: contain;
-  background: #0d2044;
   display: block;
 }
+.education-tile--1 img{ background: #032A4B; }
+.education-tile--2 img{ background: #022741; }
 .education-tile-label{
   font-family: 'Space Mono', monospace;
   font-size: 11px;
