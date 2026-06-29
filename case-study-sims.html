@@ -3,21 +3,404 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EA / Maxis â€” Project Rene â€” Case Study â€” Nate Bonham</title>
+<title>EA / Maxis &#8212; Embedded Partner &#8212; Case Study &#8212; Nate Bonham</title>
 <link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Archivo+Expanded:wght@700;900&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --carbon:#0E0E10;
+    --carbon-2:#17171A;
+    --carbon-3:#1F2024;
+    --paper:#F3F2EE;
+    --electric:#3D7CFF;
+    --acid:#D7FF3D;
+    --hot:#FF4D5E;
+    --violet:#9B6BFF;
+  }
+
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--carbon);
+    color:var(--paper);
+    font-family:'Archivo', sans-serif;
+    line-height:1.55;
+  }
+  *:focus-visible{ outline:3px solid var(--acid); outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- NAV ---------- */
+  .back-link{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:#9A9A94;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .back-link:hover{ color:var(--acid); }
+
+  /* ---------- CASE HEADER ---------- */
+  .case-header{ padding:56px 0 0; }
+  .hero-tag{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    background:var(--acid);
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:24px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 var(--acid);
+  }
+  .case-title{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:46px;
+    line-height:1.08;
+    letter-spacing:-0.5px;
+    margin:0 0 22px;
+    max-width:880px;
+  }
+  .case-dek{
+    font-size:18px;
+    color:#C9C8C2;
+    max-width:640px;
+    margin:0 0 40px;
+  }
+
+  /* ---------- FACT STRIP ---------- */
+  .fact-strip{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    margin-bottom:60px;
+  }
+  .fact-cell{
+    background:var(--carbon-2);
+    padding:22px 20px;
+  }
+  .fact-cell .label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+  .fact-cell:nth-child(1){ border:2px solid #DC2B81; }
+  .fact-cell:nth-child(1) .label{ color:#DC2B81; }
+  .fact-cell:nth-child(2){ border:2px solid #21EAE9; }
+  .fact-cell:nth-child(2) .label{ color:#21EAE9; }
+  .fact-cell:nth-child(3){ border:2px solid #D8FD41; }
+  .fact-cell:nth-child(3) .label{ color:#D8FD41; }
+  .fact-cell .value{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    line-height:1.3;
+  }
+
+  /* ---------- SQUIGGLES ---------- */
+  .squiggle-divider{ width:100%; line-height:0; }
+  .squiggle-divider svg{ width:100%; height:20px; display:block; }
+
+  /* ---------- SHARED SECTION LABEL ---------- */
+  .section-label{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+  }
+  .section-label::before{ display:none; }
+
+  /* ---------- WHERE RESEARCH LIVED ---------- */
+  .where-lived{ padding:60px 0 60px; }
+  .where-lived .section-label{ background:#9B6BFF; box-shadow:3px 3px 0 #9B6BFF; }
+  .where-lived h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .where-lived p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  /* ---------- THE PROBLEM ---------- */
+  .the-problem{ padding:60px 0 60px; }
+  .the-problem .section-label{ background:#FF4D5E; box-shadow:3px 3px 0 #FF4D5E; }
+  .the-problem h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .the-problem p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  /* ---------- THE NETWORK ---------- */
+  .the-network{ padding:60px 0 60px; }
+  .the-network .section-label{ background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; }
+  .the-network h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .the-network > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  /* ---------- THE SYSTEM ---------- */
+  .the-system{ padding:60px 0 60px; }
+  .the-system .section-label{ background:#3D7CFF; box-shadow:3px 3px 0 #3D7CFF; }
+  .the-system h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .the-system > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  .tool-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+    margin:36px 0;
+  }
+  .tool-card{
+    background:var(--carbon-2);
+    padding:28px 24px;
+  }
+  .tool-card:nth-child(1){ box-shadow:inset 0 0 0 2px #9B6BFF; }
+  .tool-card:nth-child(1) .tool-num{ color:#9B6BFF; }
+  .tool-card:nth-child(2){ box-shadow:inset 0 0 0 2px #FF4D5E; }
+  .tool-card:nth-child(2) .tool-num{ color:#FF4D5E; }
+  .tool-card:nth-child(3){ box-shadow:inset 0 0 0 2px #21EAE9; }
+  .tool-card:nth-child(3) .tool-num{ color:#21EAE9; }
+  .tool-card:nth-child(4){ box-shadow:inset 0 0 0 2px #D7FF3D; }
+  .tool-card:nth-child(4) .tool-num{ color:#D7FF3D; }
+  .tool-num{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+  }
+  .tool-card h4{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:16px;
+    font-weight:700;
+    margin:0 0 12px;
+    line-height:1.3;
+  }
+  .tool-card p{
+    font-size:14px;
+    color:#B8B7B1;
+    margin:0;
+    line-height:1.55;
+  }
+
+  @media (max-width:760px){
+    .tool-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- THE TURN ---------- */
+  .the-turn{ padding:60px 0 60px; }
+  .the-turn .section-label{ background:#D7FF3D; box-shadow:3px 3px 0 #D7FF3D; }
+  .the-turn h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .the-turn > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 32px;
+  }
+
+  .timeline{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+  }
+  .milestone{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-bottom:1px solid rgba(255,255,255,0.07);
+    align-items:start;
+  }
+  .milestone:last-child{ border-bottom:none; }
+  .milestone-date{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#D7FF3D;
+    padding-top:4px;
+  }
+  .milestone-body h4{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:17px;
+    font-weight:700;
+    margin:0 0 8px;
+    line-height:1.3;
+  }
+  .milestone-body p{
+    font-size:15px;
+    color:#C9C8C2;
+    margin:0;
+    line-height:1.5;
+  }
+
+  @media (max-width:640px){
+    .milestone{ grid-template-columns:1fr; gap:8px; }
+  }
+
+  /* ---------- THE ENDURING IMPACT ---------- */
+  .enduring{ padding:60px 0 60px; }
+  .enduring .section-label{ background:#DC2B81; box-shadow:3px 3px 0 #DC2B81; }
+  .enduring h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .enduring > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  .outcome-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:36px;
+  }
+  .outcome-cell{
+    background:var(--carbon-2);
+    padding:26px 24px;
+    border:2px solid transparent;
+  }
+  .outcome-cell:nth-child(1){ border-color:#DC2B81; }
+  .outcome-cell:nth-child(1) .o-label{ color:#DC2B81; }
+  .outcome-cell:nth-child(2){ border-color:#21EAE9; }
+  .outcome-cell:nth-child(2) .o-label{ color:#21EAE9; }
+  .outcome-cell:nth-child(3){ border-color:#D8FD41; }
+  .outcome-cell:nth-child(3) .o-label{ color:#D8FD41; }
+  .outcome-cell .o-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+  }
+  .outcome-cell p{
+    font-size:16px;
+    color:var(--paper);
+    margin:0;
+    line-height:1.5;
+  }
+
+  @media (max-width:760px){
+    .outcome-grid{ grid-template-columns:1fr; }
+    .fact-strip{ grid-template-columns:1fr; }
+    .case-title{ font-size:32px; }
+  }
+
+  /* ---------- NEXT CASE STUDY ---------- */
+  .cs-next{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:32px 28px;
+    background:var(--carbon-2);
+    text-decoration:none;
+    margin:60px 0;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:background 0.2s;
+  }
+  .cs-next:hover{ background:var(--carbon-3); }
+  .cs-next-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#9A9A94;
+    margin-bottom:8px;
+  }
+  .cs-next-title{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:18px;
+    color:var(--paper);
+    line-height:1.3;
+  }
+  .cs-next-arrow{
+    font-size:28px;
+    color:var(--acid);
+    flex-shrink:0;
+    margin-left:24px;
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
 
-  <svg class="splat" style="top:-20px; right:-60px; width:240px; height:240px;" viewBox="0 0 200 200">
-    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#C6FF3D" opacity="0.10"/>
-  </svg>
-  <svg class="splat" style="top:850px; left:-70px; width:200px; height:200px;" viewBox="0 0 200 200">
-    <path d="M95 5 C130 0 165 25 178 60 C191 95 180 135 150 158 C120 181 80 182 50 162 C20 142 5 105 12 70 C19 35 60 10 95 5 Z" fill="#FF2E93" opacity="0.11"/>
-  </svg>
-
   <header class="nav">
-    <a href="index.html" class="logo">Nate<span>Bonham</span></a>
+    <a href="index.html" class="logo">Home</a>
     <button class="nav-toggle" aria-label="Open navigation"><span></span><span></span><span></span></button>
     <nav class="navlinks">
       <a href="philosophy.html">Leadership</a>
@@ -27,86 +410,199 @@
         <div class="nav-dropdown-menu">
           <a href="case-study-jstor.html">JSTOR Integration</a>
           <a href="case-study-roblox.html">Studio Reframe</a>
-          <a href="case-study-sims.html">The Sims Audience</a>
+          <a href="case-study-sims.html">Embedded Partner</a>
         </div>
       </div>
-
+      <a href="recommendations.html">Recs</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="page-hero">
-    <div class="hero-tag">ELECTRONIC ARTS / MAXIS â€” PROJECT RENE</div>
-    <h1>Aligning a Studio Around Who a <span class="accent">Mobile-First Sims Player</span> Actually Is</h1>
+  <a class="back-link" href="work.html" style="margin-top:24px; display:inline-flex;">&#8592; Back to case studies</a>
+
+  <section class="case-header">
+    <div class="hero-tag">ELECTRONIC ARTS / MAXIS</div>
+    <h1 class="case-title">How I redefined what research means at EA</h1>
+    <p class="case-dek">A seven-month process of deliberate relationship-building that moved UXR from a service org to an embedded strategic partner &#8212; and built the infrastructure to make research actionable at scale.</p>
+
+    <div class="fact-strip">
+      <div class="fact-cell">
+        <div class="label">My Role</div>
+        <div class="value">Sr. UX Researcher</div>
+      </div>
+      <div class="fact-cell">
+        <div class="label">Duration</div>
+        <div class="value">7 months</div>
+      </div>
+      <div class="fact-cell">
+        <div class="label">Reach</div>
+        <div class="value">Studio-wide: game design, product, and leadership</div>
+      </div>
+    </div>
   </section>
 
-  <div class="stat-strip">
-    <div class="stat-cell">
-      <div class="label">Controls Ease-of-Use</div>
-      <div class="value">+55% score improvement</div>
-    </div>
-    <div class="stat-cell">
-      <div class="label">Studio Impact</div>
-      <div class="value">Studio-wide shift toward mobile-first players</div>
-    </div>
-    <div class="stat-cell">
-      <div class="label">Research Model</div>
-      <div class="value">Cross-team workshops and playtest viewings</div>
-    </div>
-  </div>
-
-  <div class="squiggle-divider" style="margin-top:40px;">
+  <div class="squiggle-divider">
     <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
-      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#9B6BFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
     </svg>
   </div>
 
-    <div class="pull-quote">
-      <p>"Where Nate truly shines is in his partnership after the research is complete — pressure-testing action plans and serving as a sounding board as ideas evolve."</p>
-      <cite>— Kristi Ince, Director of Experience Design, Maxis</cite>
+  <section class="where-lived">
+    <div class="section-label">Where Research Lived</div>
+    <h2>UXR had one job: run the playtests</h2>
+    <p>When I joined the game team at Maxis, user research occupied a specific and limited lane. We ran playtests. The team would scope a study request, we'd recruit and moderate, and we'd share what we found. It was a clean service model: they had a question, we had a process.</p>
+    <p>But that model kept research at the back of the line. Decisions were made in conversations that didn't include us. Findings arrived as presentations &#8212; detailed, thorough, and disconnected from the moment when they could have actually changed something. UXR was downstream of everything that mattered.</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#FF4D5E" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="the-problem">
+    <div class="section-label">The Problem</div>
+    <h2>The distance between research and product was costing everyone</h2>
+    <p>A service model puts research after the important conversations. Designers and PMs were shaping direction based on assumptions, then requesting a study to check whether they were right. By the time findings landed, the decisions were mostly made.</p>
+    <p>The people closest to the product had no context for what research had found. Research had no context for what the team was actually trying to solve. Neither side could see the gap they were standing in &#8212; and it widened with every sprint that passed without UXR in the room.</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 8 C90 2 180 18 300 10 C420 2 520 16 640 8 C760 0 860 16 970 9 C1010 6 1050 14 1078 10" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="the-network">
+    <div class="section-label">The Network</div>
+    <h2>I started by learning what the team was actually trying to do</h2>
+    <p>I didn't pitch research capabilities. I started by listening. I spent time with game designers &#8212; in hallways, in 1:1s, in the margins of sprint retros &#8212; asking what they were building, what felt most uncertain, where they were making calls they weren't confident in. I mapped the organization: consumer insights, data and analytics, the PM group. I looked for where our disciplines connected and where I could offer something that wasn't already available.</p>
+    <p>My segment of the "Building For Our Players" series &#8212; a studio-wide presentation series I co-authored with the Creative Director, Experience Design Director, and Lead Game PM &#8212; was part of this. I introduced research methods to the people who could use them, in language that made sense to them. Not as a pitch, but as a way of showing what was possible.</p>
+    <p>I also asked to be a fly on the wall in product ceremonies &#8212; sprint retros, requirement reviews, design crits. I wasn't there to present. I was there to understand what the team was actually deciding, so I could be useful when it mattered.</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 14 C100 6 220 18 350 10 C480 2 580 18 700 10 C820 2 920 16 1020 9 C1045 7 1062 13 1078 10" stroke="#3D7CFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="the-system">
+    <div class="section-label">The System</div>
+    <h2>I built ways for the team to participate in research, not just receive it</h2>
+    <p>The shift I was trying to make wasn't just about running better studies. It was about changing the relationship between research and the people who needed to act on it. I built structures for co-authoring the research agenda before a study started, tools for observing sessions in real time, and formats for synthesizing findings together rather than receiving a report.</p>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-num">Tool 01</div>
+        <h4>Async Question Scoping</h4>
+        <p>Before a study launched, I opened a shared space where game designers, PMs, and experience designers could add their own questions. A 2x2 framework &#8212; Consequence vs. Desired Confidence &#8212; helped the whole team prioritize together. By the time research started, the agenda had been co-authored by the people who were going to use the findings.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-num">Tool 02</div>
+        <h4>Viewing Parties</h4>
+        <p>Instead of watching sessions alone and reporting back, I set up structured viewing sessions where team members could observe participants in real time and add notes to a shared board organized by feature area. Non-researchers had clear instructions: what to pay attention to, how to take notes, what to do with what they noticed.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-num">Tool 03</div>
+        <h4>Working Workshops</h4>
+        <p>At an onsite, I replaced findings presentations with working sessions. Rather than presenting to the room, we worked on problems together &#8212; dot voting, building on each other's ideas, and turning observations into decisions collaboratively. The team wasn't receiving research. They were doing it.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-num">Tool 04</div>
+        <h4>Director's Commentary Debrief</h4>
+        <p>Debriefs were player clips, not slide decks. I played recordings of participant sessions with running commentary &#8212; real moments of frustration, delight, and confusion &#8212; and had the team synthesize together: what was most surprising, what were the wins, what were the toughest moments. The team built a shared picture rather than inheriting mine.</p>
+      </div>
     </div>
-
-  <section class="prose-section" style="border-top:none;">
-    <div class="section-label">Background</div>
-
-    <p>Project Rene is a mobile-first, multiplayer concept within The Sims franchise â€” a significant departure from the franchise's PC-native roots. For Maxis, this meant designing for two fundamentally different audiences at once: longtime Sims fans with deeply ingrained expectations about how the game looks, feels, and works, and an entirely new population of mobile-first players who had never touched The Sims before. The franchise had decades of institutional knowledge built around the first group. Almost none of it applied to the second.</p>
   </section>
 
-  <section class="prose-section">
-    <div class="section-label section-label--magenta">The Problem</div>
-    <p>Without a clear, shared picture of who the mobile-first, new-to-franchise player actually was, development decisions risked defaulting to what the studio already knew. UI patterns designed for mouse-and-keyboard. Pacing assumptions shaped by players who had played every Sims title since the early 2000s. The business risk wasn't just a bad product for a new audience â€” it was a missed opportunity to grow a franchise into a new generation of players who were already playing on the platforms The Sims needed to reach.</p>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#D7FF3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="the-turn">
+    <div class="section-label">The Turn</div>
+    <h2>Seven months from a whiteboard conversation to a standing seat at the table</h2>
+    <p>The shift didn't happen all at once. It built through a series of specific moments that each moved the relationship forward.</p>
+
+    <ul class="timeline">
+      <li class="milestone">
+        <div class="milestone-date">July 2024</div>
+        <div class="milestone-body">
+          <h4>Patient Zero</h4>
+          <p>An onsite gave me the chance to sit with a game designer at a whiteboard and walk through everything research actually does. We mapped it together: what each method produces, what decisions it can inform, what it can't answer. One conversation that reframed what was possible.</p>
+        </div>
+      </li>
+      <li class="milestone">
+        <div class="milestone-date">October 2024</div>
+        <div class="milestone-body">
+          <h4>The Onsite</h4>
+          <p>I ran studio workshops where the team worked on research problems together rather than listening to findings. Dot voting, live synthesis, collaborative prioritization. The team left having made something, not just heard something.</p>
+        </div>
+      </li>
+      <li class="milestone">
+        <div class="milestone-date">November 2024</div>
+        <div class="milestone-body">
+          <h4>Research in the Room</h4>
+          <p>Producers and PMs started pulling workshop outputs directly into their own feature documents and presentations. Research findings became source material &#8212; not a separate report sitting in a Slack channel.</p>
+        </div>
+      </li>
+      <li class="milestone">
+        <div class="milestone-date">December 2024</div>
+        <div class="milestone-body">
+          <h4>The Viewing Party</h4>
+          <p>Live observation sessions changed the game manager's perception of UXR completely. Watching participants in real time, with commentary, landed differently than any readout ever had. Demand for more studies, more involvement, and more of this participatory format came almost immediately.</p>
+        </div>
+      </li>
+      <li class="milestone">
+        <div class="milestone-date">Early 2025</div>
+        <div class="milestone-body">
+          <h4>Invited In</h4>
+          <p>I was asked to join a product team investigating new gameplay directions as a standing member &#8212; not a vendor brought in when needed. I was reviewing and co-authoring feature requirement documents, attending product ceremonies, and proactively proposing research rather than waiting to be asked.</p>
+        </div>
+      </li>
+    </ul>
   </section>
 
-  <section class="prose-section">
-    <div class="section-label section-label--cyan">My Approach</div>
-    <p>I combined end-to-end quantitative and qualitative research â€” covering UI, gameplay, controls, visual style, fashion systems, and multiplayer frameworks â€” to build a research-driven narrative about who this new player actually was: their mental models, their expectations coming in from mobile gaming, and what they valued differently from a longtime fan. The harder part was making that narrative stick across a full studio, not just one team. I worked inside the existing agile rhythm â€” sprint planning, retrospectives, requirement sessions â€” to keep research integrated with development as the work evolved, rather than arriving as a periodic report from the outside.</p>
-  </section>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#DC2B81" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
 
-  <section class="prose-section">
-    <div class="section-label section-label--violet">My Findings</div>
-    <p>Mobile-first players approached the game with fundamentally different mental models. They expected controls to feel intuitive without a learning curve, because mobile games they already loved had taught them to expect that. They engaged with fashion and customization differently â€” as expression, not as a completionist system to unlock. And they experienced multiplayer not as a feature bolted onto a single-player game, but as the reason to play. These weren't small differences in preference. They were differences in how the game needed to be designed from the ground up to feel right to someone encountering the franchise for the first time.</p>
-  </section>
+  <section class="enduring">
+    <div class="section-label">The Enduring Impact</div>
+    <h2>Research moved from "they run our playtests" to "what do you need from us"</h2>
+    <p>By early 2025, the relationship had changed fundamentally. I wasn't being asked to run studies on request &#8212; I was being asked what I needed to run them, so the team could build their sprints around it. I was reviewing feature requirement documents. I was in product ceremonies. I was co-authoring the documentation that shaped what the team built next.</p>
 
-  <section class="prose-section">
-    <div class="section-label section-label--cyan">How I Delivered My Findings</div>
-    <p>I built a participatory research culture around the work so insight didn't depend on me being in the room. Cross-team scoping workshops brought research and design together before studies launched. Studio-wide playtest viewing sessions let anyone observe research in progress and form their own reactions to what they saw. I shared insights across multiple channels â€” 1:1s, Slack, show-and-tells, and studio-wide all-hands â€” so different audiences could engage at the depth that was useful to them. I also coached teams directly on reading their own behavioral data in BigQuery and Looker, so the teams could track the questions research raised without waiting for me to run another study.</p>
-  </section>
-
-  <section class="prose-section">
-    <div class="section-label section-label--magenta">What Was Resolved</div>
-    <p>The studio's development culture shifted to genuinely account for mobile-first, new-to-franchise players â€” not as an afterthought layered onto existing design, but as a population shaping decisions from the start. The controls work alone raised the ease-of-use score by 55%, driven directly by addressing the usability gaps and expectation mismatches specific to mobile-first players. More broadly, the research established a shared language across the studio for talking about two different audiences â€” and gave teams a way to make that distinction in real decisions, not just in principle.</p>
+    <div class="outcome-grid">
+      <div class="outcome-cell">
+        <div class="o-label">Trust</div>
+        <p>Research moved from a service request to an ongoing strategic conversation. The team started asking what I needed rather than telling me what to run.</p>
+      </div>
+      <div class="outcome-cell">
+        <div class="o-label">Integration</div>
+        <p>Workshop outputs were pulled directly into feature requirement documents. Producers and PMs were already part of making sense of what we'd learned &#8212; they didn't wait for a report.</p>
+      </div>
+      <div class="outcome-cell">
+        <div class="o-label">Partnership</div>
+        <p>I was invited to review, edit, and co-author feature requirement documents and join product ceremonies as a standing member of the team &#8212; not a guest.</p>
+      </div>
+    </div>
   </section>
 
   <a class="cs-next" href="case-study-jstor.html">
     <div>
       <div class="cs-next-label">Next Case Study</div>
-      <div class="cs-next-title">ITHAKA / JSTOR â€” Artstor Integration</div>
+      <div class="cs-next-title">ITHAKA / Artstor &#8594; JSTOR</div>
     </div>
-    <div class="cs-next-arrow">â†’</div>
+    <div class="cs-next-arrow">&#8594;</div>
   </a>
 
   <footer>
-    <span>nateux.com â€” Ann Arbor, MI</span>
+    <span>nateux.com &#8212; Ann Arbor, MI</span>
     <span>
       <a href="contact.html">Contact</a>
       <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
@@ -118,4 +614,3 @@
 <script src="js/theme-toggle.js"></script>
 </body>
 </html>
-
