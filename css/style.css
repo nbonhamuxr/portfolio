@@ -107,7 +107,7 @@ header.nav::before{
 .navlinks a.active{ color: var(--ink-cyan); }
 .navlinks a:focus-visible{ outline: 2px solid var(--ink-cyan); outline-offset: 4px; }
 
-.nav-dropdown{ position: relative; }
+.nav-dropdown{ position: relative; display: flex; align-items: center; }
 .nav-dropdown > a::after{ content: ' ▾'; font-size: 10px; opacity: 0.6; }
 .nav-dropdown-menu{
   display: none;
