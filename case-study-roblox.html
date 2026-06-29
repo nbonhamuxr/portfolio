@@ -3,21 +3,500 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EA / Maxis â€” Competitive Research â€” Case Study â€” Nate Bonham</title>
+<title>EA / Maxis — Studio Reframe — Case Study — Nate Bonham</title>
 <link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Archivo+Expanded:wght@700;900&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --carbon:#0E0E10;
+    --carbon-2:#17171A;
+    --carbon-3:#1F2024;
+    --paper:#F3F2EE;
+    --electric:#3D7CFF;
+    --acid:#D7FF3D;
+    --hot:#FF4D5E;
+    --violet:#9B6BFF;
+  }
+
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--carbon);
+    color:var(--paper);
+    font-family:'Archivo', sans-serif;
+    line-height:1.55;
+  }
+  *:focus-visible{ outline:3px solid var(--acid); outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- NAV ---------- */
+  .back-link{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:#9A9A94;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .back-link:hover{ color:var(--acid); }
+
+  /* ---------- CASE HEADER ---------- */
+  .case-header{ padding:56px 0 0; }
+  .hero-tag{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    background:var(--acid);
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:24px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 var(--acid);
+  }
+  .case-title{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:46px;
+    line-height:1.08;
+    letter-spacing:-0.5px;
+    margin:0 0 22px;
+    max-width:880px;
+  }
+  .case-title .accent{ color:var(--ink-cyan); text-shadow:3px 0 0 var(--ink-magenta); }
+  .case-dek{
+    font-size:18px;
+    color:#C9C8C2;
+    max-width:640px;
+    margin:0 0 40px;
+  }
+
+  /* ---------- FACT STRIP ---------- */
+  .fact-strip{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    margin-bottom:60px;
+  }
+  .fact-cell{
+    background:var(--carbon-2);
+    padding:22px 20px;
+  }
+  .fact-cell .label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+  .fact-cell:nth-child(1){ border:2px solid #DC2B81; }
+  .fact-cell:nth-child(1) .label{ color:#DC2B81; }
+  .fact-cell:nth-child(2){ border:2px solid #21EAE9; }
+  .fact-cell:nth-child(2) .label{ color:#21EAE9; }
+  .fact-cell:nth-child(3){ border:2px solid #D8FD41; }
+  .fact-cell:nth-child(3) .label{ color:#D8FD41; }
+  .fact-cell .value{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    line-height:1.3;
+  }
+
+  /* ---------- SQUIGGLES ---------- */
+  .squiggle-divider{ width:100%; line-height:0; }
+  .squiggle-divider svg{ width:100%; height:20px; display:block; }
+
+  /* ---------- SHARED SECTION LABEL PATTERN ---------- */
+  .section-label{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+  }
+  .section-label::before{ display:none; }
+
+  /* ---------- THE STUDIO ---------- */
+  .studio{ padding:60px 0 60px; }
+  .studio .section-label{ background:#9B6BFF; box-shadow:3px 3px 0 #9B6BFF; }
+  .studio h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .studio p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  /* ---------- THE PROBLEM ---------- */
+  .problem{ padding:60px 0 60px; }
+  .problem .section-label{ background:#FF4D5E; box-shadow:3px 3px 0 #FF4D5E; }
+  .problem h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .problem p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  /* ---------- BUILDING FOR OUR PLAYERS ---------- */
+  .bfop{ padding:60px 0 60px; }
+  .bfop .section-label{ background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; }
+  .bfop h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .bfop > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  .series-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:16px;
+    margin:36px 0;
+  }
+  .series-card{
+    background:var(--carbon-2);
+    padding:22px 20px;
+    position:relative;
+  }
+  .series-card:nth-child(1){ box-shadow:inset 0 0 0 2px #9B6BFF; }
+  .series-card:nth-child(1) .series-num{ color:#9B6BFF; }
+  .series-card:nth-child(2){ box-shadow:inset 0 0 0 2px #FF4D5E; }
+  .series-card:nth-child(2) .series-num{ color:#FF4D5E; }
+  .series-card:nth-child(3){ box-shadow:inset 0 0 0 2px #21E6E6; }
+  .series-card:nth-child(3) .series-num{ color:#21E6E6; }
+  .series-card:nth-child(4){ box-shadow:inset 0 0 0 2px #D7FF3D; }
+  .series-card:nth-child(4) .series-num{ color:#D7FF3D; }
+  .series-num{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+  }
+  .series-card h4{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 8px;
+    line-height:1.3;
+  }
+  .series-card p{
+    font-size:13px;
+    color:#B8B7B1;
+    margin:0;
+    line-height:1.5;
+  }
+  .series-card.mine{ background:var(--carbon-3); }
+  .series-mine-badge{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    background:#21E6E6;
+    color:var(--carbon);
+    padding:3px 8px;
+    margin-top:12px;
+  }
+
+  @media (max-width:760px){
+    .series-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+  }
+
+  /* ---------- THE ROBLOX STUDY ---------- */
+  .roblox-study{ padding:60px 0 60px; }
+  .roblox-study .section-label{ background:#3D7CFF; box-shadow:3px 3px 0 #3D7CFF; }
+  .roblox-study h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .roblox-study > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  .method-strip{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+    margin:32px 0;
+  }
+  .method-pill{
+    background:var(--carbon-2);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:14px 16px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    color:#C9C8C2;
+    line-height:1.4;
+  }
+
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    margin:36px 0;
+  }
+  .why-card{
+    background:var(--carbon-2);
+    padding:24px 22px;
+    border-top:3px solid #9B6BFF;
+  }
+  .why-card:nth-child(2){ border-top-color:#21E6E6; }
+  .why-card:nth-child(3){ border-top-color:#D7FF3D; }
+  .why-card h4{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:17px;
+    font-weight:700;
+    margin:0 0 16px;
+  }
+  .why-card ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .why-card li{
+    font-size:14px;
+    color:#C9C8C2;
+    padding:7px 0;
+    border-bottom:1px solid rgba(255,255,255,0.07);
+    line-height:1.4;
+  }
+  .why-card li:last-child{ border-bottom:none; }
+
+  .why-intro{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#9A9A94;
+    margin:36px 0 16px;
+  }
+
+  .reframe-quote{
+    background:var(--carbon-2);
+    border-left:4px solid #3D7CFF;
+    padding:28px 32px;
+    margin:36px 0 0;
+    max-width:880px;
+  }
+  .reframe-quote p{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:19px;
+    font-style:italic;
+    font-weight:700;
+    line-height:1.45;
+    color:var(--paper);
+    margin:0;
+  }
+
+  @media (max-width:760px){
+    .why-grid{ grid-template-columns:1fr; }
+    .method-strip{ grid-template-columns:1fr 1fr; }
+  }
+
+  /* ---------- WHAT SHIFTED ---------- */
+  .shifted{ padding:60px 0 60px; }
+  .shifted .section-label{ background:#D7FF3D; box-shadow:3px 3px 0 #D7FF3D; }
+  .shifted h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .shifted > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  .loop-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    margin:36px 0;
+  }
+  .loop-card{
+    background:var(--carbon-2);
+    padding:28px 24px;
+  }
+  .loop-card:nth-child(1){ box-shadow:inset 0 0 0 2px #DC2B81; }
+  .loop-card:nth-child(1) .loop-tag{ color:#DC2B81; }
+  .loop-card:nth-child(2){ box-shadow:inset 0 0 0 2px #21EAE9; }
+  .loop-card:nth-child(2) .loop-tag{ color:#21EAE9; }
+  .loop-card:nth-child(3){ box-shadow:inset 0 0 0 2px #D8FD41; }
+  .loop-card:nth-child(3) .loop-tag{ color:#D8FD41; }
+  .loop-tag{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:12px;
+  }
+  .loop-card h4{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:18px;
+    font-weight:700;
+    margin:0 0 12px;
+    line-height:1.25;
+  }
+  .loop-card p{
+    font-size:14px;
+    color:#B8B7B1;
+    margin:0;
+    line-height:1.5;
+  }
+
+  @media (max-width:760px){
+    .loop-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- THE ENDURING IMPACT ---------- */
+  .enduring{ padding:60px 0 60px; }
+  .enduring .section-label{ background:#DC2B81; box-shadow:3px 3px 0 #DC2B81; }
+  .enduring h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .enduring > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+
+  .outcome-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:36px;
+  }
+  .outcome-cell{
+    background:var(--carbon-2);
+    padding:26px 24px;
+    border:2px solid transparent;
+  }
+  .outcome-cell:nth-child(1){ border-color:#DC2B81; }
+  .outcome-cell:nth-child(1) .o-label{ color:#DC2B81; }
+  .outcome-cell:nth-child(2){ border-color:#21EAE9; }
+  .outcome-cell:nth-child(2) .o-label{ color:#21EAE9; }
+  .outcome-cell:nth-child(3){ border-color:#D8FD41; }
+  .outcome-cell:nth-child(3) .o-label{ color:#D8FD41; }
+  .outcome-cell .o-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+  }
+  .outcome-cell p{
+    font-size:16px;
+    color:var(--paper);
+    margin:0;
+    line-height:1.5;
+  }
+
+  @media (max-width:760px){
+    .outcome-grid{ grid-template-columns:1fr; }
+    .fact-strip{ grid-template-columns:1fr; }
+    .case-title{ font-size:32px; }
+  }
+
+  /* ---------- NEXT CASE STUDY ---------- */
+  .cs-next{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:32px 28px;
+    background:var(--carbon-2);
+    text-decoration:none;
+    margin:60px 0;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:background 0.2s;
+  }
+  .cs-next:hover{ background:var(--carbon-3); }
+  .cs-next-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#9A9A94;
+    margin-bottom:8px;
+  }
+  .cs-next-title{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:18px;
+    color:var(--paper);
+    line-height:1.3;
+  }
+  .cs-next-arrow{
+    font-size:28px;
+    color:var(--acid);
+    flex-shrink:0;
+    margin-left:24px;
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
 
-  <svg class="splat" style="top:-20px; right:-60px; width:240px; height:240px;" viewBox="0 0 200 200">
-    <path d="M100 10 C140 10 170 40 175 75 C180 110 165 140 135 160 C105 180 65 175 40 150 C15 125 10 85 30 55 C50 25 70 10 100 10 Z" fill="#21E6E6" opacity="0.11"/>
-  </svg>
-  <svg class="splat" style="top:900px; left:-70px; width:200px; height:200px;" viewBox="0 0 200 200">
-    <path d="M95 5 C130 0 165 25 178 60 C191 95 180 135 150 158 C120 181 80 182 50 162 C20 142 5 105 12 70 C19 35 60 10 95 5 Z" fill="#C6FF3D" opacity="0.10"/>
-  </svg>
-
   <header class="nav">
-    <a href="index.html" class="logo">Nate<span>Bonham</span></a>
+    <a href="index.html" class="logo">Home</a>
     <button class="nav-toggle" aria-label="Open navigation"><span></span><span></span><span></span></button>
     <nav class="navlinks">
       <a href="philosophy.html">Leadership</a>
@@ -26,87 +505,232 @@
         <a href="work.html" class="active">Case Studies</a>
         <div class="nav-dropdown-menu">
           <a href="case-study-jstor.html">JSTOR Integration</a>
-          <a href="case-study-roblox.html">Competitive Research</a>
+          <a href="case-study-roblox.html">Studio Reframe</a>
           <a href="case-study-sims.html">The Sims Audience</a>
         </div>
       </div>
-
+      <a href="recommendations.html">Recs</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="page-hero">
-    <div class="hero-tag">ELECTRONIC ARTS / MAXIS â€” COMPETITIVE RESEARCH</div>
-    <h1>How I Introduced a Lightweight, <span class="accent">Player-Centered</span> Competitive Research Approach at EA</h1>
+  <a class="back-link" href="work.html" style="margin-top:24px; display:inline-flex;">← Back to case studies</a>
+
+  <section class="case-header">
+    <div class="hero-tag">ELECTRONIC ARTS / MAXIS</div>
+    <h1 class="case-title">How I got a studio known only for <span class="accent">single-player</span> experiences to build for a mobile-first, multiplayer audience</h1>
+    <p class="case-dek">An eight-month initiative combining original research, competitive analysis, and a four-part studio-wide series that reframed who Maxis was building for — and what the game needed to become.</p>
+
+    <div class="fact-strip">
+      <div class="fact-cell">
+        <div class="label">My Role</div>
+        <div class="value">Sr. Researcher + Co-Author</div>
+      </div>
+      <div class="fact-cell">
+        <div class="label">Duration</div>
+        <div class="value">8 months</div>
+      </div>
+      <div class="fact-cell">
+        <div class="label">Reach</div>
+        <div class="value">Studio-wide: product, design, and leadership</div>
+      </div>
+    </div>
   </section>
 
-  <div class="stat-strip">
-    <div class="stat-cell">
-      <div class="label">Ride-Along Interviews</div>
-      <div class="value">9 players recruited</div>
-    </div>
-    <div class="stat-cell">
-      <div class="label">Per Session</div>
-      <div class="value">60 min with co-design exercise</div>
-    </div>
-    <div class="stat-cell">
-      <div class="label">Methodology</div>
-      <div class="value">Studio-wide adoption beyond this study</div>
-    </div>
-  </div>
-
-  <div class="squiggle-divider" style="margin-top:40px;">
+  <div class="squiggle-divider">
     <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
-      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#9B6BFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
     </svg>
   </div>
 
-    <div class="pull-quote">
-      <p>"Nate's research goes beyond superficial insights and gets at deeper motivations, problems, and opportunities."</p>
-      <cite>— Jaclyn "Jaki" Kimball, Principal Game Designer, Maxis</cite>
+  <section class="studio">
+    <div class="section-label">The Studio</div>
+    <h2>A studio built on single-player, asked to build for a multiplayer world</h2>
+    <p>Maxis had spent decades perfecting one thing: the single-player life simulation. The Sims franchise was built on private creative worlds — your Sims, your story, your pace. When the studio began work on a new multiplayer-first title targeting a younger audience, that instinct didn't disappear. Neither did the skepticism about what they were being asked to learn from.</p>
+    <p>Roblox was everywhere, undeniably enormous, and easy to write off. The art looked cheap. The mechanics felt basic. The studio's existing approach to competitive research — feature audits, catalogues of what competitor titles had — wasn't built to answer the questions that actually mattered. It answered "what does the competition have," not "why do players choose to spend their time there."</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#FF4D5E" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="problem">
+    <div class="section-label">The Problem</div>
+    <h2>Everyone knew Roblox mattered. No one knew why.</h2>
+    <p>There was no shared picture of the audience Maxis was building for. Leadership knew Roblox was culturally significant to younger players — but that knowledge lived at the level of awareness, not design conviction. Strategic conversations stayed at features and aesthetics rather than player motivation.</p>
+    <p>The more pressing issue: the game had no defined core loop. The direction was "life sim, but multiplayer" — a starting point, not a design foundation. Without a grounded understanding of what multiplayer actually meant to the players they were trying to reach, the studio was designing from assumption. The business question wasn't "how do we beat Roblox" — it was "what does this audience tell us about who we're building for and what they need?"</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 8 C90 2 180 18 300 10 C420 2 520 16 640 8 C760 0 860 16 970 9 C1010 6 1050 14 1078 10" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="bfop">
+    <div class="section-label">Building For Our Players</div>
+    <h2>Setting the stage before the research ran</h2>
+    <p>Before any Roblox-specific research existed, I co-authored a four-part studio-wide series called "Building For Our Players" alongside the Sr. Creative Director, Experience Design Director, and Lead Game PM. Presented to the full studio over several months, the series was designed to build shared understanding of who we were building for — and what it would take to reach them.</p>
+    <p>My segment, "What We've Learned," synthesized early research findings: storyboard testing, art style evaluations, motivational profiles, and an emerging picture of what this new audience actually expected. The series established shared vocabulary, defined methodological approaches, and gave cross-functional teams an early read on where the data was pointing.</p>
+
+    <div class="series-grid">
+      <div class="series-card">
+        <div class="series-num">Installment 01</div>
+        <h4>Creative Vision Focus</h4>
+        <p>The creative direction and visual identity of the game, and what it needed to signal to a new audience.</p>
+      </div>
+      <div class="series-card mine">
+        <div class="series-num">Installment 02</div>
+        <h4>What We've Learned</h4>
+        <p>Research synthesis: storyboard testing, art style reactions, motivational profiles, and early audience reads.</p>
+        <span class="series-mine-badge">Nate's segment</span>
+      </div>
+      <div class="series-card">
+        <div class="series-num">Installment 03</div>
+        <h4>What's To Come</h4>
+        <p>The design roadmap: how early findings were shaping decisions about direction and experience goals.</p>
+      </div>
+      <div class="series-card">
+        <div class="series-num">Installment 04</div>
+        <h4>What We're Doing With What We've Learned</h4>
+        <p>How product was translating research and design direction into concrete roadmap decisions.</p>
+      </div>
     </div>
 
-  <section class="prose-section" style="border-top:none;">
-    <div class="section-label">Background</div>
-
-    <p>At Maxis, competitive research typically meant broad feature audits â€” comprehensive catalogues of what competitor titles had. Teams produced thorough reports, but they rarely changed what got built, because they answered "what does the competition have" rather than "why do players choose to spend their time there." Roblox was on everyone's radar. Tycoon-style games on the platform had a massive, dedicated player base â€” many of them in the same demographic Maxis was trying to attract to The Sims 4. The studio needed to understand what was working, and why, in terms players would actually recognize.</p>
+    <p>The series moved the needle. But even four installments in, the studio's understanding of Roblox players specifically stayed surface-level. Knowing who to build for is different from knowing what they actually do, and why they keep coming back.</p>
   </section>
 
-  <section class="prose-section">
-    <div class="section-label section-label--magenta">The Problem</div>
-    <p>Leadership knew Roblox was culturally significant to younger players, but the team's understanding of it was surface-level. Strategic conversations stayed at the level of features and aesthetics rather than player motivation. Without a grounded picture of why players kept coming back, the studio risked designing for assumptions instead of behavior. The business question wasn't "how do we beat Roblox?" â€” it was "what can Roblox teach us about the players we're trying to reach?"</p>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 14 C100 6 220 18 350 10 C480 2 580 18 700 10 C820 2 920 16 1020 9 C1045 7 1062 13 1078 10" stroke="#3D7CFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="roblox-study">
+    <div class="section-label">The Roblox Study</div>
+    <h2>I ran this research on my own initiative</h2>
+    <p>The Roblox research wasn't commissioned. I saw a gap in the studio's understanding and decided to fill it. I designed ride-along interviews: nine 60-minute sessions with teenagers and young adults who already played tycoon-style games on Roblox. Participants shared their screens while playing games they knew well, narrating their experience in their own words. Each session closed with a co-design exercise asking players to imagine what a tycoon experience built specifically for them would feel like.</p>
+    <p>I combined these sessions with secondary research, consumer insights reports, motivational profiles, and telemetry — building a layered picture of why these players were on Roblox, not just what they were doing there.</p>
+
+    <div class="method-strip">
+      <div class="method-pill">Ride-along interviews<br>9 participants, 60 min</div>
+      <div class="method-pill">Secondary research &amp; consumer insights</div>
+      <div class="method-pill">Motivational profiles</div>
+      <div class="method-pill">Telemetry &amp; behavioral data</div>
+    </div>
+
+    <p>Getting the research in front of the team required more than a readout. When I moderated a live session with developers during an onsite — playing Roblox together as a group — the reaction was almost uniformly dismissive. The art looked amateurish. The mechanics felt basic. The team was stuck on first impressions and couldn't get past the aesthetics to find what was actually working. Getting them there — to see why this "cheap-looking" platform had an enormous, loyal, deeply engaged player base — was as much the work as the research itself.</p>
+
+    <p class="why-intro">Why players keep coming back to Roblox</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>Varied</h4>
+        <ul>
+          <li>There's always something new — games, updates, events</li>
+          <li>Something for whatever mood I'm in</li>
+          <li>I can play for a round or for hours</li>
+          <li>Cooperative, spectating, parallel play — multiple ways to be in the same space</li>
+        </ul>
+      </div>
+      <div class="why-card">
+        <h4>Social</h4>
+        <ul>
+          <li>There's something for everyone — any age, any skill</li>
+          <li>Any device, wherever they are</li>
+          <li>People can help each other</li>
+          <li>Two taps to play with a friend</li>
+        </ul>
+      </div>
+      <div class="why-card">
+        <h4>Approachable</h4>
+        <ul>
+          <li>It doesn't take itself seriously</li>
+          <li>I know how to play most games I try</li>
+          <li>I can be whoever I want</li>
+          <li>Easy to convince others to join</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The findings reframed the competitive question entirely. This wasn't about feature parity. Players didn't want a higher-fidelity Roblox. What they wanted was a game that understood what Roblox had taught them to expect from a shared experience.</p>
+
+    <div class="reframe-quote">
+      <p>"It isn't about making a higher fidelity version of Roblox — in fact their players don't really care about that much. Instead, it's about understanding the motivations, mental models, and behaviors of an audience that grew up playing Roblox so that we can build an exemplary experience that delights and retains that audience."</p>
+    </div>
   </section>
 
-  <section class="prose-section">
-    <div class="section-label section-label--cyan">My Approach</div>
-    <p>I started not with a study, but with the team. I organized a studio-wide "let's play together" session â€” cross-functional groups playing Roblox together, using affinity mapping to surface assumptions, identify confusion, and name motivation gaps. This built genuine shared curiosity before a single participant was recruited, and it created trust for the research that followed. Then, rather than using EA's standard playtest methodology â€” questionnaires, structured evaluations â€” I designed ride-along interviews: nine 60-minute sessions with teens and young adults who already played tycoon games on Roblox. Participants shared their screens while playing games they knew well, narrating their experience in their own words. Each session closed with a co-design exercise asking players to imagine the settings, interactions, and pacing they'd want from a tycoon experience built specifically for them.</p>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#D7FF3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="shifted">
+    <div class="section-label">What Shifted</div>
+    <h2>From life-sim instinct to a multiplayer-first core loop</h2>
+    <p>Before this work, the game had no defined core loop. "Life sim, but multiplayer" was a starting point — not a design foundation. The research gave the team something concrete to build from: a player-grounded framework for what a multiplayer experience actually needed to do for this audience.</p>
+    <p>What emerged was a three-part structure that replaced the old solo life-sim model entirely:</p>
+
+    <div class="loop-grid">
+      <div class="loop-card">
+        <div class="loop-tag">Pillar 01</div>
+        <h4>Play Together</h4>
+        <p>Minigames, exploration, and shared activities — things to do with friends right now, without setup or waiting.</p>
+      </div>
+      <div class="loop-card">
+        <div class="loop-tag">Pillar 02</div>
+        <h4>Build Together</h4>
+        <p>Co-building and decorating shared spaces — creative collaboration with something to show for it.</p>
+      </div>
+      <div class="loop-card">
+        <div class="loop-tag">Pillar 03</div>
+        <h4>Live Together</h4>
+        <p>A communal life-sim experience — shared narrative, shared space, shared identity over time.</p>
+      </div>
+    </div>
+
+    <p>This reframe — from private creative world to shared living experience — became the organizing principle for the game's design direction. It gave the studio a framework for evaluating feature decisions against player behavior rather than competitor feature lists.</p>
   </section>
 
-  <section class="prose-section">
-    <div class="section-label section-label--violet">My Findings</div>
-    <p>Players consistently disengaged from games built around mechanical repetition â€” walking between two fixed points, stepping on buttons to advance, waiting for timers to expire. One participant described the difference as loading a song versus playing the piano. What kept players engaged was a sense of authorship: customization they could point to as theirs, problems worth solving, a space that reflected their own decisions. These weren't vague preferences â€” they were specific behavioral patterns with direct design implications that the existing competitive research hadn't surfaced because it wasn't asking the right questions.</p>
-  </section>
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#DC2B81" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
 
-  <section class="prose-section">
-    <div class="section-label section-label--cyan">How I Delivered My Findings</div>
-    <p>Every session was open to the studio. Anyone could observe live, add observations to a shared Miro board, or follow along through Slack summaries I posted after each interview. Making the process visible from the start meant findings didn't arrive as a surprise â€” the team was already building intuitions alongside me. Deliverables were tailored by audience: executives received strategic summaries framing the competitive opportunity, design teams received deep dives with behavioral clips and screenshots, and individuals received targeted appendices for their specific product questions. Insights were shared across observation parties, all-hands presentations, standups, and 1:1s throughout the process.</p>
-  </section>
+  <section class="enduring">
+    <div class="section-label">The Enduring Impact</div>
+    <h2>The framing outlasted the study</h2>
+    <p>Eight months after the first Building For Our Players installment, the studio had a shared picture of its audience, a defined core loop built around multiplayer and mobile, and a methodology for competitive research that answered design questions instead of cataloguing features.</p>
 
-  <section class="prose-section">
-    <div class="section-label section-label--magenta">What Was Resolved</div>
-    <p>The studio's framing shifted from "we need to compete with Roblox" to "Roblox helps us understand our target audience." That reframe changed the nature of the strategic conversation â€” from defensive feature matching to genuine player understanding. The specific findings about authorship, customization, and creative ownership fed directly into feature requirements and sparked design innovations the team hadn't been considering before. EA leadership subsequently adopted this player-focused, decision-driving methodology company-wide, replacing the broad feature audit approach that had been the standard.</p>
+    <div class="outcome-grid">
+      <div class="outcome-cell">
+        <div class="o-label">Framing</div>
+        <p>The Roblox and tycoon frameworks are still actively referenced by the team's principal designer — the framing outlasted the study by years.</p>
+      </div>
+      <div class="outcome-cell">
+        <div class="o-label">Studio</div>
+        <p>The studio's relationship with Roblox shifted from dismissal to genuine curiosity — developers who once asked "why would anyone play this?" began using it as a reference point for player expectations.</p>
+      </div>
+      <div class="outcome-cell">
+        <div class="o-label">Methodology</div>
+        <p>EA leadership adopted this player-centered, decision-driving approach company-wide, replacing the feature audit methodology that had been the standard.</p>
+      </div>
+    </div>
   </section>
 
   <a class="cs-next" href="case-study-sims.html">
     <div>
       <div class="cs-next-label">Next Case Study</div>
-      <div class="cs-next-title">Electronic Arts / Maxis â€” Project Rene</div>
+      <div class="cs-next-title">Electronic Arts / Maxis — The Sims Audience</div>
     </div>
-    <div class="cs-next-arrow">â†’</div>
+    <div class="cs-next-arrow">→</div>
   </a>
 
   <footer>
-    <span>nateux.com â€” Ann Arbor, MI</span>
+    <span>nateux.com — Ann Arbor, MI</span>
     <span>
       <a href="contact.html">Contact</a>
       <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
@@ -118,4 +742,3 @@
 <script src="js/theme-toggle.js"></script>
 </body>
 </html>
-
