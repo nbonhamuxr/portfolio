@@ -166,37 +166,85 @@
     margin:0 0 16px;
   }
 
-  .slide-gallery{
+  .gallery{
+    margin-top:32px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:var(--carbon-2);
+  }
+  .gallery-stage{
     position:relative;
-    margin:40px 0 0;
+    overflow:hidden;
+    background:var(--carbon-3);
+    line-height:0;
   }
-  .slide-track{
+  .gallery-slides{
     display:flex;
-    gap:16px;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    padding-bottom:4px;
+    transition:transform 0.35s ease;
   }
-  .slide-track::-webkit-scrollbar{ display:none; }
-  .slide-track img{
+  .gallery-slide{
+    min-width:100%;
     flex-shrink:0;
-    width:720px;
-    max-width:90vw;
-    height:auto;
-    object-fit:cover;
-    scroll-snap-align:start;
-    display:block;
-    border:1px solid rgba(255,255,255,0.08);
   }
-  .slide-caption{
+  .gallery-slide img{
+    width:100%;
+    display:block;
+    max-height:540px;
+    object-fit:contain;
+    object-position:top center;
+  }
+  .gallery-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.55);
+    border:1px solid rgba(255,255,255,0.15);
+    color:var(--paper);
+    font-size:16px;
+    width:38px;
+    height:38px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:10;
+    transition:background 0.15s;
+    line-height:1;
+  }
+  .gallery-btn:hover{ background:rgba(0,0,0,0.85); border-color:rgba(255,255,255,0.35); }
+  .gallery-prev{ left:12px; }
+  .gallery-next{ right:12px; }
+  .gallery-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 16px;
+    gap:16px;
+  }
+  .gallery-caption{
     font-family:'Space Mono', monospace;
     font-size:11px;
-    color:#9A9A94;
-    margin-top:14px;
+    text-transform:uppercase;
     letter-spacing:0.5px;
+    color:#9A9A94;
+    line-height:1.5;
+    flex:1;
   }
+  .gallery-dots{
+    display:flex;
+    gap:6px;
+    flex-shrink:0;
+  }
+  .gallery-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.18);
+    border:none;
+    cursor:pointer;
+    padding:0;
+    transition:background 0.2s;
+  }
+  .gallery--red .gallery-dot.active{ background:#FF4D5E; }
 
   /* ---------- BUILDING RELATIONSHIPS ---------- */
   .building-relationships{ padding:60px 0 60px; }
@@ -483,18 +531,50 @@
     <p>I co-authored "Building For Our Players," a studio-wide series presented alongside the Creative Director, Experience Design Director, and Lead Game PM. My segment introduced the team to different research methodologies, the questions each one was designed to answer, and where each fit within the product process.</p>
     <p>Study planning shifted from a logistics exercise into a conversation about product decisions. Teams started showing up with the right questions.</p>
 
-    <div class="slide-gallery">
-      <div class="slide-track">
-        <img src="images/building_10.png" alt="Building For Our Players slide">
-        <img src="images/building_11.png" alt="Building For Our Players slide">
-        <img src="images/building_12.png" alt="Building For Our Players slide">
-        <img src="images/building_13.png" alt="Building For Our Players slide">
-        <img src="images/building_14.png" alt="Building For Our Players slide">
-        <img src="images/building_15.png" alt="Building For Our Players slide">
-        <img src="images/building_16.png" alt="Building For Our Players slide">
-        <img src="images/building_17.png" alt="Building For Our Players slide">
+    <div class="gallery gallery--red">
+      <div class="gallery-stage">
+        <div class="gallery-slides">
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_10.png" alt="Building For Our Players slide">
+          </div>
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_11.png" alt="Building For Our Players slide">
+          </div>
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_12.png" alt="Building For Our Players slide">
+          </div>
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_13.png" alt="Building For Our Players slide">
+          </div>
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_14.png" alt="Building For Our Players slide">
+          </div>
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_15.png" alt="Building For Our Players slide">
+          </div>
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_16.png" alt="Building For Our Players slide">
+          </div>
+          <div class="gallery-slide" data-caption="A selection of slides from &quot;Building For Our Players&quot;">
+            <img src="images/building_17.png" alt="Building For Our Players slide">
+          </div>
+        </div>
+        <button class="gallery-btn gallery-prev" aria-label="Previous">&#8592;</button>
+        <button class="gallery-btn gallery-next" aria-label="Next">&#8594;</button>
       </div>
-      <p class="slide-caption">A selection of slides from &#8220;Building For Our Players&#8221;</p>
+      <div class="gallery-footer">
+        <div class="gallery-caption"></div>
+        <div class="gallery-dots">
+          <button class="gallery-dot" aria-label="Slide 1"></button>
+          <button class="gallery-dot" aria-label="Slide 2"></button>
+          <button class="gallery-dot" aria-label="Slide 3"></button>
+          <button class="gallery-dot" aria-label="Slide 4"></button>
+          <button class="gallery-dot" aria-label="Slide 5"></button>
+          <button class="gallery-dot" aria-label="Slide 6"></button>
+          <button class="gallery-dot" aria-label="Slide 7"></button>
+          <button class="gallery-dot" aria-label="Slide 8"></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -632,5 +712,27 @@
 
 </div>
 <script src="js/theme-toggle.js"></script>
+<script>
+  document.querySelectorAll('.gallery').forEach(function(gallery) {
+    var slides = gallery.querySelectorAll('.gallery-slide');
+    var dots = gallery.querySelectorAll('.gallery-dot');
+    var caption = gallery.querySelector('.gallery-caption');
+    var track = gallery.querySelector('.gallery-slides');
+    var current = 0;
+
+    function goTo(n) {
+      current = (n + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+      caption.textContent = slides[current].dataset.caption;
+    }
+
+    gallery.querySelector('.gallery-prev').addEventListener('click', function() { goTo(current - 1); });
+    gallery.querySelector('.gallery-next').addEventListener('click', function() { goTo(current + 1); });
+    dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
+
+    goTo(0);
+  });
+</script>
 </body>
 </html>
