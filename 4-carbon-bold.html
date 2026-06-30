@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nate Bonham — User Research</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Archivo+Expanded:wght@700;900&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --carbon:#0E0E10;
+    --carbon-2:#17171A;
+    --paper:#F3F2EE;
+    --electric:#3D7CFF;
+    --acid:#D7FF3D;
+    --hot:#FF4D5E;
+    --violet:#9B6BFF;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--carbon);
+    color:var(--paper);
+    font-family:'Archivo', sans-serif;
+    line-height:1.55;
+  }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+
+  header.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 0;
+  }
+  .logo{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:18px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+  .logo span{ color:var(--acid); }
+  .navlinks{ display:flex; gap:26px; }
+  .navlinks a{
+    color:var(--paper);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .navlinks a:hover{ color:var(--acid); }
+
+  .hero{
+    padding:60px 0 80px;
+    position:relative;
+  }
+  .hero-tag{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    background:var(--acid);
+    color:var(--carbon);
+    padding:6px 12px;
+    margin-bottom:30px;
+  }
+  .hero h1{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:64px;
+    line-height:1.04;
+    margin:0 0 30px;
+    letter-spacing:-1px;
+    max-width:880px;
+  }
+  .hero h1 .accent{ color:var(--electric); }
+  .hero p.lead{
+    font-size:18px;
+    color:#C9C8C2;
+    max-width:600px;
+    margin:0 0 40px;
+  }
+
+  .stat-strip{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:rgba(255,255,255,0.12);
+    margin-top:20px;
+  }
+  .stat-cell{
+    background:var(--carbon-2);
+    padding:24px 22px;
+  }
+  .stat-cell .label{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--acid);
+    margin-bottom:8px;
+  }
+  .stat-cell .value{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:17px;
+  }
+
+  .who-block{
+    padding:70px 0;
+    border-top:1px solid rgba(255,255,255,0.1);
+  }
+  .section-label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--hot);
+    margin-bottom:24px;
+  }
+  .section-label::before{
+    content:'';
+    width:10px; height:10px;
+    background:var(--hot);
+  }
+  .who-block p{
+    font-size:21px;
+    line-height:1.6;
+    max-width:780px;
+    color:#E6E5E0;
+    margin:0;
+  }
+  .who-block strong{ color:var(--paper); font-weight:700; }
+
+  .thesis-block{
+    padding:50px 0 80px;
+  }
+  .thesis-block h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:40px;
+    line-height:1.2;
+    margin:0;
+    max-width:760px;
+  }
+  .thesis-block h2 em{ font-style:normal; color:var(--violet); }
+
+  .case-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    padding-bottom:80px;
+  }
+  .case-card{
+    background:var(--carbon-2);
+    padding:28px 24px;
+    border-top:5px solid var(--electric);
+    text-decoration:none;
+    color:var(--paper);
+    display:flex;
+    flex-direction:column;
+    min-height:280px;
+  }
+  .case-card:nth-child(2){ border-top-color:var(--hot); }
+  .case-card:nth-child(3){ border-top-color:var(--acid); }
+  .case-org{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#9A9A94;
+    margin-bottom:16px;
+  }
+  .case-title{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    line-height:1.35;
+    margin:0 0 14px;
+  }
+  .case-desc{
+    font-size:14px;
+    color:#B8B7B1;
+    flex-grow:1;
+    margin-bottom:18px;
+  }
+  .case-cta{
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    font-weight:700;
+    color:var(--paper);
+  }
+  .case-card:nth-child(1) .case-cta{ color:var(--electric); }
+  .case-card:nth-child(2) .case-cta{ color:var(--hot); }
+  .case-card:nth-child(3) .case-cta{ color:var(--acid); }
+
+  .resume-block{
+    background:var(--acid);
+    color:var(--carbon);
+    padding:60px 0;
+    margin-bottom:80px;
+  }
+  .resume-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:24px;
+  }
+  .resume-block h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:32px;
+    margin:0 0 8px;
+  }
+  .resume-block p{ margin:0; font-size:15px; max-width:440px; }
+  .btn-dark{
+    background:var(--carbon);
+    color:var(--acid);
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    text-decoration:none;
+    padding:16px 28px;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    white-space:nowrap;
+  }
+
+  footer{
+    padding:30px 0 50px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:#9A9A94;
+  }
+  footer a{ color:var(--paper); text-decoration:none; margin-left:16px; }
+  footer a:hover{ color:var(--acid); }
+
+  @media(max-width:760px){
+    .hero h1{ font-size:38px; }
+    .stat-strip{ grid-template-columns:1fr; }
+    .case-grid{ grid-template-columns:1fr; }
+    .who-block p{ font-size:17px; }
+    .thesis-block h2{ font-size:28px; }
+    .resume-inner{ flex-direction:column; align-items:flex-start; }
+    .navlinks{ display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="nav">
+    <div class="logo">Nate<span>UX</span></div>
+    <nav class="navlinks">
+      <a href="#">Leadership</a>
+      <a href="#">AI Practice</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Recs</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-tag">SENIOR USER RESEARCHER</div>
+    <h1>I help teams build <span class="accent">shared understanding</span> — then turn it into action.</h1>
+    <p class="lead">I combine user experience research, product management, and design thinking to help teams clarify problem spaces, uncover opportunities, and move forward with confidence.</p>
+    <div class="stat-strip">
+      <div class="stat-cell"><div class="label">Current Role</div><div class="value">Senior User Researcher, WWT</div></div>
+      <div class="stat-cell"><div class="label">Based In</div><div class="value">Ann Arbor, MI</div></div>
+      <div class="stat-cell"><div class="label">Education</div><div class="value">M.S. Information, U-M</div></div>
+    </div>
+  </section>
+
+  <section class="who-block">
+    <div class="section-label">Who I Am</div>
+    <p>I'm a researcher and mentor with over <strong>10 years</strong> leading user-centered decisions for products used by millions, including <strong>Halo Infinite</strong>, <strong>JSTOR</strong>, and <strong>The Sims</strong>. I'm curious by nature, comfortable in the unknown, and am most energized when I help teams move from ambiguity to clarity. I also mentor researchers through the University of Michigan.</p>
+  </section>
+
+  <section class="thesis-block">
+    <div class="section-label" style="color:var(--electric);">Check Out My Work</div>
+    <h2>Three studies, three teams finding <em>common ground.</em></h2>
+  </section>
+
+  <section class="case-grid">
+    <a class="case-card" href="#">
+      <div class="case-org">ITHAKA / JSTOR</div>
+      <h3 class="case-title">How I Led a Multiplatform Integration at ITHAKA by Focusing on User Outcomes</h3>
+      <p class="case-desc">A user-outcomes framework that gave two stalled teams a common scorecard — still in use org-wide.</p>
+      <div class="case-cta">Read the case study →</div>
+    </a>
+    <a class="case-card" href="#">
+      <div class="case-org">Electronic Arts / Maxis</div>
+      <h3 class="case-title">How I Introduced a Lightweight, Player-Centered Competitive Research Approach at EA</h3>
+      <p class="case-desc">A lighter, player-centered approach to competitive research that became the new EA standard.</p>
+      <div class="case-cta">Read the case study →</div>
+    </a>
+    <a class="case-card" href="#">
+      <div class="case-org">Electronic Arts / Maxis — Project Rene</div>
+      <h3 class="case-title">Aligning a Studio Around Who a Mobile-First Sims Player Actually Is</h3>
+      <p class="case-desc">The research narrative that aligned development culture around new and returning players alike.</p>
+      <div class="case-cta">Read the case study →</div>
+    </a>
+  </section>
+
+  <section class="resume-block">
+    <div class="wrap" style="padding:0 28px;">
+      <div class="resume-inner">
+        <div>
+          <h2>The long version.</h2>
+          <p>See my full work history spanning Halo Infinite, JSTOR, The Sims, and now WWT.</p>
+        </div>
+        <a class="btn-dark" href="#">Download Résumé (PDF) ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>nateux.com — Ann Arbor, MI</span>
+    <span><a href="#">Contact</a><a href="#">LinkedIn</a><a href="#">Substack</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
