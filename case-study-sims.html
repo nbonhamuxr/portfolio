@@ -130,10 +130,10 @@
   }
   .section-label::before{ display:none; }
 
-  /* ---------- WHERE RESEARCH LIVED ---------- */
-  .where-lived{ padding:60px 0 60px; }
-  .where-lived .section-label{ background:#9B6BFF; box-shadow:3px 3px 0 #9B6BFF; }
-  .where-lived h2{
+  /* ---------- THE OPPORTUNITY ---------- */
+  .opportunity{ padding:60px 0 60px; }
+  .opportunity .section-label{ background:#9B6BFF; box-shadow:3px 3px 0 #9B6BFF; }
+  .opportunity h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
     font-size:34px;
@@ -141,17 +141,17 @@
     max-width:880px;
     margin:0 0 28px;
   }
-  .where-lived p{
+  .opportunity p{
     font-size:17px;
     color:#C9C8C2;
     max-width:880px;
     margin:0 0 16px;
   }
 
-  /* ---------- THE PROBLEM ---------- */
-  .the-problem{ padding:60px 0 60px; }
-  .the-problem .section-label{ background:#FF4D5E; box-shadow:3px 3px 0 #FF4D5E; }
-  .the-problem h2{
+  /* ---------- RESEARCH LITERACY ---------- */
+  .research-literacy{ padding:60px 0 60px; }
+  .research-literacy .section-label{ background:#FF4D5E; box-shadow:3px 3px 0 #FF4D5E; }
+  .research-literacy h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
     font-size:34px;
@@ -159,17 +159,17 @@
     max-width:880px;
     margin:0 0 28px;
   }
-  .the-problem p{
+  .research-literacy p{
     font-size:17px;
     color:#C9C8C2;
     max-width:880px;
     margin:0 0 16px;
   }
 
-  /* ---------- THE NETWORK ---------- */
-  .the-network{ padding:60px 0 60px; }
-  .the-network .section-label{ background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; }
-  .the-network h2{
+  /* ---------- BUILDING RELATIONSHIPS ---------- */
+  .building-relationships{ padding:60px 0 60px; }
+  .building-relationships .section-label{ background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; }
+  .building-relationships h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
     font-size:34px;
@@ -177,17 +177,17 @@
     max-width:880px;
     margin:0 0 28px;
   }
-  .the-network > p{
+  .building-relationships > p{
     font-size:17px;
     color:#C9C8C2;
     max-width:880px;
     margin:0 0 16px;
   }
 
-  /* ---------- THE SYSTEM ---------- */
-  .the-system{ padding:60px 0 60px; }
-  .the-system .section-label{ background:#3D7CFF; box-shadow:3px 3px 0 #3D7CFF; }
-  .the-system h2{
+  /* ---------- MAKING IT COLLABORATIVE ---------- */
+  .making-collaborative{ padding:60px 0 60px; }
+  .making-collaborative .section-label{ background:#3D7CFF; box-shadow:3px 3px 0 #3D7CFF; }
+  .making-collaborative h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
     font-size:34px;
@@ -195,7 +195,7 @@
     max-width:880px;
     margin:0 0 28px;
   }
-  .the-system > p{
+  .making-collaborative > p{
     font-size:17px;
     color:#C9C8C2;
     max-width:880px;
@@ -213,20 +213,9 @@
     padding:28px 24px;
   }
   .tool-card:nth-child(1){ box-shadow:inset 0 0 0 2px #9B6BFF; }
-  .tool-card:nth-child(1) .tool-num{ color:#9B6BFF; }
   .tool-card:nth-child(2){ box-shadow:inset 0 0 0 2px #FF4D5E; }
-  .tool-card:nth-child(2) .tool-num{ color:#FF4D5E; }
   .tool-card:nth-child(3){ box-shadow:inset 0 0 0 2px #21EAE9; }
-  .tool-card:nth-child(3) .tool-num{ color:#21EAE9; }
   .tool-card:nth-child(4){ box-shadow:inset 0 0 0 2px #D7FF3D; }
-  .tool-card:nth-child(4) .tool-num{ color:#D7FF3D; }
-  .tool-num{
-    font-family:'Space Mono', monospace;
-    font-size:10.5px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:10px;
-  }
   .tool-card h4{
     font-family:'Archivo Expanded', sans-serif;
     font-size:16px;
@@ -245,10 +234,10 @@
     .tool-grid{ grid-template-columns:1fr; }
   }
 
-  /* ---------- THE TURN ---------- */
-  .the-turn{ padding:60px 0 60px; }
-  .the-turn .section-label{ background:#D7FF3D; box-shadow:3px 3px 0 #D7FF3D; }
-  .the-turn h2{
+  /* ---------- THE IMPACT ---------- */
+  .the-impact{ padding:60px 0 60px; }
+  .the-impact .section-label{ background:#DC2B81; box-shadow:3px 3px 0 #DC2B81; }
+  .the-impact h2{
     font-family:'Archivo Expanded', sans-serif;
     font-weight:900;
     font-size:34px;
@@ -256,11 +245,56 @@
     max-width:880px;
     margin:0 0 28px;
   }
-  .the-turn > p{
+  .the-impact > p{
     font-size:17px;
     color:#C9C8C2;
     max-width:880px;
-    margin:0 0 32px;
+    margin:0 0 16px;
+  }
+
+  .outcome-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:36px;
+  }
+  .outcome-cell{
+    background:var(--carbon-2);
+    padding:26px 24px;
+    border:2px solid transparent;
+  }
+  .outcome-cell:nth-child(1){ border-color:#DC2B81; }
+  .outcome-cell:nth-child(1) .o-label{ color:#DC2B81; }
+  .outcome-cell:nth-child(2){ border-color:#21EAE9; }
+  .outcome-cell:nth-child(2) .o-label{ color:#21EAE9; }
+  .outcome-cell:nth-child(3){ border-color:#D8FD41; }
+  .outcome-cell:nth-child(3) .o-label{ color:#D8FD41; }
+  .outcome-cell .o-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+  }
+  .outcome-cell p{
+    font-size:16px;
+    color:var(--paper);
+    margin:0;
+    line-height:1.5;
+  }
+
+  .timeline-appendix{
+    margin-top:72px;
+    padding-top:40px;
+    border-top:1px solid rgba(255,255,255,0.07);
+  }
+  .timeline-appendix-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:#9A9A94;
+    margin-bottom:8px;
   }
 
   .timeline{
@@ -303,55 +337,6 @@
 
   @media (max-width:640px){
     .milestone{ grid-template-columns:1fr; gap:8px; }
-  }
-
-  /* ---------- THE ENDURING IMPACT ---------- */
-  .enduring{ padding:60px 0 60px; }
-  .enduring .section-label{ background:#DC2B81; box-shadow:3px 3px 0 #DC2B81; }
-  .enduring h2{
-    font-family:'Archivo Expanded', sans-serif;
-    font-weight:900;
-    font-size:34px;
-    line-height:1.25;
-    max-width:880px;
-    margin:0 0 28px;
-  }
-  .enduring > p{
-    font-size:17px;
-    color:#C9C8C2;
-    max-width:880px;
-    margin:0 0 16px;
-  }
-
-  .outcome-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
-    margin-top:36px;
-  }
-  .outcome-cell{
-    background:var(--carbon-2);
-    padding:26px 24px;
-    border:2px solid transparent;
-  }
-  .outcome-cell:nth-child(1){ border-color:#DC2B81; }
-  .outcome-cell:nth-child(1) .o-label{ color:#DC2B81; }
-  .outcome-cell:nth-child(2){ border-color:#21EAE9; }
-  .outcome-cell:nth-child(2) .o-label{ color:#21EAE9; }
-  .outcome-cell:nth-child(3){ border-color:#D8FD41; }
-  .outcome-cell:nth-child(3) .o-label{ color:#D8FD41; }
-  .outcome-cell .o-label{
-    font-family:'Space Mono', monospace;
-    font-size:10.5px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:10px;
-  }
-  .outcome-cell p{
-    font-size:16px;
-    color:var(--paper);
-    margin:0;
-    line-height:1.5;
   }
 
   @media (max-width:760px){
@@ -422,7 +407,7 @@
   <section class="case-header">
     <div class="hero-tag">ELECTRONIC ARTS / MAXIS</div>
     <h1 class="case-title">How I redefined what research means at EA</h1>
-    <p class="case-dek">A seven-month process of deliberate relationship-building that moved UXR from a service org to an embedded strategic partner &#8212; and built the infrastructure to make research actionable at scale.</p>
+    <p class="case-dek">A seven-month initiative that moved UXR from a downstream service function to an embedded strategic partner, building the relationships, literacy, and working practices that made research actionable at scale.</p>
 
     <div class="fact-strip">
       <div class="fact-cell">
@@ -446,11 +431,12 @@
     </svg>
   </div>
 
-  <section class="where-lived">
-    <div class="section-label">Where Research Lived</div>
-    <h2>UXR had one job: run the playtests</h2>
-    <p>When I joined the game team at Maxis, user research occupied a specific and limited lane. We ran playtests. The team would scope a study request, we'd recruit and moderate, and we'd share what we found. It was a clean service model: they had a question, we had a process.</p>
-    <p>But that model kept research at the back of the line. Decisions were made in conversations that didn't include us. Findings arrived as presentations &#8212; detailed, thorough, and disconnected from the moment when they could have actually changed something. UXR was downstream of everything that mattered.</p>
+  <section class="opportunity">
+    <div class="section-label">The Opportunity</div>
+    <h2>Research played an important role. I wanted it to play a bigger one.</h2>
+    <p>Project Rene was a cross-functional studio of about 100 people across design, product management, engineering, consumer insights, analytics, and user research. Research was active and valued. I saw an opportunity to increase its influence by getting it upstream of decisions, earlier in the process, and more integrated into how the team operated day to day.</p>
+    <p>At the time, research lived downstream of product decisions. When direction changed, studies got cancelled or deprioritized. Leadership saw research as something to tap when convenient, not something that should be shaping the questions in the first place.</p>
+    <p>My goal was to change that by becoming an embedded strategic partner for the product organization.</p>
   </section>
 
   <div class="squiggle-divider">
@@ -459,11 +445,11 @@
     </svg>
   </div>
 
-  <section class="the-problem">
-    <div class="section-label">The Problem</div>
-    <h2>Research was used to evaluate decisions, not inform them</h2>
-    <p>When I joined the team, UXR had a clear but narrow role: run the playtest, share what we found, repeat. Research happened after the important conversations, not during them. Studies were scoped to validate directions that were already set.</p>
-    <p>I saw an opportunity to change that by building relationships with stakeholders, understanding their pain points, and showing what research could do when it was part of the process from the start.</p>
+  <section class="research-literacy">
+    <div class="section-label">Research Literacy</div>
+    <h2>I started by helping the studio understand what research could do</h2>
+    <p>I co-authored "Building For Our Players," a studio-wide series presented alongside the Creative Director, Experience Design Director, and Lead Game PM. My segment introduced the team to different research methodologies, the questions each one was designed to answer, and where each fit within the product process.</p>
+    <p>Study planning shifted from a logistics exercise into a conversation about product decisions. Teams started showing up with the right questions.</p>
   </section>
 
   <div class="squiggle-divider">
@@ -472,12 +458,12 @@
     </svg>
   </div>
 
-  <section class="the-network">
-    <div class="section-label">The Network</div>
-    <h2>I created the conditions for trust before I ever asked for anything</h2>
-    <p>It started with the "Building For Our Players" series &#8212; a studio-wide presentation series I co-authored with the Creative Director, Experience Design Director, and Lead Game PM. My segment walked the team through what UXR was learning: not just findings, but how we were learning them and what kinds of questions each method could answer.</p>
-    <p>Around the same time, I oversaw an onsite focus group and invited game designers and developers to attend as live observers. After one of the sessions ended, I sat down with a game designer who had questions. I listened to what he was working on, where he felt stuck, and what he was uncertain about. I walked him through how UXR could support different types of work &#8212; foundational research to understand the space, generative work to explore directions, evaluative work to pressure-test what the team had built. It was a conversation, not a pitch.</p>
-    <p>That conversation opened the door. I started asking to sit in on product ceremonies &#8212; sprint retros, requirement reviews, design crits &#8212; not to present, but to listen. To understand what the team was actually deciding so I could proactively surface research that was relevant before anyone had to ask.</p>
+  <section class="building-relationships">
+    <div class="section-label">Building Relationships</div>
+    <h2>I built relationships before I ran a single study for someone</h2>
+    <p>I met regularly with game designers, producers, PMs, consumer insights, and analytics partners to understand what they were building, what felt uncertain, and where decisions were coming up fast. During an onsite focus group, I sat with a game designer after sessions wrapped and walked him through how UXR could serve foundational, generative, exploratory, or evaluative needs depending on where the team was. That conversation became a model for how I approached the whole studio.</p>
+    <p>I also synthesized across disciplines, combining qualitative findings, quantitative data, and market understanding so recommendations reflected the full picture.</p>
+    <p>I started asking to sit in on product ceremonies to stay close to roadmap discussions, feature planning, and emerging questions. The goal was to understand what the team was actually deciding so I could surface relevant research before anyone had to ask.</p>
   </section>
 
   <div class="squiggle-divider">
@@ -486,83 +472,29 @@
     </svg>
   </div>
 
-  <section class="the-system">
-    <div class="section-label">The System</div>
-    <h2>I built ways for the team to participate in research, not just receive it</h2>
-    <p>The shift I was trying to make wasn't just about running better studies. It was about changing the relationship between research and the people who needed to act on it. I built structures for co-authoring the research agenda before a study started, tools for observing sessions in real time, and formats for synthesizing findings together rather than receiving a report.</p>
+  <section class="making-collaborative">
+    <div class="section-label">Making It Collaborative</div>
+    <h2>I changed how the team experienced research</h2>
+    <p>The shift I was trying to make required changing the relationship between research and the people who needed to act on it. I built structures for co-authoring the research agenda before a study started, tools for observing sessions in real time, and formats for synthesizing findings together.</p>
 
     <div class="tool-grid">
       <div class="tool-card">
-        <div class="tool-num">Tool 01</div>
         <h4>Async Question Scoping</h4>
-        <p>Before a study launched, I opened a shared space where game designers, PMs, and experience designers could add their own questions. A 2x2 framework &#8212; Consequence vs. Desired Confidence &#8212; helped the whole team prioritize together. By the time research started, the agenda had been co-authored by the people who were going to use the findings.</p>
+        <p>Before a study launched, I opened a shared space where game designers, PMs, and experience designers could contribute their own questions. I introduced a prioritization exercise using a Consequence vs. Desired Confidence framework so the team could align on what mattered most before research started. The research agenda was co-authored by the people who were going to use the findings.</p>
       </div>
       <div class="tool-card">
-        <div class="tool-num">Tool 02</div>
         <h4>Viewing Parties</h4>
-        <p>Instead of watching sessions alone and reporting back, I set up structured viewing sessions where team members could observe participants in real time and add notes to a shared board organized by feature area. Non-researchers had clear instructions: what to pay attention to, how to take notes, what to do with what they noticed.</p>
+        <p>I set up live observation sessions where team members could watch participants in real time and add notes to a shared board organized by feature area. Everyone had clear instructions on what to pay attention to, how to take notes, and what to do with what they noticed.</p>
       </div>
       <div class="tool-card">
-        <div class="tool-num">Tool 03</div>
         <h4>Working Workshops</h4>
-        <p>At an onsite, I replaced findings presentations with working sessions. Rather than presenting to the room, we worked on problems together &#8212; dot voting, building on each other's ideas, and turning observations into decisions collaboratively. The team wasn't receiving research. They were doing it.</p>
+        <p>At an onsite, I replaced findings presentations with working sessions. The team worked through research problems together using dot voting, live synthesis, and collaborative prioritization. They left having made something, not just heard something.</p>
       </div>
       <div class="tool-card">
-        <div class="tool-num">Tool 04</div>
         <h4>Director's Commentary Debrief</h4>
-        <p>Debriefs were player clips, not slide decks. I played recordings of participant sessions with running commentary &#8212; real moments of frustration, delight, and confusion &#8212; and had the team synthesize together: what was most surprising, what were the wins, what were the toughest moments. The team built a shared picture rather than inheriting mine.</p>
+        <p>Debriefs were player clips, not slide decks. I played recordings with running commentary covering moments of frustration, delight, and confusion, then had the team synthesize together: what was most surprising, what were the wins, what were the toughest moments. The team built a shared picture.</p>
       </div>
     </div>
-  </section>
-
-  <div class="squiggle-divider">
-    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
-      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#D7FF3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
-    </svg>
-  </div>
-
-  <section class="the-turn">
-    <div class="section-label">The Turn</div>
-    <h2>Seven months from a whiteboard conversation to a standing seat at the table</h2>
-    <p>The shift didn't happen all at once. It built through a series of specific moments that each moved the relationship forward.</p>
-
-    <ul class="timeline">
-      <li class="milestone">
-        <div class="milestone-date">July 2024</div>
-        <div class="milestone-body">
-          <h4>Patient Zero</h4>
-          <p>An onsite gave me the chance to sit with a game designer at a whiteboard and walk through everything research actually does. We mapped it together: what each method produces, what decisions it can inform, what it can't answer. One conversation that reframed what was possible.</p>
-        </div>
-      </li>
-      <li class="milestone">
-        <div class="milestone-date">October 2024</div>
-        <div class="milestone-body">
-          <h4>The Onsite</h4>
-          <p>I ran studio workshops where the team worked on research problems together rather than listening to findings. Dot voting, live synthesis, collaborative prioritization. The team left having made something, not just heard something.</p>
-        </div>
-      </li>
-      <li class="milestone">
-        <div class="milestone-date">November 2024</div>
-        <div class="milestone-body">
-          <h4>Research in the Room</h4>
-          <p>Producers and PMs started pulling workshop outputs directly into their own feature documents and presentations. Research findings became source material &#8212; not a separate report sitting in a Slack channel.</p>
-        </div>
-      </li>
-      <li class="milestone">
-        <div class="milestone-date">December 2024</div>
-        <div class="milestone-body">
-          <h4>The Viewing Party</h4>
-          <p>Live observation sessions changed the game manager's perception of UXR completely. Watching participants in real time, with commentary, landed differently than any readout ever had. Demand for more studies, more involvement, and more of this participatory format came almost immediately.</p>
-        </div>
-      </li>
-      <li class="milestone">
-        <div class="milestone-date">Early 2025</div>
-        <div class="milestone-body">
-          <h4>Invited In</h4>
-          <p>I was asked to join a product team investigating new gameplay directions as a standing member &#8212; not a vendor brought in when needed. I was reviewing and co-authoring feature requirement documents, attending product ceremonies, and proactively proposing research rather than waiting to be asked.</p>
-        </div>
-      </li>
-    </ul>
   </section>
 
   <div class="squiggle-divider">
@@ -571,10 +503,12 @@
     </svg>
   </div>
 
-  <section class="enduring">
-    <div class="section-label">The Enduring Impact</div>
-    <h2>Research moved from "they run our playtests" to "what do you need from us"</h2>
-    <p>By early 2025, the relationship had changed fundamentally. I wasn't being asked to run studies on request &#8212; I was being asked what I needed to run them, so the team could build their sprints around it. I was reviewing feature requirement documents. I was in product ceremonies. I was co-authoring the documentation that shaped what the team built next.</p>
+  <section class="the-impact">
+    <div class="section-label">The Impact</div>
+    <h2>This work changed how the studio identified the game it needed to build</h2>
+    <p>The most visible sign of the shift: a leader who had previously cancelled studies became one of research's most vocal advocates. After watching the whole studio engage with player sessions together during a viewing party, she saw firsthand what research could do when the team was part of it. That moment changed the relationship.</p>
+    <p>Teams brought UXR in earlier, scoped studies around the questions they actually needed answered, and built planning timelines around what research was learning. Workshop outputs went directly into feature requirement documents. Cross-functional partners showed up in research activities. Findings from UXR, consumer insights, and analytics were regularly combined to inform product direction.</p>
+    <p>The lasting change was cultural. I built the relationships, literacy, and working practices that made research a strategic function. That gave the organization the infrastructure to make player-centered decisions at scale, and to keep making them long after any individual study was done.</p>
 
     <div class="outcome-grid">
       <div class="outcome-cell">
@@ -583,12 +517,53 @@
       </div>
       <div class="outcome-cell">
         <div class="o-label">Integration</div>
-        <p>Workshop outputs were pulled directly into feature requirement documents. Producers and PMs were already part of making sense of what we'd learned &#8212; they didn't wait for a report.</p>
+        <p>Workshop outputs were pulled directly into feature requirement documents. Producers and PMs were already part of making sense of what we had learned. They didn't wait for a report.</p>
       </div>
       <div class="outcome-cell">
         <div class="o-label">Partnership</div>
-        <p>I was invited to review, edit, and co-author feature requirement documents and join product ceremonies as a standing member of the team &#8212; not a guest.</p>
+        <p>I was invited to review, edit, and co-author feature requirement documents and join product ceremonies as a standing member of the team.</p>
       </div>
+    </div>
+
+    <div class="timeline-appendix">
+      <div class="timeline-appendix-label">How it unfolded</div>
+      <ul class="timeline">
+        <li class="milestone">
+          <div class="milestone-date">July 2024</div>
+          <div class="milestone-body">
+            <h4>Patient Zero</h4>
+            <p>An onsite gave me the chance to sit with a game designer at a whiteboard and walk through everything research actually does. We mapped it together: what each method produces, what decisions it can inform, what it cannot answer. One conversation that reframed what was possible.</p>
+          </div>
+        </li>
+        <li class="milestone">
+          <div class="milestone-date">October 2024</div>
+          <div class="milestone-body">
+            <h4>The Onsite</h4>
+            <p>I ran studio workshops where the team worked on research problems together rather than listening to findings. Dot voting, live synthesis, collaborative prioritization. The team left having made something, not just heard something.</p>
+          </div>
+        </li>
+        <li class="milestone">
+          <div class="milestone-date">November 2024</div>
+          <div class="milestone-body">
+            <h4>Research in the Room</h4>
+            <p>Producers and PMs started pulling workshop outputs directly into their own feature documents and presentations. Research findings became source material rather than a separate report.</p>
+          </div>
+        </li>
+        <li class="milestone">
+          <div class="milestone-date">December 2024</div>
+          <div class="milestone-body">
+            <h4>The Viewing Party</h4>
+            <p>Live observation sessions changed the perception of UXR completely. Watching participants in real time, with commentary, landed differently than any readout ever had. Demand for more studies, more involvement, and more of this participatory format came almost immediately.</p>
+          </div>
+        </li>
+        <li class="milestone">
+          <div class="milestone-date">Early 2025</div>
+          <div class="milestone-body">
+            <h4>Invited In</h4>
+            <p>I was asked to join a product team investigating new gameplay directions as a standing member. I was reviewing and co-authoring feature requirement documents, attending product ceremonies, and proactively proposing research rather than waiting to be asked.</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
