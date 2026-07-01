@@ -173,17 +173,21 @@
   }
   .gallery-stage{
     position:relative;
-    overflow:hidden;
+    overflow-x:scroll;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
     background:var(--carbon-3);
     line-height:0;
   }
+  .gallery-stage::-webkit-scrollbar{ display:none; }
   .gallery-slides{
     display:flex;
-    transition:transform 0.35s ease;
   }
   .gallery-slide{
     min-width:100%;
     flex-shrink:0;
+    scroll-snap-align:start;
   }
   .gallery-slide img{
     width:100%;
@@ -191,6 +195,10 @@
     max-height:540px;
     object-fit:contain;
     object-position:top center;
+  }
+  @media (max-width:760px){
+    .gallery-slide img{ max-height:none; height:auto; }
+    .gallery-btn{ display:none; }
   }
   .gallery-btn{
     position:absolute;
@@ -786,15 +794,24 @@
     var slides = gallery.querySelectorAll('.gallery-slide');
     var dots = gallery.querySelectorAll('.gallery-dot');
     var caption = gallery.querySelector('.gallery-caption');
-    var track = gallery.querySelector('.gallery-slides');
+    var stage = gallery.querySelector('.gallery-stage');
     var current = 0;
 
     function goTo(n) {
       current = (n + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      stage.scrollTo({ left: current * stage.offsetWidth, behavior: 'smooth' });
       dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
       caption.textContent = slides[current].dataset.caption;
     }
+
+    stage.addEventListener('scroll', function() {
+      var index = Math.round(stage.scrollLeft / stage.offsetWidth);
+      if (index !== current) {
+        current = index;
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+        caption.textContent = slides[current].dataset.caption;
+      }
+    });
 
     gallery.querySelector('.gallery-prev').addEventListener('click', function() { goTo(current - 1); });
     gallery.querySelector('.gallery-next').addEventListener('click', function() { goTo(current + 1); });
