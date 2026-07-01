@@ -179,10 +179,11 @@
     scrollbar-width:none;
     background:var(--carbon-3);
     line-height:0;
+    display:flex;
   }
   .gallery-stage::-webkit-scrollbar{ display:none; }
   .gallery-slides{
-    display:flex;
+    display:contents;
   }
   .gallery-slide{
     min-width:100%;
@@ -197,7 +198,7 @@
     object-position:top center;
   }
   @media (max-width:760px){
-    .gallery-slide img{ max-height:none; height:auto; }
+    .gallery-slide img{ max-height:56vw; height:56vw; object-fit:contain; }
     .gallery-btn{ display:none; }
   }
   .gallery-btn{
