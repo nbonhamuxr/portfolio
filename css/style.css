@@ -957,6 +957,10 @@ footer a:hover{ color: var(--ink-magenta); }
   }
   header.nav{ flex-wrap: wrap; }
   header.nav.nav-open .navlinks{ display: flex; }
+  .nav-dropdown{
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .nav-dropdown-menu{
     display: none;
     position: static;
