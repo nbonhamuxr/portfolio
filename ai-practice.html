@@ -270,86 +270,6 @@
   }
   .project-desc strong{ color:var(--paper); }
   .project-desc:last-of-type{ margin-bottom:32px; }
-  .gallery{
-    margin-top:32px;
-    border:1px solid rgba(255,255,255,0.1);
-    background:var(--carbon-2);
-  }
-  .gallery-stage{
-    position:relative;
-    overflow:hidden;
-    background:var(--carbon-3);
-    line-height:0;
-  }
-  .gallery-slides{
-    display:flex;
-    transition:transform 0.35s ease;
-  }
-  .gallery-slide{
-    min-width:100%;
-    flex-shrink:0;
-  }
-  .gallery-slide img{
-    width:100%;
-    display:block;
-    max-height:540px;
-    object-fit:contain;
-    object-position:top center;
-  }
-  .gallery-btn{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:rgba(0,0,0,0.55);
-    border:1px solid rgba(255,255,255,0.15);
-    color:var(--paper);
-    font-size:16px;
-    width:38px;
-    height:38px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:10;
-    transition:background 0.15s;
-    line-height:1;
-  }
-  .gallery-btn:hover{ background:rgba(0,0,0,0.85); border-color:rgba(255,255,255,0.35); }
-  .gallery-prev{ left:12px; }
-  .gallery-next{ right:12px; }
-  .gallery-footer{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:12px 16px;
-    gap:16px;
-  }
-  .gallery-caption{
-    font-family:'Space Mono', monospace;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-    color:var(--paper-faint);
-    line-height:1.5;
-    flex:1;
-  }
-  .gallery-dots{
-    display:flex;
-    gap:6px;
-    flex-shrink:0;
-  }
-  .gallery-dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.18);
-    border:none;
-    cursor:pointer;
-    padding:0;
-    transition:background 0.2s;
-  }
-  .gallery--violet .gallery-dot.active{ background:var(--ink-violet); }
-  .gallery--cyan .gallery-dot.active{ background:var(--ink-cyan); }
 
   /* Reach-for grid — reuses principle-grid pattern */
   .reach-section{ padding:50px 0 0; position:relative; z-index:1; }
@@ -553,19 +473,21 @@
     <p class="project-desc">Forge connects to a GitHub repo, creates and manages pull requests, and streams its reasoning in real time as it works. It toggles between <strong>Ask</strong> and <strong>Code</strong> modes within the same stream — so you stay in control of when the tool is thinking versus when it's executing and spending tokens. It manages context across a conversation, troubleshoots its own errors, and stops at an approval gate before anything merges.</p>
 
     <div class="gallery gallery--violet">
-      <div class="gallery-stage">
-        <div class="gallery-slides">
-          <div class="gallery-slide" data-caption="The full interface — chat, tool-call trace, and Ask/Code toggle">
-            <img src="images/forge01.png" alt="Forge chat interface showing a live conversation, tool-call trace, and Ask/Code toggle at the bottom of the screen">
-          </div>
-          <div class="gallery-slide" data-caption="PR management — rollback and revert built in">
-            <img src="images/forge02.png" alt="Forge PR panel showing PR history with revert and rolled-back status badges and View on GitHub links">
-          </div>
-          <div class="gallery-slide" data-caption="Cost controls — token usage, tool call limits, auto-approve toggle">
-            <img src="images/forge03.png" alt="Forge settings panel with auto-approve toggle, explanation length, tool calls per plan slider, and live token usage counter">
-          </div>
-          <div class="gallery-slide" data-caption="Ask mode — reasoning through an image, not just describing it">
-            <img src="images/forge04.png" alt="Forge chat showing an image analysis interaction — the agent identifies a personality quiz result and narrates its reasoning">
+      <div class="gallery-wrap">
+        <div class="gallery-stage">
+          <div class="gallery-slides">
+            <div class="gallery-slide" data-caption="The full interface — chat, tool-call trace, and Ask/Code toggle">
+              <img src="images/forge01.png" alt="Forge chat interface showing a live conversation, tool-call trace, and Ask/Code toggle at the bottom of the screen">
+            </div>
+            <div class="gallery-slide" data-caption="PR management — rollback and revert built in">
+              <img src="images/forge02.png" alt="Forge PR panel showing PR history with revert and rolled-back status badges and View on GitHub links">
+            </div>
+            <div class="gallery-slide" data-caption="Cost controls — token usage, tool call limits, auto-approve toggle">
+              <img src="images/forge03.png" alt="Forge settings panel with auto-approve toggle, explanation length, tool calls per plan slider, and live token usage counter">
+            </div>
+            <div class="gallery-slide" data-caption="Ask mode — reasoning through an image, not just describing it">
+              <img src="images/forge04.png" alt="Forge chat showing an image analysis interaction — the agent identifies a personality quiz result and narrates its reasoning">
+            </div>
           </div>
         </div>
         <button class="gallery-btn gallery-prev" aria-label="Previous">&#8592;</button>
@@ -596,25 +518,27 @@
     <p class="project-desc">The skill references an MD file I built that acts as an activity database — it proposes specific activities based on the context a user provides, then generates a ready-to-use research brief. The design intent was anti-cognitive-offloading: rather than just producing a plan, it makes the person think more carefully about what they're actually trying to get out of the session. Currently in beta with sales and design teams at WWT.</p>
 
     <div class="gallery gallery--cyan">
-      <div class="gallery-stage">
-        <div class="gallery-slides">
-          <div class="gallery-slide" data-caption="Stage overview — six steps from context to completed brief">
-            <img src="images/workshopbuilder01.png" alt="Workshop Builder skill opening screen showing the six-stage flow: Context and Goals, Questions, Audience, Logistics, Activities, and Workshop Brief">
-          </div>
-          <div class="gallery-slide" data-caption="Stage 2 — questions framed around what the session needs to answer">
-            <img src="images/workshopbuilder03.png" alt="Workshop Builder working through goal clarification and question framing with the user">
-          </div>
-          <div class="gallery-slide" data-caption="Stage 4 — logistics clarified and confirmed before moving on">
-            <img src="images/workshopbuilder02.png" alt="Logistics stage of the Workshop Builder — Claude asking about platform, session dates, and duration, with a logistics summary generated at the end">
-          </div>
-          <div class="gallery-slide" data-caption="Stage 5 — activities proposed from the database, matched to context">
-            <img src="images/workshopbuilder04.png" alt="Workshop Builder proposed activity flow — a structured 60-minute agenda with timing, blocks, and activity names pulled from the database">
-          </div>
-          <div class="gallery-slide" data-caption="Generated welcome script — ready to use or edit before the session">
-            <img src="images/workshopbuilder05.png" alt="Generated facilitator welcome script — a full opening script tailored to the session context, ready to use or edit">
-          </div>
-          <div class="gallery-slide" data-caption="The full brief — everything needed to run the session, in one document">
-            <img src="images/workshopbuilder06.png" alt="Full workshop brief output — a multi-section document covering goals, questions, participant profile, agenda, and facilitator notes">
+      <div class="gallery-wrap">
+        <div class="gallery-stage">
+          <div class="gallery-slides">
+            <div class="gallery-slide" data-caption="Stage overview — six steps from context to completed brief">
+              <img src="images/workshopbuilder01.png" alt="Workshop Builder skill opening screen showing the six-stage flow: Context and Goals, Questions, Audience, Logistics, Activities, and Workshop Brief">
+            </div>
+            <div class="gallery-slide" data-caption="Stage 2 — questions framed around what the session needs to answer">
+              <img src="images/workshopbuilder03.png" alt="Workshop Builder working through goal clarification and question framing with the user">
+            </div>
+            <div class="gallery-slide" data-caption="Stage 4 — logistics clarified and confirmed before moving on">
+              <img src="images/workshopbuilder02.png" alt="Logistics stage of the Workshop Builder — Claude asking about platform, session dates, and duration, with a logistics summary generated at the end">
+            </div>
+            <div class="gallery-slide" data-caption="Stage 5 — activities proposed from the database, matched to context">
+              <img src="images/workshopbuilder04.png" alt="Workshop Builder proposed activity flow — a structured 60-minute agenda with timing, blocks, and activity names pulled from the database">
+            </div>
+            <div class="gallery-slide" data-caption="Generated welcome script — ready to use or edit before the session">
+              <img src="images/workshopbuilder05.png" alt="Generated facilitator welcome script — a full opening script tailored to the session context, ready to use or edit">
+            </div>
+            <div class="gallery-slide" data-caption="The full brief — everything needed to run the session, in one document">
+              <img src="images/workshopbuilder06.png" alt="Full workshop brief output — a multi-section document covering goals, questions, participant profile, agenda, and facilitator notes">
+            </div>
           </div>
         </div>
         <button class="gallery-btn gallery-prev" aria-label="Previous">&#8592;</button>
@@ -642,28 +566,6 @@
 </div>
 
 <script src="js/theme-toggle.js"></script>
-<script>
-  document.querySelectorAll('.gallery').forEach(function(gallery) {
-    var slides = gallery.querySelectorAll('.gallery-slide');
-    var dots = gallery.querySelectorAll('.gallery-dot');
-    var caption = gallery.querySelector('.gallery-caption');
-    var track = gallery.querySelector('.gallery-slides');
-    var current = 0;
-
-    function goTo(n) {
-      current = (n + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (current * 100) + '%)';
-      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
-      caption.textContent = slides[current].dataset.caption;
-    }
-
-    gallery.querySelector('.gallery-prev').addEventListener('click', function() { goTo(current - 1); });
-    gallery.querySelector('.gallery-next').addEventListener('click', function() { goTo(current + 1); });
-    dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
-
-    goTo(0);
-  });
-</script>
 
 </body>
 </html>
