@@ -818,11 +818,12 @@ footer a:hover{ color: var(--ink-magenta); }
   height: auto;
   min-height: 200px;
   margin: 0;
+  background: var(--carbon-3);
 }
 .case-card--horiz .card-img img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .case-card--horiz .card-content{
   padding: 28px;
@@ -1043,7 +1044,7 @@ footer a:hover{ color: var(--ink-magenta); }
   .case-card--img .card-img{ height: 140px; }
   .principle-grid{ grid-template-columns: 1fr; }
   .case-card--horiz{ flex-direction: column; }
-  .case-card--horiz .card-img{ width: 100%; min-height: 160px; }
+  .case-card--horiz .card-img{ width: 100%; min-height: 0; aspect-ratio: 16 / 9; }
   /* gallery mobile */
   .gallery-slide img{ max-height:56vw; height:56vw; object-fit:contain; }
   /* body text mobile */
