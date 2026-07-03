@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EA / Maxis &#8212; Studio Reframe &#8212; Case Study &#8212; Nate Bonham</title>
+<meta property="og:title" content="How I helped a legacy game studio design for a new generation of players">
+<meta property="og:description" content="A research initiative that aligned a PC-first studio around a younger, mobile-first, multiplayer audience and changed how ideas were generated across development.">
+<meta property="og:image" content="https://www.nateux.com/images/the-sims-project-rene-new-playtest.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.nateux.com/case-study-studio-reframe.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" id="theme-stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Archivo+Expanded:wght@700;900&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --carbon:#0E0E10;
+    --carbon-2:#17171A;
+    --carbon-3:#1F2024;
+    --paper:#F3F2EE;
+    --electric:#3D7CFF;
+    --acid:#D7FF3D;
+    --hot:#FF4D5E;
+    --violet:#9B6BFF;
+  }
+
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--carbon);
+    color:var(--paper);
+    font-family:'Archivo', sans-serif;
+    line-height:1.55;
+  }
+  *:focus-visible{ outline:3px solid var(--acid); outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- NAV ---------- */
+  .back-link{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:#9A9A94;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .back-link:hover{ color:var(--acid); }
+
+  /* ---------- CASE HEADER ---------- */
+  .case-header{ padding:56px 0 0; }
+  .hero-tag{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    background:var(--acid);
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:24px;
+    transform:rotate(-2deg);
+    box-shadow:3px 3px 0 var(--acid);
+  }
+  .case-title{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-style:italic;
+    font-size:46px;
+    line-height:1.08;
+    letter-spacing:-0.5px;
+    margin:0 0 22px;
+    max-width:880px;
+  }
+  .case-dek{
+    font-size:18px;
+    color:#C9C8C2;
+    max-width:640px;
+    margin:0 0 40px;
+  }
+
+  /* ---------- SQUIGGLES ---------- */
+  .squiggle-divider{ width:100%; line-height:0; }
+  .squiggle-divider svg{ width:100%; height:20px; display:block; }
+
+  /* ---------- SHARED SECTION LABEL ---------- */
+  .section-label{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--carbon);
+    padding:7px 14px;
+    margin-bottom:30px;
+    transform:rotate(-2deg);
+  }
+  .section-label::before{ display:none; }
+
+  /* ---------- SHARED SECTION TYPOGRAPHY ---------- */
+  .cs-section{ padding:60px 0 60px; }
+  .cs-section h2{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:900;
+    font-size:34px;
+    line-height:1.25;
+    max-width:880px;
+    margin:0 0 28px;
+  }
+  .cs-section > p{
+    font-size:17px;
+    color:#C9C8C2;
+    max-width:880px;
+    margin:0 0 16px;
+  }
+  .cs-section .lead-line{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--paper);
+    max-width:880px;
+    margin:0 0 24px;
+  }
+
+  /* ---------- PER-SECTION LABEL COLORS ---------- */
+  .opportunity .section-label{ background:#9B6BFF; box-shadow:3px 3px 0 #9B6BFF; }
+  .shared-understanding .section-label{ background:#FF4D5E; box-shadow:3px 3px 0 #FF4D5E; }
+  .translating .section-label{ background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; }
+  .audience-world .section-label{ background:#3D7CFF; box-shadow:3px 3px 0 #3D7CFF; }
+  .scaling .section-label{ background:#D7FF3D; box-shadow:3px 3px 0 #D7FF3D; }
+  .the-impact .section-label{ background:#DC2B81; box-shadow:3px 3px 0 #DC2B81; }
+
+  /* ---------- AUDIENCE GRID (Translating section) ---------- */
+  .audience-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    margin:36px 0;
+  }
+  .audience-cell{
+    background:var(--carbon-2);
+    padding:26px 24px;
+    border-top:3px solid #9B6BFF;
+  }
+  .audience-cell:nth-child(2){ border-top-color:#21E6E6; }
+  .audience-cell:nth-child(3){ border-top-color:#D7FF3D; }
+  .audience-cell .a-role{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:17px;
+    font-weight:700;
+    margin:0 0 12px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .audience-cell:nth-child(1) .a-role i{ color:#9B6BFF; }
+  .audience-cell:nth-child(2) .a-role i{ color:#21E6E6; }
+  .audience-cell:nth-child(3) .a-role i{ color:#D7FF3D; }
+  .audience-cell p{
+    font-size:14px;
+    color:#C9C8C2;
+    margin:0;
+    line-height:1.55;
+  }
+
+  @media (max-width:760px){
+    .audience-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- PULL QUOTE ---------- */
+  .pull-quote{
+    background:var(--carbon-2);
+    border-left:4px solid #3D7CFF;
+    padding:28px 32px;
+    margin:36px 0;
+    max-width:880px;
+  }
+  .pull-quote p{
+    font-family:'Archivo Expanded', sans-serif;
+    font-size:19px;
+    font-style:italic;
+    font-weight:700;
+    line-height:1.45;
+    color:var(--paper);
+    margin:0;
+  }
+
+  /* ---------- JEANS CLOSE ---------- */
+  .jeans-close{
+    margin:40px 0 0;
+    max-width:880px;
+  }
+  .jeans-close p{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    line-height:1.35;
+    color:var(--paper);
+    margin:0 0 12px;
+  }
+  .jeans-close p:last-child{
+    font-family:'Archivo', sans-serif;
+    font-weight:400;
+    font-size:17px;
+    color:#C9C8C2;
+    margin:0;
+  }
+
+  @media (max-width:760px){
+    .case-title{ font-size:32px; }
+  }
+
+  /* ---------- NEXT CASE STUDY ---------- */
+  .cs-next{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:32px 28px;
+    background:var(--carbon-2);
+    text-decoration:none;
+    margin:60px 0;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:background 0.2s;
+  }
+  .cs-next:hover{ background:var(--carbon-3); }
+  .cs-next-label{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#9A9A94;
+    margin-bottom:8px;
+  }
+  .cs-next-title{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:700;
+    font-size:18px;
+    color:var(--paper);
+    line-height:1.3;
+  }
+  .cs-next-arrow{
+    font-size:28px;
+    color:var(--acid);
+    flex-shrink:0;
+    margin-left:24px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="nav">
+    <a href="index.html" class="logo">Nate<span>Bonham</span></a>
+    <button class="nav-toggle" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav class="navlinks">
+      <a href="philosophy.html">Leadership</a>
+      <a href="ai-practice.html">AI</a>
+      <div class="nav-dropdown">
+        <a href="work.html" class="active">Case Studies</a>
+        <div class="nav-dropdown-menu">
+          <a href="work.html">All Case Studies</a>
+          <a href="case-study-jstor.html">Artstor Integration</a>
+          <a href="case-study-studio-reframe.html">Studio Reframe</a>
+          <a href="case-study-sims.html">Embedded Partner</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <a class="back-link" href="work.html" style="margin-top:24px; display:inline-flex;">&#8592; Back to case studies</a>
+
+  <section class="case-header">
+    <div class="hero-tag">ELECTRONIC ARTS / MAXIS</div>
+    <h1 class="case-title">How I helped a legacy game studio design for a new generation of players</h1>
+    <p class="case-dek">A research initiative that aligned a PC-first studio around a younger, mobile-first, multiplayer audience and changed how ideas were generated across development.</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#9B6BFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="cs-section opportunity">
+    <div class="section-label">The Opportunity</div>
+    <h2>I identified the knowledge gaps preventing the studio from building for its future audience</h2>
+    <p>Project Rene wasn't being built for the traditional Sims audience. It targeted a younger generation that grew up with mobile devices, multiplayer games, and platforms like Roblox.</p>
+    <p>The studio's design experience reflected decades of building The Sims for longtime PC players, and product decisions carried that experience forward.</p>
+    <p>Ideas generated early in development did not consistently align with the motivations and expectations of this audience. Those gaps surfaced later through research and playtesting, creating rework and slowing the team's progress.</p>
+    <p>You could see it in the game itself, right down to the denim. The characters wore skinny jeans, because that is what the people building them wore. The audience the studio was chasing had long since moved on to baggy.</p>
+    <p>The studio needed a shared, applied understanding of this audience to guide decisions during ideation and development. I set out to build that understanding and embed it into how the studio made product decisions.</p>
+
+    <!-- IMAGE GALLERY SLOT: The Opportunity (optional) - e.g. audience/demographic slides -->
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#FF4D5E" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="cs-section shared-understanding">
+    <div class="section-label">Building a Shared Understanding</div>
+    <h2>I maintained a continuous synthesis of audience evidence across many inputs</h2>
+    <p>No single study could answer these questions.</p>
+    <p>I combined consumer research, motivational profiling, exploratory interviews, fashion and expression research, Roblox ride-alongs, comparative usability studies, genre deep dives, workshops, and observational research.</p>
+    <p>Each input answered a different question and updated one continuously maintained understanding of the audience: how this generation played, communicated, formed friendships, expressed identity, and decided which games deserved their attention.</p>
+    <p>Leadership used this work to define motivational profiles that became a shared language across product, design, and research.</p>
+
+    <!-- IMAGE GALLERY SLOT: Building a Shared Understanding - e.g. motivational profiles, fashion/art studies, audience decks -->
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 8 C90 2 180 18 300 10 C420 2 520 16 640 8 C760 0 860 16 970 9 C1010 6 1050 14 1078 10" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="cs-section translating">
+    <div class="section-label">Translating Insight Into Decisions</div>
+    <h2>I communicated the research at every level of the organization</h2>
+    <p class="lead-line">Different teams needed different answers.</p>
+
+    <div class="audience-grid">
+      <div class="audience-cell">
+        <div class="a-role"><i class="ti ti-compass" aria-hidden="true"></i>Leadership</div>
+        <p>Used audience patterns to steer product direction and investment decisions.</p>
+      </div>
+      <div class="audience-cell">
+        <div class="a-role"><i class="ti ti-tools" aria-hidden="true"></i>Developers</div>
+        <p>Used observed player behavior to generate and pressure-test ideas.</p>
+      </div>
+      <div class="audience-cell">
+        <div class="a-role"><i class="ti ti-palette" aria-hidden="true"></i>Designers</div>
+        <p>Used applied principles to shape systems, mechanics, and features.</p>
+      </div>
+    </div>
+
+    <p>I translated the same body of research across those different levels, helping leadership steer the product while giving individual teams confidence in the decisions they were making every day.</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 14 C100 6 220 18 350 10 C480 2 580 18 700 10 C820 2 920 16 1020 9 C1045 7 1062 13 1078 10" stroke="#3D7CFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="cs-section audience-world">
+    <div class="section-label">Bringing the Studio Into the Audience's World</div>
+    <h2>I helped developers learn from the games this audience already loved</h2>
+    <p class="lead-line">One question kept surfacing. If these players spend thousands of hours in Roblox, what can we learn from it?</p>
+    <p>I facilitated collaborative Roblox sessions where developers experienced the platform together, documented observations, surfaced questions, and discussed what made those experiences compelling.</p>
+    <p>Those conversations led to a new research approach.</p>
+    <p>I developed ride-along studies where Roblox players shared their screens while playing the experiences they already loved. Combined with comparative studies across games like Fortnite, Minecraft, and Roblox, the work informed multiplayer systems, controls, progression, cosmetics, social features, and the broader product strategy.</p>
+    <p>Roblox stopped being viewed as a competitor. It became one of the studio's richest sources of inspiration for understanding the audience.</p>
+
+    <div class="pull-quote">
+      <p>"It isn't about making a higher fidelity version of Roblox. In fact their players don't really care about that much. It's about understanding the motivations, mental models, and behaviors of an audience that grew up playing Roblox so that we can build an exemplary experience that delights and retains that audience."</p>
+    </div>
+
+    <!-- IMAGE GALLERY SLOT: Bringing the Studio Into the Audience's World - e.g. ride-along slides, Roblox session photos, comparative study visuals -->
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#D7FF3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="cs-section scaling">
+    <div class="section-label">Scaling the Approach</div>
+    <h2>Leadership expanded the model across the studio</h2>
+    <p>As the work gained momentum, leadership reorganized development pods around genres relevant to the new audience and invested in exploratory research across those spaces.</p>
+    <p>Teams increasingly looked to player behavior before generating ideas, allowing development to begin from evidence instead of assumption.</p>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 12 C110 18 200 4 310 14 C420 24 510 2 620 12 C730 22 820 4 930 13 C990 19 1040 6 1078 14" stroke="#DC2B81" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="cs-section the-impact">
+    <div class="section-label">Impact</div>
+    <h2>The studio changed how it designed for a new generation of players</h2>
+    <p>At the beginning of this work, product decisions were largely informed by assumptions carried forward from previous Sims titles.</p>
+    <p>By the end, teams shared a common understanding of the audience they were building for and used that understanding to guide decisions across multiplayer, controls, progression, cosmetics, art direction, and social play.</p>
+    <p>Developers began inviting me into standups to explore Roblox together. Leadership expanded investment in exploratory research. Teams became increasingly curious about understanding players before deciding what to build.</p>
+
+    <div class="jeans-close">
+      <p>Somewhere along the way, the skinny jeans became baggy.</p>
+      <p>It wasn't really about denim. It was evidence that the studio had started designing for the players it wanted to win.</p>
+    </div>
+  </section>
+
+  <a class="cs-next" href="case-study-sims.html">
+    <div>
+      <div class="cs-next-label">Next Case Study</div>
+      <div class="cs-next-title">Electronic Arts / Maxis &#8212; Embedded Partner</div>
+    </div>
+    <div class="cs-next-arrow">&#8594;</div>
+  </a>
+
+  <footer>
+    <span>nateux.com &#8212; Ann Arbor, MI</span>
+    <span>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/nathanielbonham">LinkedIn</a>
+      <a href="https://natebonham.substack.com/">Substack</a>
+    </span>
+  </footer>
+
+</div>
+<script src="js/theme-toggle.js"></script>
+</body>
+</html>
