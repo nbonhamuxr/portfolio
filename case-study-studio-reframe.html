@@ -135,47 +135,9 @@
   /* ---------- PER-SECTION LABEL COLORS ---------- */
   .opportunity .section-label{ background:#9B6BFF; box-shadow:3px 3px 0 #9B6BFF; }
   .shared-understanding .section-label{ background:#FF4D5E; box-shadow:3px 3px 0 #FF4D5E; }
-  .translating .section-label{ background:#21E6E6; box-shadow:3px 3px 0 #21E6E6; }
   .audience-world .section-label{ background:#3D7CFF; box-shadow:3px 3px 0 #3D7CFF; }
   .scaling .section-label{ background:#D7FF3D; box-shadow:3px 3px 0 #D7FF3D; }
   .the-impact .section-label{ background:#DC2B81; box-shadow:3px 3px 0 #DC2B81; }
-
-  /* ---------- AUDIENCE GRID (Translating section) ---------- */
-  .audience-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:16px;
-    margin:36px 0;
-  }
-  .audience-cell{
-    background:var(--carbon-2);
-    padding:26px 24px;
-    border-top:3px solid #9B6BFF;
-  }
-  .audience-cell:nth-child(2){ border-top-color:#21E6E6; }
-  .audience-cell:nth-child(3){ border-top-color:#D7FF3D; }
-  .audience-cell .a-role{
-    font-family:'Archivo Expanded', sans-serif;
-    font-size:17px;
-    font-weight:700;
-    margin:0 0 12px;
-    display:flex;
-    align-items:center;
-    gap:9px;
-  }
-  .audience-cell:nth-child(1) .a-role i{ color:#9B6BFF; }
-  .audience-cell:nth-child(2) .a-role i{ color:#21E6E6; }
-  .audience-cell:nth-child(3) .a-role i{ color:#D7FF3D; }
-  .audience-cell p{
-    font-size:14px;
-    color:#C9C8C2;
-    margin:0;
-    line-height:1.55;
-  }
-
-  @media (max-width:760px){
-    .audience-grid{ grid-template-columns:1fr; }
-  }
 
   /* ---------- PULL QUOTE ---------- */
   .pull-quote{
@@ -357,35 +319,6 @@
 
   <div class="squiggle-divider">
     <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
-      <path d="M2 8 C90 2 180 18 300 10 C420 2 520 16 640 8 C760 0 860 16 970 9 C1010 6 1050 14 1078 10" stroke="#21E6E6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
-    </svg>
-  </div>
-
-  <section class="cs-section translating">
-    <div class="section-label">Translating Insight Into Decisions</div>
-    <h2>I communicated the research at every level of the organization</h2>
-    <p class="lead-line">Different teams needed different answers.</p>
-
-    <div class="audience-grid">
-      <div class="audience-cell">
-        <div class="a-role"><i class="ti ti-compass" aria-hidden="true"></i>Leadership</div>
-        <p>Used audience patterns to steer product direction and investment decisions.</p>
-      </div>
-      <div class="audience-cell">
-        <div class="a-role"><i class="ti ti-tools" aria-hidden="true"></i>Developers</div>
-        <p>Used observed player behavior to generate and pressure-test ideas.</p>
-      </div>
-      <div class="audience-cell">
-        <div class="a-role"><i class="ti ti-palette" aria-hidden="true"></i>Designers</div>
-        <p>Used applied principles to shape systems, mechanics, and features.</p>
-      </div>
-    </div>
-
-    <p>I translated the same body of research across those different levels, helping leadership steer the product while giving individual teams confidence in the decisions they were making every day.</p>
-  </section>
-
-  <div class="squiggle-divider">
-    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
       <path d="M2 14 C100 6 220 18 350 10 C480 2 580 18 700 10 C820 2 920 16 1020 9 C1045 7 1062 13 1078 10" stroke="#3D7CFF" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
     </svg>
   </div>
@@ -468,9 +401,9 @@
 
   <section class="cs-section scaling">
     <div class="section-label">Scaling the Approach</div>
-    <h2>Leadership expanded the model across the studio</h2>
-    <p>As the work gained momentum, leadership reorganized development pods around genres relevant to the new audience and invested in exploratory research across those spaces.</p>
-    <p>Teams increasingly looked to player behavior before generating ideas, allowing development to begin from evidence instead of assumption.</p>
+    <h2>Leadership adopted the approach and put it to work across the studio</h2>
+    <p>Leadership took the way I'd studied Roblox players and turned it into a model for the rest of the studio. They formed three pods, each pairing a PM, a designer, and a developer with me, and assigned each pod a Roblox genre with real potential for multiplayer and simulation in our own game.</p>
+    <p>I ran the tycoon deep-dive in service of that model: a genre with a strong, largely untapped fit for both. Every pod investigated its genre the same way, starting from player behavior instead of assumption.</p>
 
     <div class="gallery gallery--acid">
       <div class="gallery-wrap">
@@ -536,7 +469,7 @@
     <h2>The studio changed how it designed for a new generation of players</h2>
     <p>At the beginning of this work, product decisions were largely informed by assumptions carried forward from previous Sims titles.</p>
     <p>By the end, teams shared a common understanding of the audience they were building for and used that understanding to guide decisions across multiplayer, controls, progression, cosmetics, art direction, and social play.</p>
-    <p>Developers began inviting me into standups to explore Roblox together. Leadership expanded investment in exploratory research. Teams became increasingly curious about understanding players before deciding what to build.</p>
+    <p>The studio's own research tracking credited this work with shaping the multiplayer and social direction, prioritizing character-creation features, substantiating the switch to direct controls, and settling the final art and UI style. Developers who once dismissed Roblox started inviting me into their standups to explore it together.</p>
 
     <div class="gallery gallery--magenta">
       <div class="gallery-wrap">
