@@ -209,9 +209,11 @@
     position:relative;
     overflow:hidden;
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
     min-height:64px;
+    text-align:center;
   }
   .tool-card::after{
     content:'';
@@ -230,6 +232,16 @@
     position:relative;
     z-index:2;
   }
+  .tool-card-desc{
+    font-family:'Archivo', sans-serif;
+    font-size:12.5px;
+    line-height:1.5;
+    color:var(--paper-card);
+    text-align:center;
+    position:relative;
+    z-index:2;
+    margin-top:6px;
+  }
   .tool-card:nth-child(1){ border-top-color:var(--ink-magenta); }
   .tool-card:nth-child(1)::after{ background:var(--ink-magenta); }
   .tool-card:nth-child(2){ border-top-color:var(--ink-cyan); }
@@ -244,6 +256,8 @@
   .tool-card:nth-child(6)::after{ background:var(--ink-magenta); }
   .tool-card:nth-child(7){ border-top-color:var(--ink-cyan); }
   .tool-card:nth-child(7)::after{ background:var(--ink-cyan); }
+  .tool-card:nth-child(8){ border-top-color:var(--ink-lime); }
+  .tool-card:nth-child(8)::after{ background:var(--ink-lime); }
 
   @media (max-width:760px){
     .tools-grid{ grid-template-columns:repeat(2, 1fr); }
@@ -415,24 +429,35 @@
     <div class="tools-grid">
       <div class="tool-card">
         <div class="tool-card-name">Claude</div>
+        <div class="tool-card-desc">My most-used tool, for quickly generating presentation materials and pressure-testing the logic in my writing and research</div>
       </div>
       <div class="tool-card">
         <div class="tool-card-name">ChatGPT</div>
+        <div class="tool-card-desc">Fast brainstorming and alternate framings</div>
       </div>
       <div class="tool-card">
         <div class="tool-card-name">Gemini</div>
+        <div class="tool-card-desc">A second opinion when I want to pressure-test an idea differently</div>
       </div>
       <div class="tool-card">
-        <div class="tool-card-name">Midjourney</div>
+        <div class="tool-card-name">Nano Banana</div>
+        <div class="tool-card-desc">Visual concepts for workshops and presentations</div>
       </div>
       <div class="tool-card">
         <div class="tool-card-name">Hey Marvin</div>
+        <div class="tool-card-desc">A research repository for session recordings, notes, and insights</div>
       </div>
       <div class="tool-card">
         <div class="tool-card-name">Otter.ai</div>
+        <div class="tool-card-desc">Transcription for research sessions and interviews</div>
       </div>
       <div class="tool-card">
         <div class="tool-card-name">Eleven Labs</div>
+        <div class="tool-card-desc">Voice generation for prototype and video narration</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-name">Hemingway Editor</div>
+        <div class="tool-card-desc">Testing readability and accessibility of research materials</div>
       </div>
     </div>
   </section>
