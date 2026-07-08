@@ -379,15 +379,13 @@
 
   <section class="page-hero">
     <div class="hero-tag">How I Use AI</div>
-    <h1>A <span class="accent">partner</span> in the work. Not a replacement for the judgment.</h1>
+    <h1>AI as a <span class="accent">partner</span> in the work. The judgment stays mine.</h1>
   </section>
 
   <section class="prose-section">
     <div class="tag-label tag-label--violet">The Approach</div>
-    <h2>From early experiments to <em>everyday practice.</em></h2>
-    <p>I've been experimenting with AI tools since 2021 — long enough to have a considered point of view on where they genuinely help and where they fall short.</p>
-    <p>I see AI as a thinking partner, not a shortcut. It's a place to <strong>pressure-test a plan</strong> before it reaches a stakeholder, <strong>refine how I'm explaining something</strong> so it lands clearly, <strong>explore alternatives</strong> I might not land on alone, and turn rough findings into <strong>polished, walkable artifacts</strong> for a room full of decision-makers.</p>
-    <p>What I've found is that it's most powerful when I know exactly what question I'm trying to answer — and least useful when I'm hoping it will figure that out for me. The judgment calls stay mine.</p>
+    <p>I come to AI work with intent. Before I ask for anything, I sharpen the axe: I get clear on what I'm trying to do, why, and what context the model actually needs to do it well.</p>
+    <p>I follow Anthropic's AI fluency guidelines, and I stay grounded in what these tools actually are. Large language models are non-deterministic, which makes them a strong partner for exploring, ideating, and refining, with guardrails I set around how they're allowed to behave. When I need a fixed, repeatable answer, I look elsewhere.</p>
   </section>
 
   <div class="squiggle-divider">
@@ -400,8 +398,8 @@
     <div class="tag-label tag-label--hot">Four Places I Reach For It</div>
     <div class="reach-grid">
       <div class="reach-card">
-        <h3>Pressure-Testing a Plan</h3>
-        <p>Before a study design or a stakeholder readout goes out, I'll run it past AI to find the gaps in my own logic — the questions a sharp stakeholder would ask that I haven't answered yet.</p>
+        <h3>Calibrating for the Audience</h3>
+        <p>I run my research materials, screeners, and guides past AI to check whether the language actually fits the participants I'm recruiting.</p>
       </div>
       <div class="reach-card">
         <h3>Refining Language</h3>
@@ -409,11 +407,11 @@
       </div>
       <div class="reach-card">
         <h3>Exploring Alternatives</h3>
-        <p>When I'm stuck on how to frame a recommendation or structure a workshop, AI is a fast way to see options I wouldn't have generated alone — before I decide which one actually fits the situation.</p>
+        <p>When I'm stuck on how to frame a recommendation or structure a workshop, AI gives me options I wouldn't have generated alone. Then I decide which one actually fits the situation.</p>
       </div>
       <div class="reach-card">
         <h3>Building Artifacts</h3>
-        <p>I create a central source of truth — a research guide or feature requirements document — then point AI to it. From there I can quickly generate stakeholder-friendly artifacts to walk a room through ideas, plans, features, or research findings.</p>
+        <p>I start with a central source of truth: a research guide or feature requirements document. Then I point AI to it and quickly generate stakeholder-friendly artifacts to walk a room through ideas, plans, features, or research findings.</p>
       </div>
     </div>
   </section>
@@ -469,19 +467,18 @@
   </div>
 
   <section class="boundary-section">
-    <div class="tag-label tag-label--blue">Where I Don't Use AI</div>
-    <h2>Knowing the mechanism is what tells you where the line is.</h2>
-    <p>A team once asked if I could run open-ended survey responses through ChatGPT to get the analysis. I said no — and here's why it matters.</p>
-    <p>The AI isn't reading through all the survey open ends, building a mental model of what people said, and reasoning its way to themes. What's actually happening: the model is <em>non-deterministic</em> — it predicts the next most probable token given everything before it, using <em>stochastic generation</em>, meaning randomness is baked into how it samples at output time. Every word it produces is a probability calculation, not a reasoning act. And because it processes all responses at once through <em>batch processing</em> rather than reading sequentially the way a person does, it never builds the accumulating pattern-sense that makes real thematic analysis trustworthy.</p>
+    <div class="tag-label tag-label--blue">Where I Don't Use AI and Why</div>
+    <p>A team once asked if I could run open-ended survey responses through ChatGPT to get the analysis. I said no.</p>
+    <p>The AI isn't reading through all the survey open ends, building a mental model of what people said, and reasoning its way to themes. What's actually happening: the model is <em>non-deterministic</em>. It predicts the next most probable token given everything before it, using <em>stochastic generation</em>, meaning randomness is baked into how it samples at output time. Every word it produces comes from a probability calculation. And because it processes all responses at once through <em>batch processing</em> rather than reading sequentially the way a person does, it never builds the accumulating pattern-sense that makes real thematic analysis trustworthy.</p>
     <p>That distinction has real consequences:</p>
     <ul>
-      <li><strong>Run the same responses through twice and you'll get different themes</strong> — not because the data changed, but because stochastic generation means the output shifts. The themes aren't being <em>found</em>. They're being <em>generated</em> in a way that looks like finding. That directly undermines <strong>reproducibility</strong>.</li>
-      <li><strong>There's no accumulating pattern-sense.</strong> Batch processing means it has no persistent sense of "that's the third person who mentioned the checkout flow." It produces output shaped like thematic analysis because it's seen many examples of what that looks like — not because it reasoned over your data.</li>
+      <li><strong>Run the same responses through twice and you'll get different themes.</strong> The data didn't change. Stochastic generation means the output shifts every time. The themes are generated to resemble what discovery would look like, and that undermines <strong>reproducibility</strong>.</li>
+      <li><strong>There's no accumulating pattern-sense.</strong> Batch processing means it has no persistent sense of "that's the third person who mentioned the checkout flow." It produces output shaped like thematic analysis because it has seen many examples of what that looks like. It has no memory of your specific responses building on each other the way a person's does.</li>
       <li><strong>Outliers get over-represented.</strong> A vivid, unusual response can carry more statistical weight than its actual frequency warrants, which undermines <strong>trust</strong> in the findings.</li>
-      <li><strong>Ask the same question slightly differently and you may get meaningfully different themes</strong> — meaning the output is partly a function of how you asked, not just what the data says. That's a <strong>consistency</strong> problem when findings are supposed to reflect your users, not your prompt wording.</li>
+      <li><strong>Ask the same question slightly differently and you may get meaningfully different themes.</strong> The output is partly a function of how you asked. That's a <strong>consistency</strong> problem for findings that are supposed to reflect your users rather than your prompt wording.</li>
     </ul>
     <p>A person reading 200 responses builds genuine pattern-sense. Contradictions create friction. Repetitions create confidence. AI produces a summary that resembles thematic analysis output. Those are very different things, and the difference matters when someone is making product decisions from your findings.</p>
-    <p>AI still earns a place around that work — building the instrument, pressure-testing question wording, shaping how I present themes once I've found them. But the reading stays mine.</p>
+    <p>AI still earns a place around that work: building the instrument, pressure-testing question wording, shaping how I present themes once I've found them. The reading stays mine.</p>
   </section>
 
   <div class="squiggle-divider">
@@ -491,78 +488,33 @@
   </div>
 
   <section class="project-section">
-    <div class="tag-label tag-label--lime">Capstone · AI-Native Engineering Bootcamp · Honors</div>
-    <p class="project-desc" style="margin-bottom:24px;">A week-long intensive course on agentic coding tools, the agentic coding loop, and best practices for working with AI in a software engineering context.</p>
-    <h2 class="project-heading">Forge: an agentic coding assistant built with <em>Devin</em></h2>
-    <p class="project-desc">For my bootcamp capstone I used Devin — an AI software engineer — to build Forge, a chat-based coding assistant powered by AWS Bedrock. The interesting design problem wasn't getting AI to write code. It was figuring out what it should be allowed to do on its own, and where a human has to sign off before anything happens.</p>
-    <p class="project-desc">Forge connects to a GitHub repo, creates and manages pull requests, and streams its reasoning in real time as it works. It toggles between <strong>Ask</strong> and <strong>Code</strong> modes within the same stream — so you stay in control of when the tool is thinking versus when it's executing and spending tokens. It manages context across a conversation, troubleshoots its own errors, and stops at an approval gate before anything merges.</p>
-
-    <div class="gallery gallery--violet">
-      <div class="gallery-wrap">
-        <div class="gallery-stage">
-          <div class="gallery-slides">
-            <div class="gallery-slide" data-caption="The full interface — chat, tool-call trace, and Ask/Code toggle">
-              <img src="images/forge01.png" alt="Forge chat interface showing a live conversation, tool-call trace, and Ask/Code toggle at the bottom of the screen">
-            </div>
-            <div class="gallery-slide" data-caption="PR management — rollback and revert built in">
-              <img src="images/forge02.png" alt="Forge PR panel showing PR history with revert and rolled-back status badges and View on GitHub links">
-            </div>
-            <div class="gallery-slide" data-caption="Cost controls — token usage, tool call limits, auto-approve toggle">
-              <img src="images/forge03.png" alt="Forge settings panel with auto-approve toggle, explanation length, tool calls per plan slider, and live token usage counter">
-            </div>
-            <div class="gallery-slide" data-caption="Ask mode — reasoning through an image, not just describing it">
-              <img src="images/forge04.png" alt="Forge chat showing an image analysis interaction — the agent identifies a personality quiz result and narrates its reasoning">
-            </div>
-          </div>
-        </div>
-        <button class="gallery-btn gallery-prev" aria-label="Previous">&#8592;</button>
-        <button class="gallery-btn gallery-next" aria-label="Next">&#8594;</button>
-      </div>
-      <div class="gallery-footer">
-        <div class="gallery-caption"></div>
-        <div class="gallery-dots">
-          <button class="gallery-dot" aria-label="Slide 1"></button>
-          <button class="gallery-dot" aria-label="Slide 2"></button>
-          <button class="gallery-dot" aria-label="Slide 3"></button>
-          <button class="gallery-dot" aria-label="Slide 4"></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="squiggle-divider">
-    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
-      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#DC2B81" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
-    </svg>
-  </div>
-
-  <section class="project-section">
     <div class="tag-label tag-label--magenta">Claude Skill · In Beta at WWT</div>
-    <h2 class="project-heading">Workshop Builder: a Claude skill that makes AI a <em>thinking partner</em>, not a shortcut</h2>
-    <p class="project-desc">Workshop Builder is a Claude skill I built for WWT that guides sales reps and designers through planning a research session or workshop — the same questions I'd ask if I were running it myself. Who's the audience? What needs to be learned? What format fits the context? What activities will actually surface the right things?</p>
-    <p class="project-desc">The skill references an MD file I built that acts as an activity database — it proposes specific activities based on the context a user provides, then generates a ready-to-use research brief. The design intent was anti-cognitive-offloading: rather than just producing a plan, it makes the person think more carefully about what they're actually trying to get out of the session. Currently in beta with sales and design teams at WWT.</p>
+    <p class="project-desc" style="margin-bottom:24px;">AI works best when the person brings the intent. I make sense of the problem, structure it, and let AI propose vetted strategies for solving it, automating the parts that are tedious to redo every time. Workshop Builder is built around that belief.</p>
+    <h2 class="project-heading">Workshop Builder: a Claude skill that makes you think harder about the session you're planning</h2>
+    <p class="project-desc">Workshop Builder is a Claude skill I built for WWT that guides sales reps and designers through planning a research session or workshop: the same questions I'd ask if I were running it myself. Who's the audience? What needs to be learned? What format fits the context? What activities will actually surface the right things?</p>
+    <p class="project-desc">The skill references an MD file I built that acts as an activity database. It proposes specific activities based on the context a user provides, then generates a ready-to-use research brief. The design intent was anti-cognitive-offloading: it makes the person think more carefully about what they're actually trying to get out of the session instead of just handing them a plan. Currently in beta with sales and design teams at WWT.</p>
 
     <div class="gallery gallery--cyan">
       <div class="gallery-wrap">
         <div class="gallery-stage">
           <div class="gallery-slides">
-            <div class="gallery-slide" data-caption="Stage overview — six steps from context to completed brief">
+            <div class="gallery-slide" data-caption="Stage overview: six steps from context to completed brief">
               <img src="images/workshopbuilder01.png" alt="Workshop Builder skill opening screen showing the six-stage flow: Context and Goals, Questions, Audience, Logistics, Activities, and Workshop Brief">
             </div>
-            <div class="gallery-slide" data-caption="Stage 2 — questions framed around what the session needs to answer">
+            <div class="gallery-slide" data-caption="Stage 2: questions framed around what the session needs to answer">
               <img src="images/workshopbuilder03.png" alt="Workshop Builder working through goal clarification and question framing with the user">
             </div>
-            <div class="gallery-slide" data-caption="Stage 4 — logistics clarified and confirmed before moving on">
-              <img src="images/workshopbuilder02.png" alt="Logistics stage of the Workshop Builder — Claude asking about platform, session dates, and duration, with a logistics summary generated at the end">
+            <div class="gallery-slide" data-caption="Stage 4: logistics clarified and confirmed before moving on">
+              <img src="images/workshopbuilder02.png" alt="Logistics stage of the Workshop Builder: Claude asking about platform, session dates, and duration, with a logistics summary generated at the end">
             </div>
-            <div class="gallery-slide" data-caption="Stage 5 — activities proposed from the database, matched to context">
-              <img src="images/workshopbuilder04.png" alt="Workshop Builder proposed activity flow — a structured 60-minute agenda with timing, blocks, and activity names pulled from the database">
+            <div class="gallery-slide" data-caption="Stage 5: activities proposed from the database, matched to context">
+              <img src="images/workshopbuilder04.png" alt="Workshop Builder proposed activity flow: a structured 60-minute agenda with timing, blocks, and activity names pulled from the database">
             </div>
-            <div class="gallery-slide" data-caption="Generated welcome script — ready to use or edit before the session">
-              <img src="images/workshopbuilder05.png" alt="Generated facilitator welcome script — a full opening script tailored to the session context, ready to use or edit">
+            <div class="gallery-slide" data-caption="Generated welcome script, ready to use or edit before the session">
+              <img src="images/workshopbuilder05.png" alt="Generated facilitator welcome script, a full opening script tailored to the session context, ready to use or edit">
             </div>
-            <div class="gallery-slide" data-caption="The full brief — everything needed to run the session, in one document">
-              <img src="images/workshopbuilder06.png" alt="Full workshop brief output — a multi-section document covering goals, questions, participant profile, agenda, and facilitator notes">
+            <div class="gallery-slide" data-caption="The full brief: everything needed to run the session, in one document">
+              <img src="images/workshopbuilder06.png" alt="Full workshop brief output: a multi-section document covering goals, questions, participant profile, agenda, and facilitator notes">
             </div>
           </div>
         </div>
@@ -578,6 +530,52 @@
           <button class="gallery-dot" aria-label="Slide 4"></button>
           <button class="gallery-dot" aria-label="Slide 5"></button>
           <button class="gallery-dot" aria-label="Slide 6"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="squiggle-divider">
+    <svg viewBox="0 0 1080 20" preserveAspectRatio="none">
+      <path d="M2 10 C120 20 230 2 370 12 C510 22 610 4 730 14 C850 24 950 6 1060 12 C1065 13 1072 11 1078 12" stroke="#DC2B81" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <section class="project-section">
+    <div class="tag-label tag-label--lime">Capstone · AI-Native Engineering Bootcamp · Honors</div>
+    <p class="project-desc" style="margin-bottom:24px;">A week-long intensive course on agentic coding tools, the agentic coding loop, and best practices for working with AI in a software engineering context.</p>
+    <h2 class="project-heading">Forge: an agentic coding assistant built with <em>Devin</em></h2>
+    <p class="project-desc">For my bootcamp capstone I used Devin, an AI software engineer, to build Forge, a chat-based coding assistant powered by AWS Bedrock. The interesting design problem wasn't getting AI to write code. It was figuring out what it should be allowed to do on its own, and where a human has to sign off before anything happens.</p>
+    <p class="project-desc">Forge connects to a GitHub repo, creates and manages pull requests, and streams its reasoning in real time as it works. It toggles between <strong>Ask</strong> and <strong>Code</strong> modes within the same stream, so you stay in control of when the tool is thinking versus when it's executing and spending tokens. It manages context across a conversation, troubleshoots its own errors, and stops at an approval gate before anything merges.</p>
+
+    <div class="gallery gallery--violet">
+      <div class="gallery-wrap">
+        <div class="gallery-stage">
+          <div class="gallery-slides">
+            <div class="gallery-slide" data-caption="The full interface: chat, tool-call trace, and Ask/Code toggle">
+              <img src="images/forge01.png" alt="Forge chat interface showing a live conversation, tool-call trace, and Ask/Code toggle at the bottom of the screen">
+            </div>
+            <div class="gallery-slide" data-caption="PR management, with rollback and revert built in">
+              <img src="images/forge02.png" alt="Forge PR panel showing PR history with revert and rolled-back status badges and View on GitHub links">
+            </div>
+            <div class="gallery-slide" data-caption="Cost controls: token usage, tool call limits, auto-approve toggle">
+              <img src="images/forge03.png" alt="Forge settings panel with auto-approve toggle, explanation length, tool calls per plan slider, and live token usage counter">
+            </div>
+            <div class="gallery-slide" data-caption="Ask mode: reasoning through an image instead of just describing it">
+              <img src="images/forge04.png" alt="Forge chat showing an image analysis interaction: the agent identifies a personality quiz result and narrates its reasoning">
+            </div>
+          </div>
+        </div>
+        <button class="gallery-btn gallery-prev" aria-label="Previous">&#8592;</button>
+        <button class="gallery-btn gallery-next" aria-label="Next">&#8594;</button>
+      </div>
+      <div class="gallery-footer">
+        <div class="gallery-caption"></div>
+        <div class="gallery-dots">
+          <button class="gallery-dot" aria-label="Slide 1"></button>
+          <button class="gallery-dot" aria-label="Slide 2"></button>
+          <button class="gallery-dot" aria-label="Slide 3"></button>
+          <button class="gallery-dot" aria-label="Slide 4"></button>
         </div>
       </div>
     </div>
