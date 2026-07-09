@@ -468,17 +468,18 @@
 
   <section class="boundary-section">
     <div class="tag-label tag-label--blue">Where I Don't Use AI and Why</div>
-    <p>A team once asked if I could run open-ended survey responses through ChatGPT to get the analysis. I said no.</p>
-    <p>The AI isn't reading through all the survey open ends, building a mental model of what people said, and reasoning its way to themes. What's actually happening: the model is <em>non-deterministic</em>. It predicts the next most probable token given everything before it, using <em>stochastic generation</em>, meaning randomness is baked into how it samples at output time. Every word it produces comes from a probability calculation. And because it processes all responses at once through <em>batch processing</em> rather than reading sequentially the way a person does, it never builds the accumulating pattern-sense that makes real thematic analysis trustworthy.</p>
-    <p>That distinction has real consequences:</p>
+    <p>A team once asked if they could run open-ended survey responses through ChatGPT to get the analysis. I reframed the ask: the analysis needed to happen by hand, but ChatGPT had a real role once themes were drafted, checking whether anything was missed and sharpening how we communicated them.</p>
+    <p>The reason I recommended doing the analysis by hand comes down to how these models actually work. AI isn't reading through all the survey open ends, building a mental model of what people said, and reasoning its way to themes. What's actually happening: the model is <em>non-deterministic</em>. At each step, it predicts a probability distribution over possible next tokens, then samples from that distribution rather than always picking the single most likely one. That's <em>stochastic generation</em>, and it's why the exact output can shift even when you ask the same thing twice. And because it processes all responses at once through <em>batch processing</em> rather than reading sequentially the way a person does, it never builds the accumulating pattern-sense that makes real thematic analysis trustworthy.</p>
+    <p>This has real consequences:</p>
     <ul>
       <li><strong>Run the same responses through twice and you'll get different themes.</strong> The data didn't change. Stochastic generation means the output shifts every time. The themes are generated to resemble what discovery would look like, and that undermines <strong>reproducibility</strong>.</li>
       <li><strong>There's no accumulating pattern-sense.</strong> Batch processing means it has no persistent sense of "that's the third person who mentioned the checkout flow." It produces output shaped like thematic analysis because it has seen many examples of what that looks like. It has no memory of your specific responses building on each other the way a person's does.</li>
       <li><strong>Outliers get over-represented.</strong> A vivid, unusual response can carry more statistical weight than its actual frequency warrants, which undermines <strong>trust</strong> in the findings.</li>
       <li><strong>Ask the same question slightly differently and you may get meaningfully different themes.</strong> The output is partly a function of how you asked. That's a <strong>consistency</strong> problem for findings that are supposed to reflect your users rather than your prompt wording.</li>
     </ul>
-    <p>A person reading 200 responses builds genuine pattern-sense. Contradictions create friction. Repetitions create confidence. AI produces a summary that resembles thematic analysis output. Those are very different things, and the difference matters when someone is making product decisions from your findings.</p>
-    <p>AI still earns a place around that work: building the instrument, pressure-testing question wording, shaping how I present themes once I've found them. The reading stays mine.</p>
+    <p>A person reading 200 responses builds genuine pattern-sense. Contradictions create friction. Repetitions create confidence. AI produces a summary that resembles thematic analysis output. This matters when leaders are making decisions based on your findings.</p>
+    <p>How I led was by walking the team through how I run the analysis: sampling from the dataset when it's too large to read end to end, then converting responses into stickies on a digital whiteboard and working through them with the Stanford d.school's group-and-saturate method for thematic analysis.</p>
+    <p>Once the team had themes, we gave ChatGPT a well-formatted file of them, asked it to flag anything that looked missing, and used it to sharpen how we communicated the results. What we ended up with was better than what AI or the team could have produced alone.</p>
   </section>
 
   <div class="squiggle-divider">
@@ -546,8 +547,8 @@
     <p class="project-desc" style="margin-bottom:24px;">Being a good partner to AI means understanding how it actually works under the hood. I go hands-on with these tools directly to build that understanding, and to stay sharp on what's actually possible.</p>
     <p class="project-desc" style="margin-bottom:24px;">In a five-day, AI-native engineering bootcamp on agentic coding tools and best practices, I built Forge: a fully agentic coding assistant with real guardrails, working end to end in under a week.</p>
     <h2 class="project-heading">Forge: an agentic coding assistant built with <em>Devin</em></h2>
-    <p class="project-desc">Forge is a chat-based coding assistant powered by AWS Bedrock. The interesting design problem wasn't getting AI to write code. It was figuring out what it should be allowed to do on its own, and where a human has to sign off before anything happens.</p>
-    <p class="project-desc">Forge connects to a GitHub repo, creates and manages pull requests, and streams its reasoning in real time as it works. It toggles between <strong>Ask</strong> and <strong>Code</strong> modes within the same stream, so you stay in control of when the tool is thinking versus when it's executing and spending tokens. It manages context across a conversation, troubleshoots its own errors, and stops at an approval gate before anything merges.</p>
+    <p class="project-desc">Forge is a chat-based coding assistant powered by AWS Bedrock. The interesting design problem was scoping the agent's autonomy: what it handles on its own, and where a person steps in before anything ships.</p>
+    <p class="project-desc">Forge connects to a GitHub repo, creates and manages pull requests, and streams its reasoning in real time as it works. It toggles between <strong>Ask</strong> and <strong>Code</strong> modes within the same stream, so you always know when the tool is thinking versus when it's executing and spending tokens. It manages context across a conversation, troubleshoots its own errors, and pauses for a final check before anything merges.</p>
 
     <div class="gallery gallery--violet">
       <div class="gallery-wrap">
