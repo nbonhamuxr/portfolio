@@ -217,3 +217,8 @@ h1,h2,h3,h4{ color:var(--ink); }
 .card-media{ position:relative; }
 .locked-media::after{ content:""; position:absolute; inset:0; background:rgba(30,42,46,0.28); }
 .lock-overlay{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:1; width:88px; height:88px; border-radius:50%; background:rgba(255,255,255,0.72); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); color:var(--ink); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(30,42,46,0.18); }
+
+/* ---------- mobile avatar ---------- */
+.greeting{ display:flex; align-items:center; gap:14px; }
+.avatar{ display:none; width:60px; height:60px; border-radius:50%; object-fit:cover; flex:0 0 auto; }
+@media (max-width:760px){ .avatar{ display:block; } .hero-photo{ display:none; } }
