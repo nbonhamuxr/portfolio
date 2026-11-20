@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How I Use AI · Nate Bonham</title>
-<meta name="description" content="The AI-enabled research hub Nate Bonham built at World Wide Technology, and where he keeps analysis in human hands.">
+<meta name="description" content="Nate Bonham's approach to AI in research, shown through the AI-enabled User Research Hub he built at World Wide Technology.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="How I Use AI · Nate Bonham">
-<meta property="og:description" content="The AI-enabled research hub Nate Bonham built at World Wide Technology, and where he keeps analysis in human hands.">
+<meta property="og:description" content="Nate Bonham's approach to AI in research, shown through the AI-enabled User Research Hub he built at World Wide Technology.">
 <meta property="og:image" content="https://www.nateux.com/images/og-default.png">
 <meta property="og:url" content="https://www.nateux.com/ai-practice.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,79 +25,33 @@
 <main>
 <div class="container">
 <section class="page-head">
-<h1 class="h1" style="max-width: 940px">I built an AI-enabled research hub that helps three researchers support a 13,000-person organization</h1>
-<p class="lede" style="max-width: 820px">At World Wide Technology, I turned our research standards into guides, tools, and Claude skills that teams use to draft and review their own research before it reaches a researcher.</p>
+<h1 class="h1" style="max-width: 940px">I use AI to scale research expertise, with people making the judgment calls</h1>
+<p class="lede" style="max-width: 820px">At World Wide Technology, I created an AI-enabled User Research Hub in Notion that helps our three-person research team scale and extend our practice across a 13,000-person organization.</p>
+</section>
+<section class="row">
+<div class="row-label"><div class="label">My approach</div></div>
+<div class="row-body">
+<h2 class="h2">I use AI where varied output helps, and other tools where answers must be repeatable</h2>
+<div class="body"><p>Before I prompt, I define the goal, the reason behind it, and the context the model needs. Large language models can return different output on each run, which suits exploring, ideating, and refining. When I need a fixed, repeatable answer, I use a different tool.</p></div>
+<div class="body"><p>The judgment calls stay with people: what to study, what the evidence means, and what to do about it. I design AI tools so people make those calls with better information.</p></div>
+<div class="body"><p>To understand how these tools work under the hood, I completed an AI-native engineering bootcamp with honors, where I built an agentic coding assistant with guardrails.</p></div>
+</div>
 </section>
 <section class="row">
 <div class="row-label"><div class="label">The problem</div></div>
 <div class="row-body">
-<h2 class="h2">Faster drafting with AI created more material that needed fixing</h2>
-<div class="body"><p>At WWT, three full-time researchers support a 13,000-person organization. As teams adopted Claude, they produced more research material faster: surveys, interview guides, reports, and insights. Much of it came to me for review.</p></div>
-<div class="body"><p>Claude bases its output on general training data, so it guesses what a good survey, interview guide, or report looks like. The results look the part but fall apart under scrutiny: generic text, statements that carry no information, hallucinations, and ungrounded summaries. Fixing that output slowed teams down.</p></div>
+<h2 class="h2">Teams were running research with Claude without the expertise to judge its output</h2>
+<div class="body"><p>At WWT, three full-time researchers support a 13,000-person organization, so many people outside the research team run their own studies. Most of them used Claude to generate materials for each stage: deciding what to research, running sessions, analyzing results, and reporting.</p></div>
+<div class="body"><p>Claude bases its output on general training data, so it guesses what a good survey, interview guide, or report looks like. The results look the part but fall apart under scrutiny: generic text, statements that carry no information, hallucinations, and ungrounded summaries. Without research training, people had no way to tell whether Claude's output fit the job.</p></div>
 </div>
 </section>
 <section class="row">
 <div class="row-label"><div class="label">What I built</div></div>
 <div class="row-body">
-<h2 class="h2">I built a research hub that gives Claude our research standards as its source of truth</h2>
-<div class="body"><p>The hub works as a high-context layer for Claude. Teams attach its guides and tools when they generate or review research materials, so Claude evaluates their work against WWT's standards in place of its own guesses.</p></div>
-<div class="grid-2 theme-neutral"><div class="box"><h4>Report repository</h4><p>Past studies and findings in one place, so teams start from what WWT already knows.</p></div><div class="box"><h4>Best practice guides</h4><p>Survey design, methodology fit, report writing, writing insights, and deciding when research is worth the investment.</p></div><div class="box"><h4>Claude skills</h4><p>Guided workflows that package research expertise: a Workshop Builder, a Methodology Selector, and a 55-item heuristic analysis for products serving people with low digital literacy and low incomes.</p></div><div class="box"><h4>Engagement model playbooks</h4><p>How teams work with research, from scoping a request to sharing findings.</p></div><div class="box"><h4>Research calculators</h4><p>Parameters for sample sizes and statistics that Claude and teams can apply to a study plan.</p></div></div>
-</div>
-</section>
-<section class="row">
-<div class="row-label"><div class="label">How it works</div></div>
-<div class="row-body">
-<h2 class="h2">Anyone can check a draft against our standards in three steps</h2>
-<figure class="figure">
-<svg viewBox="0 0 1000 300" role="img" aria-labelledby="flow-title">
-<title id="flow-title">Three steps: upload a draft, transcript, or survey data; attach the matching best practice guide or calculator parameters; ask Claude to evaluate the draft strictly against the guide and rewrite where it falls short.</title>
-<defs><marker id="fl-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1E2A2E"/></marker></defs>
-<g font-family="Instrument Sans, sans-serif">
-<rect x="20" y="40" width="280" height="200" rx="4" fill="#FFFFFF" stroke="#1E2A2E" stroke-width="3"/>
-<rect x="20" y="40" width="280" height="10" fill="#C3DBF2"/>
-<text x="44" y="92" font-size="14" font-weight="700" fill="#156152" letter-spacing="1.5">1 · CONTEXT</text>
-<text x="44" y="128" font-size="21" font-weight="700" fill="#1E2A2E">Add your draft</text>
-<text x="44" y="164" font-size="16" fill="#4A5559">A survey, interview guide,</text>
-<text x="44" y="186" font-size="16" fill="#4A5559">report, transcript, or</text>
-<text x="44" y="208" font-size="16" fill="#4A5559">survey data</text>
-<rect x="360" y="40" width="280" height="200" rx="4" fill="#FFFFFF" stroke="#1E2A2E" stroke-width="3"/>
-<rect x="360" y="40" width="280" height="10" fill="#BFE3C8"/>
-<text x="384" y="92" font-size="14" font-weight="700" fill="#156152" letter-spacing="1.5">2 · REFERENCE</text>
-<text x="384" y="128" font-size="21" font-weight="700" fill="#1E2A2E">Attach the standard</text>
-<text x="384" y="164" font-size="16" fill="#4A5559">The matching best practice</text>
-<text x="384" y="186" font-size="16" fill="#4A5559">guide or research</text>
-<text x="384" y="208" font-size="16" fill="#4A5559">calculator parameters</text>
-<rect x="700" y="40" width="280" height="200" rx="4" fill="#FFFFFF" stroke="#1E2A2E" stroke-width="3"/>
-<rect x="700" y="40" width="280" height="10" fill="#FFE27A"/>
-<text x="724" y="92" font-size="14" font-weight="700" fill="#156152" letter-spacing="1.5">3 · EVALUATE</text>
-<text x="724" y="128" font-size="21" font-weight="700" fill="#1E2A2E">Review and rewrite</text>
-<text x="724" y="164" font-size="16" fill="#4A5559">Claude checks the draft</text>
-<text x="724" y="186" font-size="16" fill="#4A5559">against the guide and</text>
-<text x="724" y="208" font-size="16" fill="#4A5559">fixes where it falls short</text>
-<g stroke="#1E2A2E" stroke-width="3" marker-end="url(#fl-ink)"><line x1="304" y1="140" x2="354" y2="140"/><line x1="644" y1="140" x2="694" y2="140"/></g>
-<text x="500" y="288" text-anchor="middle" font-size="16" fill="#4A5559">The draft reaches a colleague or client already checked against the team's standards</text>
-</g>
-</svg>
-<figcaption>How someone uses the hub to check their work</figcaption>
-</figure>
-<div class="box theme-neutral"><div class="box-tag">Example prompt</div><p style="color: var(--ink); font-size: 19px">"Evaluate my text strictly against the attached Best Practice Guide. Identify where my insights lack empirical precision and rewrite it to match our report-writing standards."</p></div>
-<div class="body"><p>The guides improve the legibility, causality, structure, and readability of materials before they go to a colleague or a client.</p></div>
-</div>
-</section>
-<section class="row">
-<div class="row-label"><div class="label">Results</div></div>
-<div class="row-body">
-<h2 class="h2">Designers and PMs now review their own work against the hub before they meet with me</h2>
-<div class="grid-3 theme-neutral"><div class="box"><h4>Adopted across roles</h4><p>Creative directors, researchers, designers, and PMs use the hub.</p></div><div class="box"><h4>Time back each week</h4><p>Teams check their own drafts first, which frees a couple of hours of my week from first-pass reviews.</p></div><div class="box"><h4>Higher-quality work</h4><p>A creative director credited the hub for the improvement she saw in work from our intern and a researcher.</p></div></div>
-<div class="body"><p>The executive creative director asked me to walk through the hub at an all-hands.</p></div>
-</div>
-</section>
-<section class="row">
-<div class="row-label"><div class="label">Claude skills</div></div>
-<div class="row-body">
-<h2 class="h2">Workshop Builder walks planners through the questions I would ask</h2>
-<div class="body"><p>Workshop Builder is one of three Claude skills in the hub. It walks sales reps and designers through planning a research session or workshop with the questions I'd ask if I were running it: Who's the audience? What needs to be learned? What format fits the context? Which activities will surface what the team needs?</p></div>
-<div class="body"><p>The skill draws on a Markdown activity database I wrote. It proposes activities based on the context a user provides, then generates a ready-to-use research brief. I designed it so planners think through what they want from the session before they receive a plan.</p></div>
+<h2 class="h2">I built a User Research Hub in Notion that Claude draws on as its source of truth</h2>
+<div class="body"><p>The hub turns our team's research expertise into standards and tools that anyone at WWT can use with Claude.</p></div>
+<div class="grid-2 theme-neutral"><div class="box"><h4>Report repository</h4><p>Past studies and findings in one place, so teams start from what WWT already knows.</p></div><div class="box"><h4>Best practice guides</h4><p>Survey design, methodology fit, report writing, writing insights, and deciding when research is worth the investment.</p></div><div class="box"><h4>Claude skills</h4><p>Guided workflows that package research expertise: a Workshop Builder, a Methodology Selector, and a 55-item heuristic analysis for products serving people with low digital literacy and low incomes.</p></div><div class="box"><h4>Engagement model playbooks</h4><p>Playbooks for WWT's engagement models, the research services WWT sells to clients.</p></div><div class="box"><h4>Research calculators</h4><p>Statistical calculators teams apply when planning a study.</p></div></div>
+<div class="body"><p>Workshop Builder, one of the hub's Claude skills, walks people through planning a research session or workshop with the questions I'd ask: Who's the audience? What needs to be learned? What format fits the context? Which activities will surface what the team needs? It draws on an activity database I wrote and generates a ready-to-use research brief.</p></div>
 <div class="gallery gallery--cyan">
 <div class="gallery-wrap">
 <div class="gallery-stage">
@@ -140,7 +94,48 @@
 </div>
 </section>
 <section class="row">
-<div class="row-label"><div class="label">Where I don't use AI</div></div>
+<div class="row-label"><div class="label">How it works</div></div>
+<div class="row-body">
+<h2 class="h2">Teams call on our research standards directly from Claude</h2>
+<div class="body"><p>Claude connects to the hub in Notion through MCP, so people can ask it to use a specific guide or calculator while they work.</p></div>
+<figure class="figure">
+<svg viewBox="0 0 1000 300" role="img" aria-labelledby="flow-title">
+<title id="flow-title">Three steps: share a draft, transcript, or survey data with Claude; Claude calls on the matching guide or calculator in the Notion hub through MCP; Claude evaluates the draft against that standard and rewrites where it falls short.</title>
+<defs><marker id="fl-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1E2A2E"/></marker></defs>
+<g font-family="Instrument Sans, sans-serif">
+<rect x="20" y="40" width="280" height="200" rx="4" fill="#FFFFFF" stroke="#1E2A2E" stroke-width="3"/>
+<rect x="20" y="40" width="280" height="10" fill="#C3DBF2"/>
+<text x="44" y="92" font-size="14" font-weight="700" fill="#156152" letter-spacing="1.5">1 · CONTEXT</text>
+<text x="44" y="128" font-size="21" font-weight="700" fill="#1E2A2E">Share your draft</text>
+<text x="44" y="164" font-size="16" fill="#4A5559">A survey, interview guide,</text>
+<text x="44" y="186" font-size="16" fill="#4A5559">report, transcript, or</text>
+<text x="44" y="208" font-size="16" fill="#4A5559">survey data</text>
+<rect x="360" y="40" width="280" height="200" rx="4" fill="#FFFFFF" stroke="#1E2A2E" stroke-width="3"/>
+<rect x="360" y="40" width="280" height="10" fill="#BFE3C8"/>
+<text x="384" y="92" font-size="14" font-weight="700" fill="#156152" letter-spacing="1.5">2 · STANDARD</text>
+<text x="384" y="128" font-size="21" font-weight="700" fill="#1E2A2E">Call on the hub</text>
+<text x="384" y="164" font-size="16" fill="#4A5559">Claude pulls the matching</text>
+<text x="384" y="186" font-size="16" fill="#4A5559">guide or calculator from</text>
+<text x="384" y="208" font-size="16" fill="#4A5559">Notion through MCP</text>
+<rect x="700" y="40" width="280" height="200" rx="4" fill="#FFFFFF" stroke="#1E2A2E" stroke-width="3"/>
+<rect x="700" y="40" width="280" height="10" fill="#FFE27A"/>
+<text x="724" y="92" font-size="14" font-weight="700" fill="#156152" letter-spacing="1.5">3 · EVALUATE</text>
+<text x="724" y="128" font-size="21" font-weight="700" fill="#1E2A2E">Review and rewrite</text>
+<text x="724" y="164" font-size="16" fill="#4A5559">Claude checks the draft</text>
+<text x="724" y="186" font-size="16" fill="#4A5559">against the standard and</text>
+<text x="724" y="208" font-size="16" fill="#4A5559">fixes where it falls short</text>
+<g stroke="#1E2A2E" stroke-width="3" marker-end="url(#fl-ink)"><line x1="304" y1="140" x2="354" y2="140"/><line x1="644" y1="140" x2="694" y2="140"/></g>
+<text x="500" y="288" text-anchor="middle" font-size="16" fill="#4A5559">The person running the research reviews the result and decides what to keep</text>
+</g>
+</svg>
+<figcaption>How teams use the hub from Claude</figcaption>
+</figure>
+<div class="box theme-neutral"><div class="box-tag">Example prompt</div><p style="color: var(--ink); font-size: 19px">"Evaluate my draft strictly against our Report Writing Guidelines in Notion. Identify where my insights lack empirical precision and rewrite them to match the guidelines."</p></div>
+<div class="body"><p>The guides improve the legibility, causality, structure, and readability of materials before they go to a colleague or a client.</p></div>
+</div>
+</section>
+<section class="row">
+<div class="row-label"><div class="label">Keeping people in the loop</div></div>
 <div class="row-body">
 <h2 class="h2">I keep thematic analysis in human hands, and use AI to check the result</h2>
 <div class="body"><p>A team asked to run open-ended survey responses through ChatGPT for the analysis. I proposed a split: the team would do the thematic analysis by hand, and ChatGPT would check the drafted themes for gaps and help sharpen how we communicated them.</p></div>
@@ -156,41 +151,11 @@
 </div>
 </section>
 <section class="row">
-<div class="row-label"><div class="label">Engineering</div></div>
+<div class="row-label"><div class="label">Results</div></div>
 <div class="row-body">
-<h2 class="h2">I graduated with honors from an AI-native engineering bootcamp, where I built Forge</h2>
-<div class="body"><p>Forge is an agentic coding assistant with guardrails, powered by AWS Bedrock. It connects to a GitHub repo, manages pull requests, and streams its reasoning as it works, then pauses for a final check before anything merges.</p></div>
-<div class="gallery gallery--violet">
-<div class="gallery-wrap">
-<div class="gallery-stage">
-<div class="gallery-slides">
-<div class="gallery-slide" data-caption="The full interface: chat, tool-call trace, and Ask/Code toggle">
-<img alt="Forge chat interface showing a live conversation, tool-call trace, and Ask/Code toggle at the bottom of the screen" src="images/forge01.png"/>
-</div>
-<div class="gallery-slide" data-caption="PR management, with rollback and revert built in">
-<img alt="Forge PR panel showing PR history with revert and rolled-back status badges and View on GitHub links" src="images/forge02.png"/>
-</div>
-<div class="gallery-slide" data-caption="Cost controls: token usage, tool call limits, auto-approve toggle">
-<img alt="Forge settings panel with auto-approve toggle, explanation length, tool calls per plan slider, and live token usage counter" src="images/forge03.png"/>
-</div>
-<div class="gallery-slide" data-caption="Ask mode: the agent reasons through an image">
-<img alt="Forge chat showing an image analysis interaction: the agent identifies a personality quiz result and narrates its reasoning" src="images/forge04.png"/>
-</div>
-</div>
-</div>
-<button aria-label="Previous" class="gallery-btn gallery-prev">←</button>
-<button aria-label="Next" class="gallery-btn gallery-next">→</button>
-</div>
-<div class="gallery-footer">
-<div class="gallery-caption"></div>
-<div class="gallery-dots">
-<button aria-label="Slide 1" class="gallery-dot"></button>
-<button aria-label="Slide 2" class="gallery-dot"></button>
-<button aria-label="Slide 3" class="gallery-dot"></button>
-<button aria-label="Slide 4" class="gallery-dot"></button>
-</div>
-</div>
-</div>
+<h2 class="h2">Designers and PMs get to quality research faster, without giving up rigor</h2>
+<div class="grid-3 theme-neutral"><div class="box"><h4>Adopted across roles</h4><p>Creative directors, researchers, designers, and PMs use the hub.</p></div><div class="box"><h4>Higher-quality work</h4><p>A creative director credited the hub for the improvement she saw in work from our intern and a researcher.</p></div><div class="box"><h4>More self-sufficient teams</h4><p>Designers and PMs check their own materials against the hub, which frees researcher time from first-pass reviews.</p></div></div>
+<div class="body"><p>The executive creative director asked me to walk through the hub at an all-hands.</p></div>
 </div>
 </section>
 
