@@ -222,3 +222,10 @@ h1,h2,h3,h4{ color:var(--ink); }
 .greeting{ display:flex; align-items:center; gap:14px; }
 .avatar{ display:none; width:60px; height:60px; border-radius:50%; object-fit:cover; flex:0 0 auto; }
 @media (max-width:760px){ .avatar{ display:block; } .hero-photo{ display:none; } }
+
+/* ---------- icon list ---------- */
+.icon-list{ list-style:none; margin:4px 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:18px 32px; max-width:860px; }
+.icon-list li{ display:flex; align-items:flex-start; gap:14px; font-size:19px; line-height:1.45; color:var(--ink); }
+.icon-list-icon{ color:var(--ink); line-height:0; flex:0 0 auto; margin-top:1px; }
+.icon-list strong{ font-weight:600; }
+.icon-list-note{ display:block; font-size:16px; color:var(--muted); margin-top:4px; }
