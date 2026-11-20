@@ -229,3 +229,6 @@ h1,h2,h3,h4{ color:var(--ink); }
 .icon-list-icon{ color:var(--ink); line-height:0; flex:0 0 auto; margin-top:1px; }
 .icon-list strong{ font-weight:600; }
 .icon-list-note{ display:block; font-size:16px; color:var(--muted); margin-top:4px; }
+.contact-head{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.contact-head .contact-icon{ margin:0; }
+.contact-head .box-tag{ margin:0; }
