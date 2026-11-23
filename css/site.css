@@ -22,12 +22,14 @@
   --perf:#C9CEC9;
   /* project tints */
   --sky-band:#E6F0FA; --sky-pill:#C3DBF2; --sky-rule:#7FA9D6;
+  --clay-band:#FBEAE1; --clay-pill:#F4C9B4; --clay-rule:#D97757;
   --mint-band:#E4F3E6; --mint-pill:#BFE3C8; --mint-rule:#5FAE84;
   --band:var(--sky-band); --pill:var(--sky-pill); --rule:var(--sky-rule);
   --font:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --max:1160px;
 }
 .theme-sky{ --band:var(--sky-band); --pill:var(--sky-pill); --rule:var(--sky-rule); }
+.theme-clay{ --band:var(--clay-band); --pill:var(--clay-pill); --rule:var(--clay-rule); }
 .theme-mint{ --band:var(--mint-band); --pill:var(--mint-pill); --rule:var(--mint-rule); }
 .theme-neutral{ --band:#E9E9E5; --pill:#D9D9D3; --rule:var(--rule-neutral); }
 
