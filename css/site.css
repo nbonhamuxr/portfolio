@@ -240,7 +240,7 @@ h1,h2,h3,h4{ color:var(--ink); }
 #lb-overlay{ touch-action:pan-y; }
 
 /* ---------- about me (home) ---------- */
-.about-intro{ display:flex; flex-direction:column; gap:24px; max-width:780px; }
+.about-intro{ display:flex; flex-direction:column; gap:24px; }
 .about-text{ margin:0; font-size:20px; line-height:1.65; color:var(--muted); }
 .about-player{ display:block; border:0; border-radius:12px; }
 .about-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; }
