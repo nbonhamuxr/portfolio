@@ -253,3 +253,12 @@ h1,h2,h3,h4{ color:var(--ink); }
 @media (max-width:760px){ .about-grid--2 .about-photo img{ height:300px; } }
 .h2--full{ max-width:none; }
 .box--umich{ border-top-color:#00274C; } /* Michigan blue, University of Michigan box on About page only */
+/* three case study cards in a row on desktop */
+@media (min-width:1000px){
+  .card-grid{ grid-template-columns:repeat(3, 1fr); gap:28px; }
+  .card-grid .case-card img{ height:220px; }
+  .card-grid .case-card h3{ font-size:21px; padding:22px 24px 0; }
+  .card-grid .case-card .more{ padding:14px 24px 24px; }
+  .card-grid .case-card .locked{ padding:10px 24px 0; }
+}
+.case-card img.card-art{ object-fit:contain; background:var(--clay-band); padding:20px; }
